@@ -9,8 +9,8 @@ int main()
     ios_base::sync_with_stdio(0);
     cin.tie(0);
 
-    // freopen("ODDEVEN.INP", "r", stdin);
-    // freopen("ODDEVEN.OUT", "w", stdout);
+    freopen("ODDEVEN.INP", "r", stdin);
+    freopen("ODDEVEN.OUT", "w", stdout);
 
     long long x, y, n;
 
