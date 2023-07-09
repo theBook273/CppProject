@@ -7,19 +7,19 @@ class Solution
 public:
     vector<int> dailyTemperatures(vector<int> &temperatures)
     {
-        vector<int> next(temperatures.size(), 0);
-        next[temperatures.size() - 1] = 0;
-        for (int i = temperatures.size() - 1; i >= 0; i--)
-        {
-            for (int j = i - 1; j >= 0; j--)
-            {
-                if (temperatures[j] < temperatures[i])
-                {
-                    next[j] = i - j;
-                }
-            }
-        }
+        int n = temperatures.size();
+        stack<int> st;
+        vector<int> ans(n, 0);
 
-        return next;
+        for (int i = 0; i < n; i++)
+        {
+            while (!st.empty() && temperatures[st.top()] < temperatures[i])
+            {
+                ans[st.top()] = i - st.top();
+                st.pop();
+            }
+            st.push(i);
+        }
+        return ans;
     }
 };
