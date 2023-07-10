@@ -2,50 +2,64 @@
 
 using namespace std;
 
-string solve(string s)
+class solution
 {
-    string res;
-    deque<char> d;
+private:
+    string s, res;
+    stack<char> st;
 
-    for (int i = 0; i < s.size(); i++)
+public:
+    solution()
     {
-        if (s[i] == '<' && !res.empty())
-        {
-            d.push_back(res[res.size() - 1]);
-            res.pop_back();
-        }
-        else if (s[i] == '>' && !res.empty() && !d.empty())
-        {
-            res += d.back();
-            d.pop_back();
-        }
-        else if (s[i] == '-' && !res.empty())
-        {
-            res.pop_back();
-        }
-        else if (('0' <= s[i] && s[i] <= '9') || ('a' <= s[i] && s[i] <= 'z') || ('A' <= s[i] && s[i] <= 'Z'))
-        {
-            res += s[i];
-        }
+        cin >> s;
     }
 
-    if (!d.empty())
+    string solve()
     {
-        while (!d.empty())
+        for (int i = 0; i < s.size(); i++)
         {
-            res += d.back();
-            d.pop_back();
+            if (s[i] == '<')
+            {
+                if (!res.empty())
+                {
+                    st.push(res[res.size() - 1]);
+                    res.pop_back();
+                }
+            }
+            else if (s[i] == '>')
+            {
+                if (!st.empty())
+                {
+                    res.push_back(st.top());
+                    st.pop();
+                }
+            }
+            else if (s[i] == '-')
+            {
+                if (!res.empty())
+                {
+                    res.pop_back();
+                }
+            }
+            else
+            {
+                res.push_back(s[i]);
+            }
         }
-    }
 
-    return res;
-}
+        while (!st.empty())
+        {
+            res.push_back(st.top());
+            st.pop();
+        }
+
+        return res;
+    }
+};
 
 int main()
 {
-    string s;
-
-    cin >> s;
-
-    cout << solve(s);
+    solution a;
+    cout << a.solve() << endl;
+    return 0;
 }
