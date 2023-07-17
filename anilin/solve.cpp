@@ -5,9 +5,9 @@ using namespace std;
 class solution
 {
 private:
-    vector<pair<long long, long long>> mlAndSpace;
+    vector<pair<long long, long long>> spaceAndMl;
 
-    int n, tong = 0;
+    long long n, tong = 0;
 
 public:
     solution()
@@ -18,7 +18,7 @@ public:
         {
             int temp1, temp2;
             cin >> temp1 >> temp2;
-            mlAndSpace.push_back({temp1, temp2});
+            spaceAndMl.push_back({temp2, temp1});
         }
     }
 
@@ -26,23 +26,23 @@ public:
     {
         long long right = 0, i = 1;
 
-        sort(mlAndSpace.rbegin(), mlAndSpace.rend());
+        sort(spaceAndMl.rbegin(), spaceAndMl.rend());
 
-        while (right < i && i < mlAndSpace.size())
+        while (right < i && i < spaceAndMl.size())
         {
 
-            if (mlAndSpace[right].first + mlAndSpace[i].first <= mlAndSpace[right].second)
+            if (spaceAndMl[right].second + spaceAndMl[i].second <= spaceAndMl[right].first)
             {
-                mlAndSpace[right].first += mlAndSpace[i].first;
-                mlAndSpace[i].first = 0;
+                spaceAndMl[right].second += spaceAndMl[i].second;
+                spaceAndMl[i].second = 0;
             }
             else
             {
-                mlAndSpace[i].first = mlAndSpace[i].first + mlAndSpace[right].first - mlAndSpace[right].second;
-                mlAndSpace[right].first = mlAndSpace[right].second;
+                spaceAndMl[i].second = spaceAndMl[i].second + spaceAndMl[right].second - spaceAndMl[right].first;
+                spaceAndMl[right].second = spaceAndMl[right].first;
             }
 
-            if (mlAndSpace[right].second == mlAndSpace[right].first)
+            if (spaceAndMl[right].second == spaceAndMl[right].first)
             {
                 right++;
             }
@@ -50,11 +50,9 @@ public:
             i++;
         }
 
-        sort(mlAndSpace.rbegin(), mlAndSpace.rend());
-
-        for (int i = mlAndSpace.size() - 1; i >= 0; i--)
+        for (int i = spaceAndMl.size() - 1; i >= 0; i--)
         {
-            if (mlAndSpace[i].first == 0)
+            if (spaceAndMl[i].second == 0)
             {
                 tong++;
             }
@@ -71,9 +69,9 @@ public:
 
         cout << tong << endl;
 
-        for (int i = 0; i < mlAndSpace.size(); i++)
+        for (int i = 0; i < spaceAndMl.size(); i++)
         {
-            cout << mlAndSpace[i].first << " ";
+            cout << spaceAndMl[i].second << " ";
         }
     }
 };
