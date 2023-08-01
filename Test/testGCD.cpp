@@ -1,105 +1,43 @@
-#include <bits/stdc++.h>
+#include <map>
+#include <set>
+#include <list>
+#include <cmath>
+#include <ctime>
+#include <deque>
+#include <queue>
+#include <stack>
+#include <string>
+#include <bitset>
+#include <cstdio>
+#include <limits>
+#include <vector>
+#include <climits>
+#include <cstring>
+#include <cstdlib>
+#include <fstream>
+#include <numeric>
+#include <sstream>
+#include <iostream>
+#include <algorithm>
+#include <unordered_map>
 
 using namespace std;
 
-string ltrim(const string &);
-string rtrim(const string &);
-vector<string> split(const string &);
-
-/*
- * Complete the 'plusMinus' function below.
- *
- * The function accepts INTEGER_ARRAY arr as parameter.
- */
-
-void plusMinus(vector<int> arr)
-{
-    double aboveZero = 0, belowZero = 0, equalZero = 0;
-
-    for (int i = 0; i < arr.size(); i++)
-    {
-        if (arr[i] > 0)
-        {
-            aboveZero++;
-        }
-        else if (arr[i] < 0)
-        {
-            belowZero++;
-        }
-        else
-        {
-            equalZero++;
-        }
-    }
-
-    cout << setprecision(6) << fixed << aboveZero / arr.size() << "\n";
-    cout << setprecision(6) << fixed << belowZero / arr.size() << "\n";
-    cout << setprecision(6) << fixed << equalZero / arr.size();
-}
-
 int main()
 {
-    string n_temp;
-    getline(cin, n_temp);
-
-    int n = stoi(ltrim(rtrim(n_temp)));
-
-    string arr_temp_temp;
-    getline(cin, arr_temp_temp);
-
-    vector<string> arr_temp = split(rtrim(arr_temp_temp));
-
-    vector<int> arr(n);
-
-    for (int i = 0; i < n; i++)
+    int t;
+    cin >> t;
+    for (int a0 = 0; a0 < t; a0++)
     {
-        int arr_item = stoi(arr_temp[i]);
+        int n;
+        cin >> n;
 
-        arr[i] = arr_item;
+        long long tong3 = (3 + ((n - 1 / 3) * 3)) * ((((n - 1 / 3) * 3) - 3) / 3 + 1) / 2;
+        long long tong5 = (5 + ((n - 1 / 5) * 5)) * ((((n - 1 / 5) * 5) - 5) / 5 + 1) / 2;
+        long long tong15 = (15 + ((n - 1 / 15) * 15)) * ((((n - 1 / 15) * 15) - 15) / 15 + 1) / 2;
+
+        cout << tong3 + tong5;
     }
-
-    plusMinus(arr);
 
     return 0;
-}
-
-string ltrim(const string &str)
-{
-    string s(str);
-
-    s.erase(
-        s.begin(),
-        find_if(s.begin(), s.end(), not1(ptr_fun<int, int>(isspace))));
-
-    return s;
-}
-
-string rtrim(const string &str)
-{
-    string s(str);
-
-    s.erase(
-        find_if(s.rbegin(), s.rend(), not1(ptr_fun<int, int>(isspace))).base(),
-        s.end());
-
-    return s;
-}
-
-vector<string> split(const string &str)
-{
-    vector<string> tokens;
-
-    string::size_type start = 0;
-    string::size_type end = 0;
-
-    while ((end = str.find(" ", start)) != string::npos)
-    {
-        tokens.push_back(str.substr(start, end - start));
-
-        start = end + 1;
-    }
-
-    tokens.push_back(str.substr(start));
-
-    return tokens;
 }

@@ -1,38 +1,22 @@
 #include <bits/stdc++.h>
+#include "threeSum.h"
 
 using namespace std;
 
 int main()
 {
-    int n;
-    vector<int> nums;
-    vector<vector<int>> res;
-    unordered_map<int, int> mp;
-    int dem = 0;
+    Solution a;
 
-    cin >> n;
+    vector<int> b = {-1, 0, 1, 2, -1, -4};
 
-    for (int i = 0; i < n; i++)
+    vector<vector<int>> v = a.threeSum(b);
+
+    for (int i = 0; i < v.size(); i++)
     {
-        int temp;
-        cin >> temp;
-        nums.push_back(temp);
-        mp[nums[i]]++;
-    }
-
-    sort(nums.begin(), nums.end());
-
-    for (int i = 0; i < n && nums[i] < 0; i++)
-    {
-        for (int j = i + 1; j < n; j++)
+        for (int j = 0; j < v[i].size(); j++)
         {
-            int temp = 0 - nums[i] - nums[j];
-            if (mp.count(temp))
-            {
-                res[dem].push_back(nums[i]);
-                res[dem].push_back(nums[j]);
-                res[dem++].push_back(temp);
-            }
+            cout << v[i][j] << " ";
         }
+        cout << endl;
     }
 }
