@@ -1,8 +1,10 @@
 {
-  "files.associations": {
-    "iostream": "cpp",
-    "cmath": "cpp",
-    "unordered_map": "cpp",
-    "vector": "cpp"
-  }
+	"files.associations": {
+		"iostream": "cpp",
+		"cmath": "cpp",
+		"unordered_map": "cpp",
+		"vector": "cpp"
+	},
+	"prettier.bracketSameLine": true,
+	"prettier.useTabs": true
 }
