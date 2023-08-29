@@ -23,23 +23,25 @@ int main() {
     for (int i = 0; i < d; i++) {
         cin >> queries;
 
-        int minRes = 1e9, r = 0;
+        int res = 1e9, r = 0;
         deque<int> a;
-        multiset<int> temp;
 
         for (int j = 0; j < n; j++) {
-            if (j - r + 1 <= queries) {
-                temp.insert(arr[j]);
+            while (!a.empty() && arr[a.back()] < arr[j]) {
+                a.pop_back();
             }
-            if (j - r + 1 == queries) {
-                minRes = min(minRes, *--temp.end());
 
-                temp.erase(arr[r]);
+            a.push_back(j);
 
-                r++;
+            while (!a.empty() && a.front() <= j - queries) {
+                a.pop_front();
+            }
+
+            if (j - queries >= -1 && !a.empty()) {
+                res = min(res, arr[a.front()]);
             }
         }
 
-        cout << minRes << endl;
+        cout << res << endl;
     }
 }
