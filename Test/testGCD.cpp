@@ -1,43 +1,47 @@
-#include <map>
-#include <set>
-#include <list>
-#include <cmath>
-#include <ctime>
-#include <deque>
-#include <queue>
-#include <stack>
-#include <string>
-#include <bitset>
-#include <cstdio>
-#include <limits>
-#include <vector>
-#include <climits>
-#include <cstring>
-#include <cstdlib>
-#include <fstream>
-#include <numeric>
-#include <sstream>
-#include <iostream>
-#include <algorithm>
-#include <unordered_map>
+#include <bits/stdc++.h>
 
 using namespace std;
 
-int main()
-{
-    int t;
-    cin >> t;
-    for (int a0 = 0; a0 < t; a0++)
-    {
-        int n;
-        cin >> n;
+int main() {
+    string se;
 
-        long long tong3 = (3 + ((n - 1 / 3) * 3)) * ((((n - 1 / 3) * 3) - 3) / 3 + 1) / 2;
-        long long tong5 = (5 + ((n - 1 / 5) * 5)) * ((((n - 1 / 5) * 5) - 5) / 5 + 1) / 2;
-        long long tong15 = (15 + ((n - 1 / 15) * 15)) * ((((n - 1 / 15) * 15) - 15) / 15 + 1) / 2;
+    set<string> ssm;
 
-        cout << tong3 + tong5;
+    string s;
+
+    getline(cin, s);
+
+    int r = 0;
+
+    while (r < s.size()) {
+        if (s[r] != ' ') {
+            string temp;
+            while (s[r + 1] != ' ' && r + 1 < s.size()) {
+                temp.push_back(s[r]), r++;
+            }
+            temp.push_back(s[r]);
+            int tempSize = ssm.size();
+            ssm.insert(temp);
+
+            if (tempSize != ssm.size()) {
+                se += (temp + " ");
+            }
+        }
+        r++;
     }
 
-    return 0;
+    string temp;
+
+    for (auto i : ssm) {
+        temp += (i + " ");
+    }
+
+    for (int i = 0; i < temp.size() - 1; i++) {
+        cout << temp[i];
+    }
+    cout << endl;
+
+    for (int i = 0; i < se.size() - 1; i++) {
+        cout << se[i];
+    }
 }
