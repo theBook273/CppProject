@@ -1,1 +1,1 @@
-{"name":"Local: baihoc","url":"d:\\C++Project\\Test\\baihoc.cpp","tests":[{"id":1699718958658,"input":"6\n3 8\n9 12\n6 10\n1 4\n2 7\n11 14","output":"3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++Project\\Test\\baihoc.cpp","group":"local","local":true}
+{"name":"Local: baihoc","url":"d:\\C++Project\\Test\\baihoc.cpp","tests":[{"id":1699718958658,"input":"5 3\n5 1 1 4 7","output":"4"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++Project\\Test\\baihoc.cpp","group":"local","local":true}
