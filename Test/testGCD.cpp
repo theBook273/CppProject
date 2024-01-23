@@ -2,46 +2,34 @@
 
 using namespace std;
 
+int ma[10000][10000];
+
 int main() {
-    string se;
+    int n;
 
-    set<string> ssm;
+    cin >> n;
 
-    string s;
+    vector<int> ma[10000];
 
-    getline(cin, s);
+    for (int i = 0; i < n; i++) {
+        string temp;
 
-    int r = 0;
+        getline(cin, temp);
 
-    while (r < s.size()) {
-        if (s[r] != ' ') {
-            string temp;
-            while (s[r + 1] != ' ' && r + 1 < s.size()) {
-                temp.push_back(s[r]), r++;
-            }
-            temp.push_back(s[r]);
-            int tempSize = ssm.size();
-            ssm.insert(temp);
+        stringstream ss;
 
-            if (tempSize != ssm.size()) {
-                se += (temp + " ");
-            }
+        ss >> temp;
+
+        int num = stoi(ss.str());
+
+        while (ss >> temp) {
+            ma[num].push_back(stoi(ss.str()));
         }
-        r++;
     }
 
-    string temp;
-
-    for (auto i : ssm) {
-        temp += (i + " ");
-    }
-
-    for (int i = 0; i < temp.size() - 1; i++) {
-        cout << temp[i];
-    }
-    cout << endl;
-
-    for (int i = 0; i < se.size() - 1; i++) {
-        cout << se[i];
+    for (int i = 1; i <= n; i++) {
+        for (auto j : ma[i]) {
+            cout << i << " " j << endl;
+        }
     }
 }

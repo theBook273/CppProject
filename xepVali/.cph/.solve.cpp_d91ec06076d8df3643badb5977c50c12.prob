@@ -1,0 +1,1 @@
+{"name":"Local: solve","url":"d:\\C++Project\\xepVali\\solve.cpp","tests":[{"id":1704616954560,"input":"4 29\n13 100\n10 14\n8 76\n2 71","output":"108\n2  2\n3  1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++Project\\xepVali\\solve.cpp","group":"local","local":true}

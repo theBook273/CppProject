@@ -2,29 +2,39 @@
 
 using namespace std;
 
-int main() {
-    long long n, k;
+vector<int> v[1000000];
+int cnt = 1;
+int res[10000000];
+bool visited[10000000];
 
-    cin >> n >> k;
-
-    long long a[n];
-    long long f[n + 3];
-
-    for (int i = 0; i < n; i++) {
-        cin >> a[i];
-        f[i] = 2 * 1e9;
-    }
-
-    f[0] = 0;
-    f[1] = f[0] + abs(a[1] - a[0]);
-
-    for (long long i = 2; i < n; i++) {
-        for (long long j = 1; j <= k; j++) {
-            if (i - j >= 0) {
-                f[i] = min(f[i], f[i - j] + abs(a[i] - a[i - j]));
-            }
+void dfs(int x) {
+    for (int i : v[x]) {
+        if (!visited[i]) {
+            cnt++;
+            res[i] = res[x] + 1;
+            visited[i] = 1;
+            dfs(i);
         }
     }
+}
 
-    cout << f[n - 1];
+int main() {
+    int n, m;
+    cin >> n >> m;
+
+    for (int i = 0; i < m; i++) {
+        int a, b, c;
+
+        cin >> a >> b >> c;
+
+        v[a].push_back(b);
+        v[a].push_back(c);
+    }
+
+    res[1] = 1;
+    dfs(1);
+
+    for (int i = 1; i <= n; i++) {
+        cout << res[i] << endl;
+    }
 }
