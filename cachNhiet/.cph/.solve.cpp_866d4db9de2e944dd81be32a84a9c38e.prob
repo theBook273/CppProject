@@ -1,0 +1,1 @@
+{"name":"Local: solve","url":"d:\\C++Project\\cachNhiet\\solve.cpp","tests":[{"id":1709459438637,"input":"4\n5 4 1 7","output":"24"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++Project\\cachNhiet\\solve.cpp","group":"local","local":true}
