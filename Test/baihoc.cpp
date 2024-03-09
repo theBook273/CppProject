@@ -1,14 +1,23 @@
-#include <iostream>
+#include <bits/stdc++.h>
 
 using namespace std;
 
+bool comp(pair<int, int> a, pair<int, int> b) { return a.second < b.second; }
+
 int main() {
-    int a, b, sum = 0;
+    int n;
 
-    cin >> a >> b;
-    sum = a + b;
+    cin >> n;
 
-    cout << "sum of " << a << " and " << b << " is " << sum << endl;
+    pair<int, int> a[n];
 
-    return 0;
+    for (auto &i : a) {
+        cin >> i.first >> i.second;
+    }
+
+    sort(a, a + n, comp);
+
+    for (auto i : a) {
+        cout << i.first << " " << i.second << endl;
+    }
 }

@@ -1,0 +1,1 @@
+{"name":"Local: solve","url":"d:\\C++Project\\phanLoai\\solve.cpp","tests":[{"id":1709553173585,"input":"12\nABC,123;0;2F","output":"-\n-\n01 F7D 1.3"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++Project\\phanLoai\\solve.cpp","group":"local","local":true}

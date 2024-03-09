@@ -3,8 +3,8 @@
 using namespace std;
 using ll = long long;
 long long s;
-
-long long changed(int n) {
+map<ll, bool> visited;
+long long changed(ll n) {
     long long res = 0;
     while (n / 10 > 0) {
         double temp = (pow(n % 10, 2));
@@ -19,16 +19,22 @@ long long changed(int n) {
 }
 
 bool so(ll n) {
-    // double temp = n;
-    // while (n / 10 > 0) {
-    //     n = 0;
-    //     while (temp >= 1) {
-    //         temp +=
-    //     }
-    // }
+    visited[n] = 1;
+    n = changed(n);
+    // cout << n << endl;
+    do {
+        visited[n] = 1;
+        n = changed(n);
+        // cout << n << endl;
+    } while (!visited[n] && n != 1);
+    return n == 1;
 }
 
 signed main() {
     cin >> s;
-    cout << changed(s);
+    s++;
+    while (!so(s)) {
+        s++;
+    }
+    cout << s << endl;
 }
