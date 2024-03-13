@@ -3,28 +3,31 @@
 using namespace std;
 using ll = long long;
 
-ll m, n, k;
+ll x, m, n;
 vector<ll> a;
 
 bool check(int dis) {
+    ll broken = 0, k = dis;
     for (int i = 1; i < a.size(); i++) {
-        if (a[i] < dis)
-            return false;
+        if (a[i] < k)
+            broken++;
         else
-            dis = a[i] + dis;
+            k = a[i] + dis;
     }
-    return true;
+    return broken <= m;
 }
 
 signed main() {
     // freopen("supermar.inp", "r", stdin);
     // freopen("supermar.out", "w", stdout);
-    cin >> n >> m >> k;
+    cin >> x >> n >> m;
+    a.push_back(0);
     for (int i = 0; i < n; i++) {
         int temp;
         cin >> temp;
         a.push_back(temp);
     }
+    a.push_back(x);
 
     sort(a.begin(), a.end());
 

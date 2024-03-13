@@ -1,51 +1,36 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+using ll = long long;
 
-class solution
-{
-private:
-    long long n;
-    vector<long long> container;
-    map<long long, long long, greater<long long>> appear;
+class solution {
+   private:
+    int n, a[100000], dp[100000], cnt[100000];
 
-public:
-    solution()
-    {
+   public:
+    solution() {
         cin >> n;
 
-        for (long long i = 0; i < n; i++)
-        {
-            int temp;
-            cin >> temp;
-            container.push_back(temp);
-            appear[temp]++;
-        }
-
-        for (auto i : appear)
-        {
-            if (appear.count(i.first + 1))
-            {
-                i.second += appear[i.first + 1];
-            }
-
-            if (appear.count(i.first - 1))
-            {
-                i.second += appear[i.first - 1];
-            }
-            cout << i.first << " " << i.second << endl;
+        for (int i = 0; i < n; i++) {
+            cin >> a[i];
+            cnt[a[i]]++;
         }
     }
 
-    int res
-    {
-        for (auto i : appear)
-        {
+    void dpIt() {
+        dp[1] = cnt[1];
+        for (int i = 2; i <= *max_element(a, a + n); i++) {
+            dp[i] = max(dp[i - 1], dp[i - 2] * cnt[i] * i);
         }
+    }
+
+    void solve() {
+        dpIt();
+        cout << dp[*max_element(a, a + n)];
     }
 };
 
-int main()
-{
+signed main() {
     solution a;
+    a.solve();
 }

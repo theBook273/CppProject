@@ -1,84 +1,53 @@
 #include <bits/stdc++.h>
 
 using namespace std;
+using ll = long long;
+bool check1(pair<pair<ll, ll>, ll> a, pair<pair<ll, ll>, ll> b) {
+    return a.first.second > b.first.second;
+}
 
-class solution
-{
-private:
-    vector<pair<long long, long long>> spaceAndMl;
+bool check2(pair<pair<ll, ll>, ll> a, pair<pair<ll, ll>, ll> b) {
+    return a.second < b.second;
+}
 
-    long long n, tong = 0;
+pair<pair<ll, ll>, ll> mlAndSpc[100000];
 
-public:
-    solution()
-    {
-        cin >> n;
+ll n, tong = 0, tongAni = 0;
 
-        for (int i = 0; i < n; i++)
-        {
-            int temp1, temp2;
-            cin >> temp1 >> temp2;
-            spaceAndMl.push_back({temp2, temp1});
+void inp() {
+    cin >> n;
+
+    for (int i = 0; i < n; i++) {
+        cin >> mlAndSpc[i].first.first >> mlAndSpc[i].first.second;
+        mlAndSpc[i].second = i;
+        tongAni += mlAndSpc[i].first.first;
+    }
+}
+
+void solve() {
+    sort(mlAndSpc, mlAndSpc + n, check1);
+    for (int i = 0; i < n; i++) {
+        if (tongAni == 0) tong++;
+        if (tongAni >= mlAndSpc[i].first.second) {
+            mlAndSpc[i].first.first = mlAndSpc[i].first.second;
+            tongAni -= mlAndSpc[i].first.second;
+        } else if (tongAni < mlAndSpc[i].first.second) {
+            mlAndSpc[i].first.first = tongAni;
+            tongAni = 0;
         }
     }
+    sort(mlAndSpc, mlAndSpc + n, check2);
+}
 
-    void passAnilin()
-    {
-        long long right = 0, i = 1;
-
-        sort(spaceAndMl.rbegin(), spaceAndMl.rend());
-
-        while (right < i && i < spaceAndMl.size())
-        {
-
-            if (spaceAndMl[right].second + spaceAndMl[i].second <= spaceAndMl[right].first)
-            {
-                spaceAndMl[right].second += spaceAndMl[i].second;
-                spaceAndMl[i].second = 0;
-            }
-            else
-            {
-                spaceAndMl[i].second = spaceAndMl[i].second + spaceAndMl[right].second - spaceAndMl[right].first;
-                spaceAndMl[right].second = spaceAndMl[right].first;
-            }
-
-            if (spaceAndMl[right].second == spaceAndMl[right].first)
-            {
-                right++;
-            }
-
-            i++;
-        }
-
-        for (int i = spaceAndMl.size() - 1; i >= 0; i--)
-        {
-            if (spaceAndMl[i].second == 0)
-            {
-                tong++;
-            }
-            else
-            {
-                break;
-            }
-        }
+void printAni() {
+    solve();
+    cout << tong << endl;
+    for (int i = 0; i < n; i++) {
+        cout << mlAndSpc[i].first.first << " ";
     }
+}
 
-    void printAnilin()
-    {
-        passAnilin();
-
-        cout << tong << endl;
-
-        for (int i = 0; i < spaceAndMl.size(); i++)
-        {
-            cout << spaceAndMl[i].second << " ";
-        }
-    }
-};
-
-int main()
-{
-    solution a;
-
-    a.printAnilin();
+int main() {
+    inp();
+    printAni();
 }
