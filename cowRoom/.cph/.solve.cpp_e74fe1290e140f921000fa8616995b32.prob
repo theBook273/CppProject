@@ -1,0 +1,1 @@
+{"name":"Local: solve","url":"d:\\C++Project\\cowRoom\\solve.cpp","tests":[{"id":1728485017748,"input":"7 2\n0100100\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++Project\\cowRoom\\solve.cpp","group":"local","local":true}

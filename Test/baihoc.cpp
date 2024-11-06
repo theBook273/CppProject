@@ -1,23 +1,20 @@
 #include <bits/stdc++.h>
+#define int long long
 
 using namespace std;
 
-bool comp(pair<int, int> a, pair<int, int> b) { return a.second < b.second; }
+signed main() {
+    cin.tie(NULL)->sync_with_stdio(false);
+    int x;
+    cin >> x;
 
-int main() {
-    int n;
+    string s;
 
-    cin >> n;
-
-    pair<int, int> a[n];
-
-    for (auto &i : a) {
-        cin >> i.first >> i.second;
-    }
-
-    sort(a, a + n, comp);
-
-    for (auto i : a) {
-        cout << i.first << " " << i.second << endl;
+    for (int i = 1; i <= 10000; i++) {
+        s += to_string(i);
+        if (s.size() > x) {
+            cout << s[x - 1];
+            return 0;
+        }
     }
 }

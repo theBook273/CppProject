@@ -1,0 +1,1 @@
+{"name":"Local: optimize","url":"d:\\C++Project\\nonDivisible\\optimize.cpp","tests":[{"id":1713440497250,"input":"15 7\n278 576 496 727 410 124 338 149 209 702 282 718 771 575 436","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++Project\\nonDivisible\\optimize.cpp","group":"local","local":true}

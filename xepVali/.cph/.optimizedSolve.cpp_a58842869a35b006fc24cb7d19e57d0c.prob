@@ -1,0 +1,1 @@
+{"name":"Local: optimizedSolve","url":"d:\\C++Project\\xepVali\\optimizedSolve.cpp","tests":[{"id":1710666800363,"input":"4  10\n5  4\n1  9\n8  90\n2  16\n\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++Project\\xepVali\\optimizedSolve.cpp","group":"local","local":true}

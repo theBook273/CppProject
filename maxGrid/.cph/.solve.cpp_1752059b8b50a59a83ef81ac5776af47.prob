@@ -1,0 +1,1 @@
+{"name":"Local: solve","url":"d:\\C++Project\\maxGrid\\solve.cpp","tests":[{"id":1711604223295,"input":"3 3\n-3 -2 3\n2 -2 1\n1 2 3","output":"17"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++Project\\maxGrid\\solve.cpp","group":"local","local":true}

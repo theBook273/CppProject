@@ -1,91 +1,98 @@
 #include <bits/stdc++.h>
+#define int long long
 
 using namespace std;
 
-int n, m, x, y, a[100][100], maxSum = 0, step[100][100];
+int n, m, posx, posy;
+int temp = 2, target = 0, res = 1e9;
+int a[105][105], board[105][105];
+int directX[4] = {1, 0, -1, 0};
+int directY[4] = {0, 1, 0, -1};
 
-int moveX[] = {0, 1, 0, -1};
-int moveY[] = {1, 0, -1, 0};
+map<int, int> mp;
 
-void bfsMaxSum(int x, int y) {
-    bool check[100][100];
-    int sum = 0;
-    queue<int> tempX;
-    queue<int> tempY;
+void color(int x, int y) {
+    int sizeOfA = 1;
+    queue<pair<int, int>> q;
+    q.push({x, y});
+    a[x][y] = temp;
 
-    tempX.push(x);
-    tempY.push(y);
-
-    while (!tempX.empty() && !tempY.empty()) {
-        int posx = tempX.front(), posy = tempY.front();
-        tempX.pop(), tempY.pop();
-
+    while (!q.empty()) {
+        x = q.front().first;
+        y = q.front().second;
+        q.pop();
         for (int i = 0; i < 4; i++) {
-            int nextX = posx + moveX[i], nextY = posy + moveY[i];
-
-            bool checkX = (nextX < n && nextX >= 0),
-                 checkY = (nextY < m && nextY >= 0);
-
-            if (checkX && checkY && check[nextX][nextY] == 0 &&
-                a[nextX][nextY] == 1) {
-                check[nextX][nextY] = 1;
-                tempX.push(nextX);
-                tempY.push(nextY);
-                sum++;
+            if (a[x + directX[i]][y + directY[i]] == 1) {
+                q.push({x + directX[i], y + directY[i]});
+                a[x + directX[i]][y + directY[i]] = temp;
+                sizeOfA++;
             }
         }
     }
 
-    maxSum = max(sum, maxSum);
-    return sum;
+    mp[temp] = sizeOfA;
+    target = max(target, sizeOfA);
+
+    temp++;
 }
 
-void bfs(int x, int y) {
-    queue<int> tempX;
-    queue<int> tempY;
+void solve(int x, int y) {
+    queue<pair<int, int>> q;
+    q.push({x, y});
+    a[x][y] = -1;
 
-    tempX.push(x);
-    tempY.push(y);
-
-    while (!tempX.empty() && !tempY.empty()) {
-        int posx = tempX.front(), posy = tempY.front();
-
-        if (a[posx][posy] == 1 && bfsMaxSum(posx, posy) == maxSum) {
-        }
-
-        tempX.pop(), tempY.pop();
-
+    while (!q.empty()) {
+        x = q.front().first;
+        y = q.front().second;
+        q.pop();
         for (int i = 0; i < 4; i++) {
-            int nextX = posx + moveX[i], nextY = posy + moveY[i];
-
-            bool checkX = (nextX < n && nextX >= 0),
-                 checkY = (nextY < m && nextY >= 0);
-
-            if (checkX && checkY &&
-                step[nextX][nextY] <= step[posx][posy] + 1 &&
-                a[nextX][nextY] == 1) {
-                step[nextX][nextY] = step[posx][posy] + 1;
-                tempX.push(nextX);
-                tempY.push(nextY);
+            if (a[x + directX[i]][y + directY[i]] != -1) {
+                board[x + directX[i]][y + directY[i]] = board[x][y] + 1;
+                if (board[x + directX[i]][y + directY[i]] != 0) {
+                    if (mp[a[x + directX[i]][y + directY[i]]] == target) {
+                        res = min(res, board[x + directX[i]][y + directY[i]]);
+                    }
+                }
+                a[x + directX[i]][y + directY[i]] = -1;
+                q.push({x + directX[i], y + directY[i]});
             }
         }
     }
 }
 
-int main() {
-    cin >> n >> m >> x >> y;
+signed main() {
+    cin.tie(NULL)->sync_with_stdio(false);
 
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
+    cin >> n >> m >> posx >> posy;
+
+    for (int i = 0; i <= n + 1; i++) {
+        for (int j = 0; j <= m + 1; j++) {
+            a[i][j] = -1;
+        }
+    }
+
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
             cin >> a[i][j];
         }
     }
 
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < m; j++) {
+    for (int i = 1; i <= n; i++) {
+        for (int j = 1; j <= m; j++) {
             if (a[i][j] == 1) {
-                bfsMaxSum(i, j);
+                color(i, j);
             }
         }
     }
+
+    // for (int i = 0; i <= n + 1; i++) {
+    //     for (int j = 0; j <= m + 1; j++) {
+    //         cout << a[i][j] << " ";
+    //     }
+    //     cout << endl;
+    // }
+
+    solve(posx, posy);
+
+    cout << res;
 }

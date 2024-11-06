@@ -1,0 +1,1 @@
+{"name":"Local: solve","url":"d:\\C++Project\\bigger\\solve.cpp","tests":[{"id":1714744187474,"input":"5\nab\nbb\nhefg\ndhck\ndkhc","output":"ba\nno answer\nhegf\ndhkc\nhcdk"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++Project\\bigger\\solve.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: solve","url":"d:\\C++Project\\soVungLienThong\\solve.cpp","tests":[{"id":1710838482895,"input":"12 7 \n1 2 \n2 6\n6 10\n3 4\n9 11\n9 12","output":"5"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++Project\\soVungLienThong\\solve.cpp","group":"local","local":true}

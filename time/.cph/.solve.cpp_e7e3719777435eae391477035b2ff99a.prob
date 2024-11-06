@@ -1,1 +1,1 @@
-{"name":"Local: solve","url":"d:\\C++Project\\time\\solve.cpp","tests":[{"id":1709627924491,"input":"12 59 -3 7\n","output":"22 59"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++Project\\time\\solve.cpp","group":"local","local":true}
+{"name":"Local: solve","url":"d:\\C++Project\\time\\solve.cpp","tests":[{"id":1709627924491,"input":"12 59 -3 7","output":"22 59"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++Project\\time\\solve.cpp","group":"local","local":true}

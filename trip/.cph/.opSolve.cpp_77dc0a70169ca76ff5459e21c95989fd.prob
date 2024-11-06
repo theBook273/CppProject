@@ -1,0 +1,1 @@
+{"name":"Local: opSolve","url":"d:\\C++Project\\trip\\opSolve.cpp","tests":[{"id":1719140596191,"input":"6\n0 1 2 1 3 4 \n5 0 3 2 3 4 \n4 1 0 2 1 2 \n4 2 5 0 4 3 \n2 5 3 5 0 2 \n5 4 3 3 1 0\n","output":"8"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++Project\\trip\\opSolve.cpp","group":"local","local":true}

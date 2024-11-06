@@ -1,0 +1,1 @@
+{"name":"Local: solve","url":"d:\\C++Project\\balance\\solve.cpp","tests":[{"id":1721551351940,"input":"5\n1 2 3 4 5\n","output":"0"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++Project\\balance\\solve.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: solve","url":"d:\\C++Project\\hinhVuongDep\\solve.cpp","tests":[{"id":1711608382272,"input":"4  9  2\n3  0  7\n0  1  0","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++Project\\hinhVuongDep\\solve.cpp","group":"local","local":true}

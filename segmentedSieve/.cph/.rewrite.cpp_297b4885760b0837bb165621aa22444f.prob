@@ -1,0 +1,1 @@
+{"name":"Local: rewrite","url":"d:\\C++Project\\segmentedSieve\\rewrite.cpp","tests":[{"id":1728920961843,"input":"100","output":"2, 3, 5, 7, 11, 13, 17, 19, 23, 29, 31, 37, 41, 43, 47, 53, 59, 61, 67, 71, 73, 79, 83, 89, 97,"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++Project\\segmentedSieve\\rewrite.cpp","group":"local","local":true}

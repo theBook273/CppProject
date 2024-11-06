@@ -1,0 +1,1 @@
+{"name":"Local: solve","url":"d:\\C++Project\\countingLiars\\solve.cpp","tests":[{"id":1711692059965,"input":"2\nG 3\nL 5\n","output":"0"},{"id":1711692174349,"input":"2\nG 3\nL 2","output":"1"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"d:\\C++Project\\countingLiars\\solve.cpp","group":"local","local":true}
