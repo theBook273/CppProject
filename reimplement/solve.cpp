@@ -3,75 +3,74 @@
 
 using namespace std;
 
-int node[1000000], lazy[1000000];
+int lazy[100000], tree[100000];
 int n, m;
 
-void update(int l, int r, int u, int v, int id) {
-    if (lazy[id] == 1) {
-        node[id] = (r - l + 1) - node[id];
+void update(int b, int e, int l, int r, int node) {
+    int left = node * 2;
+    int right = node * 2 + 1;
+    int mid = (b + e) / 2;
 
-        if (l != r) {
-            lazy[id * 2] = 1 - lazy[id * 2];
-            lazy[id * 2 + 1] = 1 - lazy[id * 2 + 1];
+    if (lazy[node] == 1) {
+        tree[node] = (e - b + 1) - tree[node];
+        if (b != e) {
+            lazy[left] = 1 - lazy[left];
+            lazy[right] = 1 - lazy[right];
         }
-        lazy[id] = 0;
+        lazy[node] = 0;
     }
 
-    if (l < u || v < r) {
+    if (b > r || e < l) return;
+
+    if (b >= l && e <= r) {
+        tree[node] = (e - b + 1) - tree[node];
+        if (b != e) {
+            lazy[left] = 1 - lazy[left];
+            lazy[right] = 1 - lazy[right];
+        }
         return;
     }
 
-    if (u <= l && r <= v) {
-        node[id] = (r - l + 1) - node[id];
-        if (l != r) {
-            lazy[id * 2] = 1 - lazy[id * 2];
-            lazy[id * 2 + 1] = 1 - lazy[id * 2 + 1];
-        }
-        return;
-    }
+    update(b, mid, l, r, left);
+    update(mid + 1, e, l, r, right);
 
-    int mid = (l + r) / 2;
-    update(l, mid, u, v, id * 2);
-    update(mid + 1, r, u, v, id * 2 + 1);
-    node[id] = node[id * 2] + node[id * 2 + 1];
+    tree[node] = tree[left] + tree[right];
+
+    return;
 }
 
-int queries(int l, int r, int u, int v, int id) {
-    if (l < u || v < r) {
-        return 0;
-    }
+int query(int b, int e, int l, int r, int node) {
+    if (b > r || e < l) return 0;
 
-    if (lazy[id] == 1) {
-        node[id] = (r - l + 1) - node[id];
-        if (l != r) {
-            lazy[id * 2] = 1 - lazy[id * 2];
-            lazy[id * 2 + 1] = 1 - lazy[id * 2 + 1];
+    int left = node * 2;
+    int right = node * 2 + 1;
+    int mid = (b + e) / 2;
+
+    if (lazy[node] == 1) {
+        tree[node] = (e - b + 1) - tree[node];
+        if (b != e) {
+            lazy[left] = 1 - lazy[left];
+            lazy[right] = 1 - lazy[right];
         }
-        lazy[id] = 0;
+        lazy[node] = 0;
     }
+    if (l <= b && e <= r) return tree[node];
 
-    if (u <= l && r <= v) {
-        return node[id];
-    }
+    int x = query(b, mid, l, r, left);
+    int y = query(mid + 1, e, l, r, right);
 
-    int mid = (l + r) / 2;
-    return queries(l, mid, u, v, id * 2) +
-           queries(mid + 1, r, u, v, id * 2 + 1);
+    return x + y;
 }
-
 signed main() {
-    // freopen("flipcoin.inp", "r", stdin);
-    // freopen("flipcoin.out", "w", stdout);
     cin.tie(NULL)->sync_with_stdio(false);
+
     cin >> n >> m;
 
     while (m--) {
-        int l, r, u;
-        cin >> u >> l >> r;
-        if (u == 1) {
-            cout << queries(l, r, 1, n, 1) << endl;
-        } else {
-            update(l, r, 1, n, 1);
-        }
+        int x, l, r;
+        cin >> x >> l >> r;
+
+        if (x == 0) update(l, r, 1, n, 1);
+        if (x == 1) cout << query(l, r, 1, n, 1) << endl;
     }
 }
