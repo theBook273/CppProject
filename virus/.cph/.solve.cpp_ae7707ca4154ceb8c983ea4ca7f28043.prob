@@ -1,0 +1,1 @@
+{"name":"Local: solve","url":"/home/livre/C++Project/virus/solve.cpp","tests":[{"id":1741333900689,"input":"5","output":"5 10 25 65 170 445 1165 3050 7985 20905 54730"}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/livre/C++Project/virus/solve.cpp","group":"local","local":true}

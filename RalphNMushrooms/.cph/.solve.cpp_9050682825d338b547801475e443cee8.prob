@@ -1,0 +1,1 @@
+{"name":"Local: solve","url":"/home/livre/C++Project/RalphNMushrooms/solve.cpp","tests":[{"id":1739971550476,"input":"7 7\n1 2 3\n2 3 1\n3 1 2\n4 2 3\n5 4 6\n6 5 5\n7 6 9 \n7","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/livre/C++Project/RalphNMushrooms/solve.cpp","group":"local","local":true}

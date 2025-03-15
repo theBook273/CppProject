@@ -2,42 +2,45 @@
 #define int long long
 
 using namespace std;
+int n, m, id[100000], low[100000], cnt, res;
+vector<int> v[100000];
+stack<int> st;
 
-vector<int> a[100000];
-int n, m, id[100000], low[100000], cnt = 1, bridge = 0, point = 0;
-
-void dfs(int u, int p) {
+void tarjan(int u) {
     id[u] = low[u] = ++cnt;
-    int node = (p != 0);
-
-    for (auto v : a[u])
-        if (v != p) {
-            if (id[v])
-                low[u] = min(id[v], low[u]);
-            else {
-                dfs(v, u);
-                low[u] = min(low[v], low[u]);
-                if (id[v] == low[v]) {
-                    bridge++;
-                    cout << u << " " << v << endl;
-                }
-                if (low[v] >= id[u]) node++;
-            }
+    st.push(u);
+    for (auto i : v[u]) {
+        if (id[i])
+            low[u] = min(low[u], id[i]);
+        else {
+            tarjan(i);
+            low[u] = min(low[u], low[i]);
         }
-    if (node >= 2) point++;
+    }
+    if (low[u] == id[u]) {
+        res++;
+        int temp;
+        cout << res << ": ";
+        do {
+            temp = st.top();
+            cout << temp << " ";
+            st.pop();
+            low[temp] = id[temp] = 1e9;
+        } while (temp != u);
+        cout << endl;
+    }
 }
+
 signed main() {
     cin >> n >> m;
-
     for (int i = 1; i <= m; i++) {
-        int v1, v2;
-        cin >> v1 >> v2;
-        a[v1].push_back(v2);
-        a[v2].push_back(v1);
+        int a, b;
+        cin >> a >> b;
+        v[a].push_back(b);
+    }
+    for (int i = 1; i <= n; i++) {
+        if (!id[i]) tarjan(i);
     }
 
-    for (int i = 1; i <= n; i++) {
-        if (!id[i]) dfs(i, 0);
-    }
-    cout << point << " " << bridge;
+    cout << res;
 }
