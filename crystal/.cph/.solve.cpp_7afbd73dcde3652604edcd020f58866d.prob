@@ -1,0 +1,1 @@
+{"name":"Local: solve","url":"/home/livre/C++Project/crystal/solve.cpp","tests":[{"id":1749002207508,"input":"7\n1\n5\n14\n2025\n31415\n536870910\n1000000000\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/livre/C++Project/crystal/solve.cpp","group":"local","local":true}

@@ -1,0 +1,1 @@
+{"name":"Local: solve","url":"/home/livre/C++Project/sntDB/solve.cpp","tests":[{"id":1741571708572,"input":"6\n59 12 57 53 23 313\n","output":""}],"interactive":false,"memoryLimit":1024,"timeLimit":3000,"srcPath":"/home/livre/C++Project/sntDB/solve.cpp","group":"local","local":true}

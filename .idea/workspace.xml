@@ -1,0 +1,173 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+  </component>
+  <component name="CMakeProjectFlavorService">
+    <option name="flavorId" value="CMakePlainProjectFlavor" />
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="0f0a6947-ecb4-4044-a5eb-2205fde90d10" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/THTLA2024/BUS.OUT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/THTLA2024/MAX.OUT" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/THTLA2024/bai1" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/THTLA2024/bai1.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/THTLA2024/bai2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/THTLA2024/bai2.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/THTLA2024/bai2samp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/THTLA2024/bai2samp.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/THTLA2024/bai3" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/THTLA2024/bai3.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/THTLA2025/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/THTLA2025/solve2" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/THTLA2025/solve2.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/THTLA2025/solve2sam.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/THTLA2025/solve3.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bai1/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bai1/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bai2/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bai2/solve.c++" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bai3/bai3sa" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bai3/bai3sa.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/bai3/bai3samp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binSearchCTF/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/binSearchCTF/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chuoiCon/.cph/.solve.cpp_7f3264e75e4857cdaca717f49135b8be.prob" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chuoiCon/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/chuoiCon/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crystal/.cph/.solve.cpp_7afbd73dcde3652604edcd020f58866d.prob" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crystal/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/crystal/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fiboCube/.cph/.solve.cpp_7f35226d066219bb851cb7e3bccf1ea5.prob" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fiboCube/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/fiboCube/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/gellyFish/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goblin/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goblin/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goodPairs/.cph/.solve.cpp_a1ad160663f6cb9caae71a4876a29b8a.prob" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goodPairs/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goodPairs/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goodString/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/goodString/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/intersection/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/linkedlist/merge.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/linkedlist/remove.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/linkedlist/rotate.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/linkedlist/setup" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/linkedlist/setup.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/linkedlist/solve.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/linkedlist/swap.h" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/matThu/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/matThu/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/matrixBin/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/matrixBin/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minimize/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/minimize/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/moreArray/.cph/.solve.cpp_606b127d93583c78be315d293cc7fcf9.prob" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/moreArray/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/moreArray/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/name/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/name/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/name/solve.exe" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/palindromeLinkedList/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pass/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/pass/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phepNhan/a.out" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phepNhan/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/phepNhan/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/polycrab/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/polycrab/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/remove/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/squareYear/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/squareYear/solve.cp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/survey/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tear/check" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tear/check.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tear/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/tear/solve.cpp" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/verdict/solve" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/verdict/solve.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/launch.json" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.vscode/tasks.json" beforeDir="false" afterPath="$PROJECT_DIR$/.vscode/tasks.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/test" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/Test/test.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/bai3/solve.cpp" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/dayTo/solve.cpp" beforeDir="false" afterPath="$PROJECT_DIR$/dayTo/solve.cpp" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="ProjectColorInfo">{
+  &quot;associatedIndex&quot;: 2
+}</component>
+  <component name="ProjectId" id="2yLe8fUy05zROMRBCuhTGcoKG4q" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "C/C++ File.bai2.cpp.executor": "Debug",
+    "C/C++ File.bai3.cpp.executor": "Debug",
+    "C/C++ File.solve.cpp (1).executor": "Debug",
+    "C/C++ File.solve.cpp.executor": "Debug",
+    "ModuleVcsDetector.initialDetectionPerformed": "true",
+    "RunOnceActivity.RadMigrateCodeStyle": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager": "true",
+    "RunOnceActivity.cidr.known.project.marker": "true",
+    "RunOnceActivity.git.unshallow": "true",
+    "RunOnceActivity.readMode.enableVisualFormatting": "true",
+    "cf.first.check.clang-format": "false",
+    "cidr.known.project.marker": "true",
+    "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/vogansach/C++Project/dfs/solve.cpp",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "editor.preferences.fonts.default",
+    "vue.rearranger.settings.migration": "true"
+  }
+}]]></component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="0f0a6947-ecb4-4044-a5eb-2205fde90d10" name="Changes" comment="" />
+      <created>1749618123283</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1749618123283</updated>
+      <workItem from="1749618125007" duration="788000" />
+      <workItem from="1749645550894" duration="1092000" />
+      <workItem from="1749701775553" duration="355000" />
+      <workItem from="1749979543474" duration="66000" />
+      <workItem from="1750696553194" duration="145000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
+  </component>
+</project>
