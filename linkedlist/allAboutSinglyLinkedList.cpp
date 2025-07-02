@@ -127,7 +127,7 @@ Node *removeBigger(Node *head, long long a) {
   return dummy->next;
 }
 
-void prlong longLis(Node *head) {
+void printLis(Node *head) {
   while (head != nullptr) {
     cout << head->data << " ";
     head = head->next;
@@ -164,7 +164,7 @@ signed main() {
 
   lis = removeBigger(lis, getDataAt(lis, a));
 
-  prlong longLis(lis);
+  printLis(lis);
 
   return 0;
 }

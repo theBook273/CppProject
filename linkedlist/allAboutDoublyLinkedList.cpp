@@ -101,7 +101,7 @@ doubList *removeAt(doubList *lis, long long pos) {
   return lis;
 }
 
-void prlong longLis(doubList *lis) {
+void printlist(doubList *lis) {
   node *p = lis->head;
   while (p != nullptr) {
     cout << p->data << " ";
@@ -132,7 +132,7 @@ signed main() {
   else
     lis = removeAt(lis, k);
 
-  prlong longLis(lis);
+  printlist(lis);
 
   return 0;
 }
