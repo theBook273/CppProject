@@ -2,16 +2,16 @@
 
 using namespace std;
 
-int n, k;
+long long n, k;
 
-int hoa(int x) {
+long long hoa(long long x) {
     x += k;
     x %= 26;
     while (x < 'A') x += 26;
     return x;
 }
 
-int thuong(int x) {
+long long thuong(long long x) {
     x -= k;
     while (x < 'a') {
         x += 26;
@@ -19,7 +19,7 @@ int thuong(int x) {
     return x;
 }
 
-int main() {
+long long main() {
     cin.tie(0)->sync_with_stdio(0);
     cin >> n >> k;
     k %= 26;
@@ -27,7 +27,7 @@ int main() {
 
     for (auto &i : s) cin >> i;
 
-    for (int i = 0; i < n; ++i) {
+    for (long long i = 0; i < n; ++i) {
         if ('A' <= s[i] && s[i] <= 'Z')
             s[i] = hoa(s[i]);
         else

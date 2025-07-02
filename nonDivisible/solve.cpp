@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
-int n, k, res, a[100000];
-vector<int> v;
+long long n, k, res, a[100000];
+vector<long long> v;
 
-void chose(int x, int lim) {
+void chose(long long x, long long lim) {
     if (v.size() == lim) {
-        for (int i = 0; i < v.size(); ++i) {
-            for (int j = i + 1; j < v.size(); ++j) {
+        for (long long i = 0; i < v.size(); ++i) {
+            for (long long j = i + 1; j < v.size(); ++j) {
                 if ((v[i] + v[j]) % k == 0) {
                     return;
                 }
@@ -17,7 +17,7 @@ void chose(int x, int lim) {
         res = max(res, lim);
         return;
     }
-    for (int i = x + 1; i < n; ++i) {
+    for (long long i = x + 1; i < n; ++i) {
         v.push_back(a[i]);
         chose(i, lim);
         v.pop_back();
@@ -27,11 +27,11 @@ void chose(int x, int lim) {
 main() {
     cin >> n >> k;
 
-    for (int i = 0; i < n; ++i) {
+    for (long long i = 0; i < n; ++i) {
         cin >> a[i];
     }
 
-    for (int i = 1; i <= n; ++i) {
+    for (long long i = 1; i <= n; ++i) {
         chose(-1, i);
     }
 

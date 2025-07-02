@@ -2,22 +2,22 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
-    int t;
+    long long t;
 
     cin >> t;
 
     while (t--)
     {
-        int n;
-        pair<int, int> maxOfThem = {0, 0};
+        long long n;
+        pair<long long, long long> maxOfThem = {0, 0};
 
         cin >> n;
 
-        for (int i = 1; i <= n; i++)
+        for (long long i = 1; i <= n; i++)
         {
-            int w, q;
+            long long w, q;
 
             cin >> w >> q;
 

@@ -6,11 +6,11 @@ long long n;
 
 bool prime[1000000];
 
-double tongUoc(int n)
+double tongUoc(long long n)
 {
     double tong = n + 1;
 
-    for (int i = sqrt(n); i > 1; i--)
+    for (long long i = sqrt(n); i > 1; i--)
     {
         if (n % i == 0)
         {
@@ -21,15 +21,15 @@ double tongUoc(int n)
     return tong;
 }
 
-int main()
+long long main()
 {
     memset(prime, 1, 1000000);
 
-    for (int i = 2; i <= 100000; i++)
+    for (long long i = 2; i <= 100000; i++)
     {
         if (prime[i])
         {
-            for (int j = 2; j * i <= 100000; j++)
+            for (long long j = 2; j * i <= 100000; j++)
             {
                 prime[i * j] = 0;
             }

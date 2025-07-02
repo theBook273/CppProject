@@ -28,7 +28,7 @@ void makeU(long long a, long long b) {
     }
 }
 
-int main() {
+long long main() {
     long long n;
 
     cin >> n;
@@ -68,7 +68,7 @@ int main() {
         makeU(a1, b1);
         // cout << endl;
 
-        // for (int i = 1; i <= n; i++) {
+        // for (long long i = 1; i <= n; i++) {
         //     cout << i << " " << parent[i] << " | ";
         // }
 

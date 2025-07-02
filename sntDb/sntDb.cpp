@@ -2,15 +2,15 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
-    int n;
+    long long n;
 
     cin >> n;
 
     while (n--)
     {
-        int a;
+        long long a;
 
         cin >> a;
     }

@@ -5,7 +5,7 @@ using namespace std;
 long long h[100001];
 long long jump[100001];
 
-int main()
+long long main()
 {
     long long n;
 

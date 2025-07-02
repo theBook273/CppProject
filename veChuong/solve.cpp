@@ -2,12 +2,12 @@
 
 using namespace std;
 
-vector<int> buoc[100000];
-pair<int, int> moveSet[] = {{-1, 0}, {0, -1}, {1, 0}, {0, 1}};
+vector<long long> buoc[100000];
+pair<long long, long long> moveSet[] = {{-1, 0}, {0, -1}, {1, 0}, {0, 1}};
 
-void move(int x, int y, int tong, vector<char> a[])
+void move(long long x, long long y, long long tong, vector<char> a[])
 {
-    queue<pair<int, int>> q;
+    queue<pair<long long, long long>> q;
 
     q.push({x, y});
 
@@ -15,7 +15,7 @@ void move(int x, int y, int tong, vector<char> a[])
 
     while (!q.empty())
     {
-        pair<int, int> pos = q.front();
+        pair<long long, long long> pos = q.front();
 
         q.pop();
 
@@ -37,7 +37,7 @@ void move(int x, int y, int tong, vector<char> a[])
     }
 }
 
-int main()
+long long main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -48,18 +48,18 @@ int main()
 
     vector<char> a[100000];
 
-    for (int i = 0; i < n + 2; i++)
+    for (long long i = 0; i < n + 2; i++)
     {
-        for (int j = 0; j < m + 2; j++)
+        for (long long j = 0; j < m + 2; j++)
         {
             a[i].push_back('*');
             buoc[i].push_back(0);
         }
     }
 
-    for (int i = 1; i <= n; i++)
+    for (long long i = 1; i <= n; i++)
     {
-        for (int j = 1; j <= m; j++)
+        for (long long j = 1; j <= m; j++)
         {
             cin >> a[i][j];
             if (a[i][j] == 'B')

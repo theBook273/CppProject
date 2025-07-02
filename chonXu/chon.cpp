@@ -2,10 +2,10 @@
 
 using namespace std;
 
-int mucTieu, soXu, soCach = 0;
-vector<int> xu;
+long long mucTieu, soXu, soCach = 0;
+vector<long long> xu;
 
-void chon(int tongXu)
+void chon(long long tongXu)
 {
     if (tongXu == mucTieu)
     {
@@ -13,7 +13,7 @@ void chon(int tongXu)
         return;
     }
 
-    for (int i = 0; i < soXu; i++)
+    for (long long i = 0; i < soXu; i++)
     {
         if (tongXu + xu[i] <= mucTieu)
         {
@@ -24,13 +24,13 @@ void chon(int tongXu)
     }
 }
 
-int main()
+long long main()
 {
     cin >> soXu >> mucTieu;
 
-    for (int i = 0; i < soXu; i++)
+    for (long long i = 0; i < soXu; i++)
     {
-        int temp;
+        long long temp;
         cin >> temp;
         xu.push_back(temp);
     }

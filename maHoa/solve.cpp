@@ -31,7 +31,7 @@ void linked(vector<pair<char, ll>> cont) {
         cout << i.first << i.second;
     }
 }
-void maximize(int k, vector<pair<char, ll>> v) {
+void maximize(long long k, vector<pair<char, ll>> v) {
     while (k != 0) {
         for (auto &i : v) {
             if (i.first == minIn.back()) {
@@ -49,7 +49,7 @@ void maximize(int k, vector<pair<char, ll>> v) {
     linked(v);
 }
 
-void minimize(int k, vector<pair<char, ll>> v) {
+void minimize(long long k, vector<pair<char, ll>> v) {
     while (k != 0) {
         for (auto &i : v) {
             if (i.first == maxIn.back()) {
@@ -67,7 +67,7 @@ void minimize(int k, vector<pair<char, ll>> v) {
     linked(v);
 }
 
-void solve(string s, int k) {
+void solve(string s, long long k) {
     for (ll i = 0; i < s.size(); i++) {
         string temp = "";
         if (isalpha(s[i])) {

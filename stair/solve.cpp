@@ -3,9 +3,9 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
-    vector<int> temp = {1, 100, 1, 1, 1, 100, 1, 1, 100, 1};
+    vector<long long> temp = {1, 100, 1, 1, 1, 100, 1, 1, 100, 1};
 
     Solution a;
 

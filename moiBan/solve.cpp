@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-int n;
-int a[200007], b[200007];
+long long n;
+long long a[200007], b[200007];
 
-bool solve(int x) {
-    int cnt = 0;
+bool solve(long long x) {
+    long long cnt = 0;
 
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         if (cnt <= b[i] && x - cnt - 1 <= a[i]) {
             cnt++;
         }
@@ -15,16 +15,16 @@ bool solve(int x) {
     return cnt >= x;
 }
 
-int main() {
+long long main() {
     cin >> n;
 
-    int l = 1, r = n, res = 0;
+    long long l = 1, r = n, res = 0;
 
-    for (int i = 0; i < n; i++) cin >> a[i];
-    for (int i = 0; i < n; i++) cin >> b[i];
+    for (long long i = 0; i < n; i++) cin >> a[i];
+    for (long long i = 0; i < n; i++) cin >> b[i];
 
     while (l <= r) {
-        int m = (l + r) / 2;
+        long long m = (l + r) / 2;
         if (solve(m)) {
             res = m;
             l = m + 1;

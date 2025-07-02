@@ -16,7 +16,7 @@ public:
 
     long long securityNum()
     {
-        int security = 0, highest = 0;
+        long long security = 0, highest = 0;
 
         for (long long i = 0; i < n; i++)
         {
@@ -50,7 +50,7 @@ public:
     }
 };
 
-int main()
+long long main()
 {
     solution a;
 

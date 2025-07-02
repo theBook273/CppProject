@@ -1,35 +1,35 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
 signed main() {
     cin.tie(NULL)->sync_with_stdio(false);
-    int t;
+    long long t;
     cin >> t;
     while (t--) {
-        int n, m;
+        long long n, m;
         cin >> n >> m;
 
-        int a[200006];
+        long long a[200006];
 
-        int b[n], c[n];
+        long long b[n], c[n];
 
         for (auto &i : b) cin >> i;
         for (auto &i : c) cin >> i;
 
-        int id = 0;
+        long long id = 0;
 
-        for (int i = 0; i < n; i++) {
-            for (int j = 0; j < c[i]; j++) {
+        for (long long i = 0; i < n; i++) {
+            for (long long j = 0; j < c[i]; j++) {
                 a[id++] = b[i];
             }
         }
         sort(a, a + id);
 
-        int l = 0;
-        int temp = a[l], res = 0;
-        for (int r = 1; r < id; r++) {
+        long long l = 0;
+        long long temp = a[l], res = 0;
+        for (long long r = 1; r < id; r++) {
             temp += a[r];
 
             if (abs(a[r] - a[l]) > 1) {

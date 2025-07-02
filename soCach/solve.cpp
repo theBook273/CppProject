@@ -2,15 +2,15 @@
 
 using namespace std;
 
-int n, k;
+long long n, k;
 
 string nums = "0";
 
 vector<string> res;
 
-void solve(int dem)
+void solve(long long dem)
 {
-    for (int i = nums[dem - 1] - '0' + 1; i <= n; i++)
+    for (long long i = nums[dem - 1] - '0' + 1; i <= n; i++)
     {
         nums += to_string(i);
         if (dem == k)
@@ -23,7 +23,7 @@ void solve(int dem)
     }
 }
 
-int main()
+long long main()
 {
     ios_base::sync_with_stdio(true);
     cin.tie(NULL);
@@ -36,7 +36,7 @@ int main()
 
     for (auto i : res)
     {
-        for (int j = 1; j < i.size(); j++)
+        for (long long j = 1; j < i.size(); j++)
         {
             cout << i[j] << " ";
         }

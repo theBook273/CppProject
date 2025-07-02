@@ -2,18 +2,18 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
-    int k;
+    long long k;
 
     cin >> k;
 
     while (k--)
     {
         string s;
-        for (int i = 0; i < 8; i++)
+        for (long long i = 0; i < 8; i++)
         {
-            for (int j = 0; j < 8; j++)
+            for (long long j = 0; j < 8; j++)
             {
                 char temp;
                 cin >> temp;

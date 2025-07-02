@@ -10,31 +10,31 @@ signed main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     cout.tie(0);
-    int n, m, q;
+    long long n, m, q;
 
     cin >> n >> m >> q;
 
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         cin >> a[i];
     }
 
     while (m--) {
-        int l, r, u;
+        long long l, r, u;
         cin >> l >> r >> u;
 
         changed[l - 1] += u;
         changed[r] -= u;
     }
 
-    for (int i = 1; i < n; i++) {
+    for (long long i = 1; i < n; i++) {
         changed[i] = changed[i - 1] + changed[i];
     }
 
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         a[i] += changed[i];
     }
 
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         mp[a[i]]++;
     }
 

@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
 signed main() {
     cin.tie(NULL)->sync_with_stdio(false);
-    int t;
+    long long t;
     cin >> t;
     while (t--) {
-        int n, a, b;
+        long long n, a, b;
         cin >> n >> a >> b;
 
         if (abs(a - b) % 2 == 0)

@@ -8,23 +8,23 @@ void input(long long &temp, long long arr[])
 {
     cin >> temp;
 
-    for (int i = 0; i < temp; i++)
+    for (long long i = 0; i < temp; i++)
     {
         cin >> arr[i];
     }
 }
 
-int main()
+long long main()
 {
     input(n, a);
     input(m, b);
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         tangA[i] = 1;
     }
 
-    for (int i = n - 2; i >= 1; i--)
+    for (long long i = n - 2; i >= 1; i--)
     {
         if (a[i] > a[i - 1])
         {
@@ -34,7 +34,7 @@ int main()
 
     long long maxN = *max_element(tangA, tangA + n);
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         cout << tangA[i] << " ";
         if (tangA[i] == maxN)
@@ -43,7 +43,7 @@ int main()
         }
     }
 
-    for (int i = 1; i < m; i++)
+    for (long long i = 1; i < m; i++)
     {
         if (b[i] >= a[i])
         {

@@ -1,18 +1,18 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
-vector<pair<pair<int, int>, int>> temp;
-int dsu[999999], val[999999], tong = 0, tar = 1;
-map<pair<int, int>, int> mp;
+vector<pair<pair<long long, long long>, long long>> temp;
+long long dsu[999999], val[999999], tong = 0, tar = 1;
+map<pair<long long, long long>, long long> mp;
 
-int parent(int x) {
+long long parent(long long x) {
     if (x == dsu[x]) return x;
     return dsu[x] = parent(dsu[x]);
 }
 
-void join(int x, int y) {
+void join(long long x, long long y) {
     x = parent(x);
     y = parent(y);
     if (x != y) {
@@ -21,29 +21,29 @@ void join(int x, int y) {
     }
 }
 
-bool comp(pair<pair<int, int>, int> a, pair<pair<int, int>, int> b) {
+bool comp(pair<pair<long long, long long>, long long> a, pair<pair<long long, long long>, long long> b) {
     return a.second < b.second;
 }
 
 main() {
-    int n, m;
+    long long n, m;
 
     cin >> n >> m;
 
-    for (int i = 1; i <= n; i++) {
+    for (long long i = 1; i <= n; i++) {
         cin >> val[i];
         dsu[i] = i;
         if (val[tar] > val[i]) tar = i;
     }
 
-    for (int i = 1; i <= n; i++) {
+    for (long long i = 1; i <= n; i++) {
         if (parent(i) != tar) {
             temp.push_back({{tar, i}, val[i] + val[tar]});
         }
     }
 
-    for (int i = 1; i <= m; i++) {
-        int a, b, x;
+    for (long long i = 1; i <= m; i++) {
+        long long a, b, x;
         cin >> a >> b >> x;
         if (val[a] > val[b]) swap(a, b);
         temp.push_back({{a, b}, x});

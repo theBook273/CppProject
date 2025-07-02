@@ -3,12 +3,12 @@
 using namespace std;
 
 signed main() {
-    int n;
+    long long n;
     cin >> n;
 
-    unordered_map<string, int> mp;
+    unordered_map<string, long long> mp;
 
-    for (int i = 0; i < 2 * n - 1; i++) {
+    for (long long i = 0; i < 2 * n - 1; i++) {
         string temp;
         cin >> temp;
         mp[temp]++;

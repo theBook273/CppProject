@@ -2,13 +2,13 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
-    int n, tong = 0;
+    long long n, tong = 0;
 
     cin >> n;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         char temp;
 

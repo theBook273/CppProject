@@ -3,13 +3,13 @@
 
 using namespace std;
 
-const int n = 8;
-int a[n][n];
+const long long n = 8;
+long long a[n][n];
 bool hang[1000], xuoi[10000], nguoc[10000], cot[10000];
 
-void check(int dem) {
-    for (int i = dem; i < n; i++) {
-        for (int j = 0; j < n; j++) {
+void check(long long dem) {
+    for (long long i = dem; i < n; i++) {
+        for (long long j = 0; j < n; j++) {
             if (!cot[i] && !nguoc[i + j - 1] && !xuoi[i - j + n]) {
                 cot[i] = 1, xuoi[i] = 1, nguoc[i] = 1;
             }
@@ -17,9 +17,9 @@ void check(int dem) {
     }
 }
 
-int main() {
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
+long long main() {
+    for (long long i = 0; i < n; i++) {
+        for (long long j = 0; j < n; j++) {
             cin >> a[i][j];
         }
     }

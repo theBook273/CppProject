@@ -2,22 +2,22 @@
 
 using namespace std;
 
-const int maxn = 5 * 1e5 + 9;
+const long long maxn = 5 * 1e5 + 9;
 
-int n, a[maxn];
-int cou[maxn + 90];
+long long n, a[maxn];
+long long cou[maxn + 90];
 
 signed main() {
     cin.tie(0)->sync_with_stdio(0);
     cin >> n;
 
-    for (int i(0); i < n; ++i) {
+    for (long long i(0); i < n; ++i) {
         cin >> a[i];
     }
 
-    vector<int> uc;
+    vector<long long> uc;
 
-    for (int i(1); i <= sqrt(n); ++i) {
+    for (long long i(1); i <= sqrt(n); ++i) {
         if (n % i == 0) {
             uc.push_back(i);
             if (n / i != i) {
@@ -28,10 +28,10 @@ signed main() {
 
     sort(uc.begin(), uc.end());
 
-    unordered_map<int, int> vl;
-    vector<int> compress;
+    unordered_map<long long, long long> vl;
+    vector<long long> compress;
 
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         if (!vl.count(a[i])) {
             vl[a[i]] = vl.size();
         }
@@ -40,13 +40,13 @@ signed main() {
 
     cout << uc.size() << "\n";
 
-    int current = 1;
+    long long current = 1;
 
     for (auto i : uc) {
-        int l(0), res(1e9);
-        int unique = 0;
+        long long l(0), res(1e9);
+        long long unique = 0;
 
-        for (int r = 0; r < n; r++) {
+        for (long long r = 0; r < n; r++) {
             if (cou[compress[r]] != current) {
                 cou[compress[r]] = current;
                 unique++;

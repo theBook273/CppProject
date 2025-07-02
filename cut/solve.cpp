@@ -12,7 +12,7 @@ bool check(long long x) {
     return tong >= m;
 }
 
-int main() {
+long long main() {
     cin >> n >> m;
 
     for (long long i = 0; i < n; i++) {

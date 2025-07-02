@@ -2,20 +2,20 @@
 
 using namespace std;
 
-int main() {
-    int q;
+long long main() {
+    long long q;
 
     cin >> q;
 
     while (q--) {
-        int n, m;
+        long long n, m;
 
         cin >> n >> m;
 
         vector<long long> v[n];
 
-        for (int i = 0; i < m; i++) {
-            int temp1, temp2;
+        for (long long i = 0; i < m; i++) {
+            long long temp1, temp2;
 
             cin >> temp1 >> temp2;
 
@@ -23,18 +23,18 @@ int main() {
             v[temp2 - 1].push_back(temp1 - 1);
         }
 
-        int dem = 0;
+        long long dem = 0;
 
         for (auto i : v) {
             if (i.size() <= 1) {
                 continue;
             }
 
-            int temp = v[i[0]].size() - 1;
+            long long temp = v[i[0]].size() - 1;
 
             if (temp == 0) continue;
 
-            for (int j = 0; j < i.size(); j++) {
+            for (long long j = 0; j < i.size(); j++) {
                 if (v[i[j]].size() - 1 != temp) {
                     temp = v[i[j]].size() - 1;
                 }

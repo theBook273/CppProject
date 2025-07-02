@@ -2,19 +2,19 @@
 
 using namespace std;
 
-int tong = 0;
+long long tong = 0;
 
-void solve(int x) {
+void solve(long long x) {
     tong += x;
     if (x == 1) return;
-    int l = floor(x / 2.0);
-    int r = ceil(x / 2.0);
+    long long l = floor(x / 2.0);
+    long long r = ceil(x / 2.0);
     solve(l);
     solve(r);
 }
 
 signed main() {
-    int n, m;
+    long long n, m;
     cin >> n >> m;
     solve(n * m);
     cout << tong;

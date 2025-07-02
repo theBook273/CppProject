@@ -2,13 +2,13 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     string s1, s2;
 
     cin >> s1 >> s2;
 
-    unordered_map<char, int> mp1, mp2;
+    unordered_map<char, long long> mp1, mp2;
 
     if (s1.size() > s2.size())
     {
@@ -20,9 +20,9 @@ int main()
         mp1[i]++;
     }
 
-    int left = 0;
+    long long left = 0;
 
-    for (int right = 0; right < s1.size(); right++)
+    for (long long right = 0; right < s1.size(); right++)
     {
         mp2[s2[right]]++;
 

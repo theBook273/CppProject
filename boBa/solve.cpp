@@ -2,17 +2,17 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
-    int a, b, z, y, m, n, tong = 0;
+    long long a, b, z, y, m, n, tong = 0;
 
     cin >> a >> b >> z >> y >> m >> n;
 
-    for (int i = a; i <= b; i++)
+    for (long long i = a; i <= b; i++)
     {
-        for (int j = z; j <= y; j++)
+        for (long long j = z; j <= y; j++)
         {
-            int temp = i * j;
+            long long temp = i * j;
 
             if (m <= temp && temp <= n)
             {

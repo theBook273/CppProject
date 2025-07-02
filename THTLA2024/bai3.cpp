@@ -1,21 +1,21 @@
 #include <bits/stdc++.h>
-#define int unsigned long long
+#define long long unsigned long long
 
 using namespace std;
 
-const int maxn = 1e6 + 20;
+const long long maxn = 1e6 + 20;
 
-int a[maxn];
+long long a[maxn];
 
 signed main() {
     freopen("TROCHOI.INP", "r", stdin);
     freopen("TROCHOI.OUT", "w", stdout);
-    int n;
+    long long n;
     cin >> n;
-    int tong = 0;
-    map<int, int> soluong;
-    for (int i = 0; i < n; ++i) {
-        int temp;
+    long long tong = 0;
+    map<long long, long long> soluong;
+    for (long long i = 0; i < n; ++i) {
+        long long temp;
         cin >> temp;
         tong += temp;
         soluong[temp & 1]++;

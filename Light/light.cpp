@@ -6,20 +6,20 @@ long long n, a[10000000], maxN = -1, pos;
 
 vector<long long> so, soluong;
 
-int main()
+long long main()
 {
 
     cin >> n;
 
-    for(int i = 0; i < n; i++)
+    for(long long i = 0; i < n; i++)
     {
         cin >> a[i];
     }
 
-    for(int i = 0; i < n; i++)
+    for(long long i = 0; i < n; i++)
     {
-        int temp = 0, tempForJ;
-        for(int j = i + 1; j < n; j++)
+        long long temp = 0, tempForJ;
+        for(long long j = i + 1; j < n; j++)
         {
             temp++;
             if(a[i] != a[j])

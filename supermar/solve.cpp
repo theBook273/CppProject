@@ -6,9 +6,9 @@ using ll = long long;
 ll x, m, n;
 vector<ll> a;
 
-bool check(int dis) {
+bool check(long long dis) {
     ll broken = 0, k = dis;
-    for (int i = 1; i < a.size(); i++) {
+    for (long long i = 1; i < a.size(); i++) {
         if (a[i] < k)
             broken++;
         else
@@ -22,8 +22,8 @@ signed main() {
     // freopen("supermar.out", "w", stdout);
     cin >> x >> n >> m;
     a.push_back(0);
-    for (int i = 0; i < n; i++) {
-        int temp;
+    for (long long i = 0; i < n; i++) {
+        long long temp;
         cin >> temp;
         a.push_back(temp);
     }
@@ -31,10 +31,10 @@ signed main() {
 
     sort(a.begin(), a.end());
 
-    int l = 1, r = 1e9;
+    long long l = 1, r = 1e9;
 
     while (l <= r) {
-        int mid = (l + r) / 2;
+        long long mid = (l + r) / 2;
         if (check(mid)) {
             l = mid + 1;
         } else {

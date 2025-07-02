@@ -3,16 +3,16 @@
 using namespace std;
 
 signed main() {
-  int t;
+  long long t;
   cin >> t;
 
   while (t--) {
-    int dem[4] = {0, 0, 0, 0};
+    long long dem[4] = {0, 0, 0, 0};
 
-    int n;
+    long long n;
     cin >> n;
 
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
       dem[i % 4]++;
     }
 

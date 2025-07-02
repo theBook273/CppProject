@@ -1,15 +1,15 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
-int h[10000], a[10000];
+long long h[10000], a[10000];
 
-int n, res;
+long long n, res;
 
-int check(int x) {
-    int tong = 0;
-    for (int i = 0; i < n; i++) {
+long long check(long long x) {
+    long long tong = 0;
+    for (long long i = 0; i < n; i++) {
         tong += (abs(x - h[i]) * a[i]);
     }
     return tong;
@@ -20,20 +20,20 @@ main() {
     cin.tie(0);
     cout.tie(0);
 
-    int t;
+    long long t;
     cin >> t;
     while (t--) {
         res = 1e18;
         cin >> n;
 
-        for (int i = 0; i < n; i++) {
+        for (long long i = 0; i < n; i++) {
             cin >> h[i];
         }
-        for (int i = 0; i < n; i++) {
+        for (long long i = 0; i < n; i++) {
             cin >> a[i];
         }
 
-        int l = 1, r = 1e9, mid;
+        long long l = 1, r = 1e9, mid;
 
         while (l + 1 < r) {
             mid = (l + r) / 2;

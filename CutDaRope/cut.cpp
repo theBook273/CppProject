@@ -5,18 +5,18 @@ using namespace std;
 class cutDaRope
 {
 private:
-    vector<int> highOfNails;
-    vector<int> lengthOfStrings;
-    int numberOfNails;
+    vector<long long> highOfNails;
+    vector<long long> lengthOfStrings;
+    long long numberOfNails;
 
 public:
     cutDaRope()
     {
         cin >> numberOfNails;
 
-        for (int i = 0; i < numberOfNails; i++)
+        for (long long i = 0; i < numberOfNails; i++)
         {
-            int temp;
+            long long temp;
 
             cin >> temp;
             highOfNails.push_back(temp);
@@ -26,11 +26,11 @@ public:
         }
     }
 
-    int solve()
+    long long solve()
     {
-        int ans = 0;
+        long long ans = 0;
 
-        for (int i = 0; i < numberOfNails; i++)
+        for (long long i = 0; i < numberOfNails; i++)
         {
             if (lengthOfStrings[i] < highOfNails[i])
             {
@@ -42,13 +42,13 @@ public:
     }
 };
 
-int main()
+long long main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int t;
+    long long t;
     cin >> t;
 
     while (t--)

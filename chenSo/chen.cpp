@@ -6,7 +6,7 @@ long long n, k, pos = -1, minG = 1e9;
 
 string s, res[2];
 
-int main()
+long long main()
 {
     cin >> n >> k;
 
@@ -18,7 +18,7 @@ int main()
         return 0;
     }
 
-    for (int i = n - 1; i >= 0; i--)
+    for (long long i = n - 1; i >= 0; i--)
     {
         if (s[i] - '0' <= k)
         {
@@ -33,7 +33,7 @@ int main()
         return 0;
     }
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         if (i == pos)
         {
@@ -42,7 +42,7 @@ int main()
         res[0] += s[i];
     }
 
-    for (int i = n - 1; i >= 0; i--)
+    for (long long i = n - 1; i >= 0; i--)
     {
         if (s[i] - '0' < k)
         {
@@ -50,7 +50,7 @@ int main()
         }
     }
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         if (i == pos)
         {

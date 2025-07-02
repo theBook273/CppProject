@@ -6,7 +6,7 @@ bool checkPal(string s) {
     stack<char> ca;
     bool odd = (s.size()) % 2;
 
-    for (int i = 0; i < s.size(); i++) {
+    for (long long i = 0; i < s.size(); i++) {
         if (odd && i == (s.size() / 2)) continue;
         if (!ca.empty()) {
             if (ca.top() == s[i]) ca.pop();
@@ -26,7 +26,7 @@ signed main() {
         string a = sam;
         reverse(sam.begin(), sam.end());
         cout << a;
-        for (int i = 1; i < sam.size(); i++) {
+        for (long long i = 1; i < sam.size(); i++) {
             cout << sam[i];
         }
     }

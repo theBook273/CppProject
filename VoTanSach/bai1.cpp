@@ -2,8 +2,8 @@
 
 using namespace std;
 
-int main() {
-    int a, b;
+long long main() {
+    long long a, b;
 
     cin >> a >> b;
 

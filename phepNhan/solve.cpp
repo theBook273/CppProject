@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 using namespace std;
 
-vector<int> each;
+vector<long long> each;
 
 bool bigger(string a, string b) {
     if (a.size() > b.size()) return 1;
     if (a.size() < b.size()) return 0;
 
-    for (int i = 0; i < a.size(); i++) {
+    for (long long i = 0; i < a.size(); i++) {
         if (a[i] < b[i])
             return 0;
         else
@@ -19,7 +19,7 @@ bool bigger(string a, string b) {
 }
 
 void eachMul(string a, string b) {
-    for (int i = b.size() - 1; i >= 0; i--)
+    for (long long i = b.size() - 1; i >= 0; i--)
         each.push_back((b[i] - '0') * stoull(a));
 }
 signed main() {
@@ -35,7 +35,7 @@ signed main() {
     for (auto i : each) cout << i << "\n";
 
     string res =
-        to_string((int)((__int128_t)stoull(a) * (__int128_t)stoull(b)));
+        to_string((long long)((__long long128_t)stoull(a) * (__long long128_t)stoull(b)));
 
-    int cn = b - a.size()
+    long long cn = b - a.size()
 }

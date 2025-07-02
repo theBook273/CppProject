@@ -3,17 +3,17 @@
 using namespace std;
 
 signed main() {
-  int t;
+  long long t;
   cin >> t;
 
   while (t--) {
     bool flag = 0;
-    int n, j, k;
+    long long n, j, k;
     cin >> n >> j >> k;
 
-    vector<int> a(n);
+    vector<long long> a(n);
 
-    for (int &i : a)
+    for (long long &i : a)
       cin >> i;
 
     if (k > 1) {

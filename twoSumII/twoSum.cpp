@@ -2,20 +2,20 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
-    int n, numbers[100000], target;
+    long long n, numbers[100000], target;
 
     cin >> n;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         cin >> numbers[i];
     }
 
     cin >> target;
 
-    int l = 0;
+    long long l = 0;
     r = numbers.size() - 1;
 
     while (l < r)

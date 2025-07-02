@@ -2,18 +2,18 @@
 
 using namespace std;
 
-vector<pair<pair<int, int>, int>> road[100000];
+vector<pair<pair<long long, long long>, long long>> road[100000];
 
-int between[100000];
+long long between[100000];
 
-int main()
+long long main()
 {
-    int n, m;
+    long long n, m;
     cin >> n >> m;
 
-    for (int i = 1; i <= m; i++)
+    for (long long i = 1; i <= m; i++)
     {
-        int u, v, distance;
+        long long u, v, distance;
 
         cin >> u >> v >> distance;
 
@@ -24,12 +24,12 @@ int main()
 
     between[1] = 0;
 
-    for (int i = 2; i <= n; i++)
+    for (long long i = 2; i <= n; i++)
     {
         between[i] = 1e9;
     }
 
-    queue<int> nodeToVisit;
+    queue<long long> nodeToVisit;
 
     nodeToVisit.push(1);
 

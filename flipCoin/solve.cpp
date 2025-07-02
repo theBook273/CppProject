@@ -3,20 +3,20 @@
 using namespace std;
 #define mx 100005
 #define ll long long
-#define forn(i, n) for (int i = 0; i < (int)n; i++)
+#define forn(i, n) for (long long i = 0; i < (long long)n; i++)
 #define mem(a) memset(a, 0, sizeof(a))
-// int arr[mx];
-int tree[mx * 3];
-int lazy[mx * 3];
-// int carry;
+// long long arr[mx];
+long long tree[mx * 3];
+long long lazy[mx * 3];
+// long long carry;
 
-int query(int node, int b, int e, int i, int j) {
+long long query(long long node, long long b, long long e, long long i, long long j) {
     // cout<<"query= "<<carry<<endl;
     if (b > j || e < i) return 0;
 
-    int Left = node * 2;
-    int Right = node * 2 + 1;
-    int mid = (b + e) / 2;
+    long long Left = node * 2;
+    long long Right = node * 2 + 1;
+    long long mid = (b + e) / 2;
 
     if (lazy[node] == 1) {
         tree[node] = (e - b + 1) - tree[node];  // updating tree
@@ -31,15 +31,15 @@ int query(int node, int b, int e, int i, int j) {
     }
 
     if (b >= i && e <= j) return tree[node];
-    int x = query(Left, b, mid, i, j);
-    int y = query(Right, mid + 1, e, i, j);
+    long long x = query(Left, b, mid, i, j);
+    long long y = query(Right, mid + 1, e, i, j);
     return x + y;
 }
 
-void update(int node, int b, int e, int i, int j) {
-    int Left = node * 2;
-    int Right = node * 2 + 1;
-    int mid = (b + e) / 2;
+void update(long long node, long long b, long long e, long long i, long long j) {
+    long long Left = node * 2;
+    long long Right = node * 2 + 1;
+    long long mid = (b + e) / 2;
 
     if (lazy[node] == 1) {
         tree[node] = (e - b + 1) - tree[node];
@@ -69,26 +69,26 @@ void update(int node, int b, int e, int i, int j) {
     tree[node] = tree[Left] + tree[Right];
 }
 
-int main() {
+long long main() {
     // ios::sync_with_stdio(false);
-    int n, m;
+    long long n, m;
     scanf("%d%d", &n, &m);
 
     while (m--) {
-        int t;
+        long long t;
         scanf("%d", &t);
 
         if (t == 1) {
-            int i, j;
+            long long i, j;
             scanf("%d%d", &i, &j);
             i++, j++;
-            int d = query(1, 1, n, i, j);
+            long long d = query(1, 1, n, i, j);
 
-            printf("%d\n", d);
+            prlong longf("%d\n", d);
         }
 
         else {
-            int i, j;
+            long long i, j;
             scanf("%d%d", &i, &j);
             i++, j++;
             update(1, 1, n, i, j);

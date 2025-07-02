@@ -2,35 +2,35 @@
 
 using namespace std;
 
-pair<int, int> a[10000];
-map<int, int> dem;
+pair<long long, long long> a[10000];
+map<long long, long long> dem;
 
 long long maxN = 0, pos = 0;
 
-int main()
+long long main()
 {
     // freopen("CHENH LECH.INP", "r", stdin);
     // freopen("CHENH LECH.OUT", "w", stdout);
 
-    int n;
+    long long n;
 
     cin >> n;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
-        int x, y;
+        long long x, y;
 
         cin >> x >> y;
 
         a[i] = {x, y};
     }
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         dem[abs(a[i].first - a[i].second)]++;
     }
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         if (dem[abs(a[i].first - a[i].second)] > maxN)
         {
@@ -49,7 +49,7 @@ int main()
 
     cout << pos << "\n";
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         if (dem[abs(a[i].first - a[i].second)] == maxN && abs(a[i].first - a[i].second) == pos)
         {

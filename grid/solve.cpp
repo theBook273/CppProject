@@ -1,22 +1,22 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
-int visisted[9][9];
-int step(0), tong(0);
+long long visisted[9][9];
+long long step(0), tong(0);
 
 vector<char> road;
 string s;
 
-map<char, pair<int, int>> direc = {
+map<char, pair<long long, long long>> direc = {
     {'D', {1, 0}}, {'U', {-1, 0}}, {'L', {0, -1}}, {'R', {0, 1}}};
 
-pair<pair<int, int>, pair<int, int>> combo[] = {
+pair<pair<long long, long long>, pair<long long, long long>> combo[] = {
     {{0, 1}, {1, 0}}, {{-1, 0}, {0, -1}}, {{1, 0}, {0, -1}}, {{-1, 0}, {0, 1}}};
-pair<int, int> diag[] = {{1, 1}, {-1, -1}, {1, -1}, {-1, 1}};
+pair<long long, long long> diag[] = {{1, 1}, {-1, -1}, {1, -1}, {-1, 1}};
 
-void dfs(int x, int y) {
+void dfs(long long x, long long y) {
     if (x == 7 && y == 1 && step < 48) return;
 
     if (step != 0) {
@@ -24,11 +24,11 @@ void dfs(int x, int y) {
     }
 
     if (!road.empty()) {
-        pair<int, int> a = direc[road.back()];
-        int tempx = x + a.first;
-        int tempy = y + a.second;
+        pair<long long, long long> a = direc[road.back()];
+        long long tempx = x + a.first;
+        long long tempy = y + a.second;
         if (visisted[tempx][tempy]) {
-            pair<int, int> side1, side2;
+            pair<long long, long long> side1, side2;
             if (road.back() == 'U' || road.back() == 'D') {
                 side1 = direc['L'];
                 side2 = direc['R'];
@@ -44,13 +44,13 @@ void dfs(int x, int y) {
         }
     }
 
-    for (int i = 0; i < 4; ++i) {
-        int nx1 = x + combo[i].first.first;
-        int ny1 = y + combo[i].first.second;
-        int nx2 = x + combo[i].second.first;
-        int ny2 = y + combo[i].second.second;
-        int tempx = x + diag[i].first;
-        int tempy = y + diag[i].second;
+    for (long long i = 0; i < 4; ++i) {
+        long long nx1 = x + combo[i].first.first;
+        long long ny1 = y + combo[i].first.second;
+        long long nx2 = x + combo[i].second.first;
+        long long ny2 = y + combo[i].second.second;
+        long long tempx = x + diag[i].first;
+        long long tempy = y + diag[i].second;
 
         if (visisted[tempx][tempy] == 2 &&
             (!visisted[nx1][ny1] && !visisted[nx2][ny2])) {
@@ -64,8 +64,8 @@ void dfs(int x, int y) {
     }
 
     for (auto i : direc) {
-        int nx = x + i.second.first;
-        int ny = y + i.second.second;
+        long long nx = x + i.second.first;
+        long long ny = y + i.second.second;
         if (!visisted[nx][ny]) {
             road.push_back(i.first);
             ++step;
@@ -82,14 +82,14 @@ signed main() {
     cin.tie(NULL)->sync_with_stdio(false);
     cin >> s;
 
-    for (int i = 0; i < 9; ++i) {
-        for (int j = 0; j < 9; ++j) {
+    for (long long i = 0; i < 9; ++i) {
+        for (long long j = 0; j < 9; ++j) {
             visisted[i][j] = 1;
         }
     }
 
-    for (int i = 1; i <= 7; ++i) {
-        for (int j = 1; j <= 7; ++j) {
+    for (long long i = 1; i <= 7; ++i) {
+        for (long long j = 1; j <= 7; ++j) {
             visisted[i][j] = 0;
         }
     }

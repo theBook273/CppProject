@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     MinStack minStack;
     minStack.push(-2);

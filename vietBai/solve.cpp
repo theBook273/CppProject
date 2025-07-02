@@ -3,7 +3,7 @@
 using namespace std;
 using ll = unsigned long long;
 
-double avgg(pair<ll, int> a[], int n) {
+double avgg(pair<ll, long long> a[], long long n) {
     double tong = 0;
     for (ll i = 0; i < n; i++) {
         tong += a[i].first;
@@ -11,14 +11,14 @@ double avgg(pair<ll, int> a[], int n) {
     return tong;
 }
 
-bool comp(pair<ll, int> a, pair<int, int> b) { return a.second < b.second; }
+bool comp(pair<ll, long long> a, pair<long long, long long> b) { return a.second < b.second; }
 
 signed main() {
     ll n, avg;
 
     cin >> n >> avg;
 
-    pair<ll, int> a[n];
+    pair<ll, long long> a[n];
 
     for (auto &i : a) {
         cin >> i.first >> i.second;

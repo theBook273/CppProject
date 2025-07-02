@@ -1,16 +1,16 @@
 #include <bits/stdc++.h>
 using namespace std;
 bool visited[100001];
-int main() {
-    int t;
+long long main() {
+    long long t;
     cin >> t;
     while (t--) {
-        int n, k;
+        long long n, k;
         cin >> n >> k;
-        vector<pair<int, int>> p;
-        int gioihan = k;
+        vector<pair<long long, long long>> p;
+        long long gioihan = k;
         while (k--) {
-            int nhan, gia;
+            long long nhan, gia;
             cin >> nhan >> gia;
             p.push_back({nhan, gia});
             // for (auto x : p) {
@@ -18,10 +18,10 @@ int main() {
             // }
         }
         sort(p.begin(), p.end());
-        int sum = 0;
-        for (int i = 0; i < p.size(); i++) {
+        long long sum = 0;
+        for (long long i = 0; i < p.size(); i++) {
             // cout << p[i].first << " " << p[i].second << " \n";
-            int kecu = p[i - 1].first;
+            long long kecu = p[i - 1].first;
             if (p[i].first != kecu) n--;
             sum += p[i].second;
             if (n == 0) break;

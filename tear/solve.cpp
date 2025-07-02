@@ -4,20 +4,20 @@ using namespace std;
 
 signed main() {
     cin.tie(0)->sync_with_stdio(0);
-    int t;
+    long long t;
     cin >> t;
     while (t--) {
         string s;
         cin >> s;
 
-        int res = 1e9;
+        long long res = 1e9;
 
         for (char maxc = 'a'; maxc <= 'z'; maxc++) {
-            int dem = 0;
+            long long dem = 0;
 
-            int l = 0;
+            long long l = 0;
 
-            for (int r = 0; r < s.size(); r++) {
+            for (long long r = 0; r < s.size(); r++) {
                 if (s[r] == maxc) {
                     dem = max(dem, r - l);
                     while (s[r] == maxc) r++;
@@ -25,9 +25,9 @@ signed main() {
                 }
             }
 
-            dem = max(dem, int(s.size() - l));
+            dem = max(dem, long long(s.size() - l));
 
-            int cnt = 0;
+            long long cnt = 0;
             while (dem) {
                 cnt++;
                 dem -= ceil(dem / 2.0);

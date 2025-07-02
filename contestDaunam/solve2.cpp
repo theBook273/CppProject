@@ -1,22 +1,22 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
-const int maxn = 2 * 1e5 + 8;
+const long long maxn = 2 * 1e5 + 8;
 
-map<int, int> mp;
-int n, k;
+map<long long, long long> mp;
+long long n, k;
 
-bool check(int t) {
-    int extra = 0;
+bool check(long long t) {
+    long long extra = 0;
 
-    for (int i = 1; i <= n; i++) {
+    for (long long i = 1; i <= n; i++) {
         if (mp[i] > t) extra += mp[i] - t;
     }
 
-    int need = 0;
-    for (int i = 1; i <= n; i++) {
+    long long need = 0;
+    for (long long i = 1; i <= n; i++) {
         if (mp[i] < t) need += (t - mp[i]) / 2;
     }
 
@@ -27,17 +27,17 @@ signed main() {
     cin.tie(NULL)->sync_with_stdio(false);
     cin >> n >> k;
 
-    for (int i = 0; i < k; i++) {
-        int temp;
+    for (long long i = 0; i < k; i++) {
+        long long temp;
         cin >> temp;
         mp[temp]++;
     }
 
-    int left = 1, right = k * 2;
-    int res = 0;
+    long long left = 1, right = k * 2;
+    long long res = 0;
 
     while (left <= right) {
-        int mid = (left + right) / 2;
+        long long mid = (left + right) / 2;
         if (check(mid)) {
             res = mid;
             right = mid - 1;

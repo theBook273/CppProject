@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
 signed main() {
-    int t;
+    long long t;
     cin >> t;
     while (t--) {
         string s;
@@ -12,8 +12,8 @@ signed main() {
         cin >> s;
         string temp = s;
 
-        for (int i = s.size() - 2; i >= 0; i--) {
-            for (int j = s.size() - 1; j >= i; j--) {
+        for (long long i = s.size() - 2; i >= 0; i--) {
+            for (long long j = s.size() - 1; j >= i; j--) {
                 if (s[j] > s[i]) {
                     check = 1;
                     swap(s[i], s[j]);

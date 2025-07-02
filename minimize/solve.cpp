@@ -3,7 +3,7 @@
 using namespace std;
 
 signed main() {
-    int n;
+    long long n;
     cin >> n;
     char s[n];
 
@@ -11,7 +11,7 @@ signed main() {
 
     bool check = 0;
 
-    for (int i = 0; i < n; ++i) {
+    for (long long i = 0; i < n; ++i) {
         if (!check && s[i] > s[i + 1]) {
             check = 1;
             continue;

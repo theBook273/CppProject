@@ -2,33 +2,33 @@
 
 using namespace std;
 
-vector<int> nums;
+vector<long long> nums;
 
-int main()
+long long main()
 {
-    int n, s;
+    long long n, s;
 
     cin >> n;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
-        int a;
+        long long a;
         cin >> a;
         nums.push_back(a);
     }
 
     cin >> s;
 
-    unordered_map<int, int> numMap;
+    unordered_map<long long, long long> numMap;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         numMap[nums[i]] = i;
     }
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
-        int res = s - nums[i];
+        long long res = s - nums[i];
         if (numMap.count(res) && numMap[res] != i)
         {
             cout << i << " " << numMap[res];

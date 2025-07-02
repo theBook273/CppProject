@@ -4,19 +4,19 @@ using namespace std;
 
 double tong = 0;
 
-int main()
+long long main()
 {
-    int n;
+    long long n;
 
     cin >> n;
 
     while (n--)
     {
-        int a;
+        long long a;
 
         cin >> a;
 
-        int temp1 = a / 10,
+        long long temp1 = a / 10,
             temp2 = a % 10;
 
         tong += pow(temp1, temp2);

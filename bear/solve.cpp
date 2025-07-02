@@ -1,23 +1,23 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
-int a[100000];
+long long a[100000];
 
 main() {
-    int n;
+    long long n;
     cin >> n;
 
-    for (int i = 1; i <= n; i++) {
+    for (long long i = 1; i <= n; i++) {
         cin >> a[i];
     }
 
-    for (int t = 0; t < n; t++) {
-        int res = 0;
-        for (int i = 1; i <= n; i++) {
-            int minR = 1e9;
-            for (int j = i; j <= i + t; j++) {
+    for (long long t = 0; t < n; t++) {
+        long long res = 0;
+        for (long long i = 1; i <= n; i++) {
+            long long minR = 1e9;
+            for (long long j = i; j <= i + t; j++) {
                 minR = min(minR, a[j]);
             }
             res = max(res, minR);

@@ -5,8 +5,8 @@ using namespace std;
 class solution
 {
 private:
-    priority_queue<int, vector<int>, greater<int>> pr;
-    int n, k;
+    priority_queue<long long, vector<long long>, greater<long long>> pr;
+    long long n, k;
 
 public:
     solution()
@@ -16,15 +16,15 @@ public:
 
         cin >> n >> k;
 
-        for (int i = 0; i < n; i++)
+        for (long long i = 0; i < n; i++)
         {
-            int temp;
+            long long temp;
             cin >> temp;
             pr.push(temp);
         }
     }
 
-    int res()
+    long long res()
     {
         while (!pr.empty() && pr.top() <= k)
         {
@@ -35,7 +35,7 @@ public:
     }
 };
 
-int main()
+long long main()
 {
     solution a;
     cout << a.res() << endl;

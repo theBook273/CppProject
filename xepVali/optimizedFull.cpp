@@ -8,12 +8,12 @@ map<ll, ll> mp;
 
 signed main() {
     cin >> n >> w;
-    for (int i = 1; i <= n; i++) {
+    for (long long i = 1; i <= n; i++) {
         cin >> a[i] >> c[i];
     }
 
-    for (int j = 1; j <= w; j++) {
-        for (int i = 1; i <= n; i++) {
+    for (long long j = 1; j <= w; j++) {
+        for (long long i = 1; i <= n; i++) {
             dp[i][j] = dp[i - 1][j];
             if (j >= a[i]) {
                 dp[i][j] = max(dp[i][j], max(dp[i - 1][j - a[i]] + c[i],
@@ -21,8 +21,8 @@ signed main() {
             }
         }
     }
-    int dem = n;
-    for (int j = w; j >= 0; j--) {
+    long long dem = n;
+    for (long long j = w; j >= 0; j--) {
         while (dem >= 0) {
             if (dp[dem - 1][j] != dp[dem][j]) {
                 mp[dem]++;

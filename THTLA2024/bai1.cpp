@@ -5,16 +5,16 @@ using namespace std;
 signed main() {
     freopen("MAX.INP", "r", stdin);
     freopen("MAX.OUT", "w", stdout);
-    int n;
+    long long n;
     cin >> n;
-    int a[n], b[n];
-    for (int &i : a) cin >> i;
-    for (int &i : b) cin >> i;
+    long long a[n], b[n];
+    for (long long &i : a) cin >> i;
+    for (long long &i : b) cin >> i;
 
-    int res = 0;
+    long long res = 0;
 
-    for (int i = 0; i < n; ++i) {
-        for (int j = n - 1; j >= i; --j) {
+    for (long long i = 0; i < n; ++i) {
+        for (long long j = n - 1; j >= i; --j) {
             if (j >= i && b[j] >= a[i]) {
                 res = max(res, j - i);
             }

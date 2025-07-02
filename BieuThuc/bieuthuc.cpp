@@ -6,7 +6,7 @@ long long a[1000000], b[1000000], maxL = -1e9, pos1 = -1, pos2 = -1, tong[2] = {
 
 void changetest(long long a[])
 {
-    for(int i = 0; i < n; i++)
+    for(long long i = 0; i < n; i++)
     {
         if((i + 1) % 2 != 0)
         {
@@ -17,7 +17,7 @@ void changetest(long long a[])
 
 void change(long long a[])
 {
-    for(int i = 0; i < n; i++)
+    for(long long i = 0; i < n; i++)
     {
         if((i + 1) % 2 == 0)
         {
@@ -26,11 +26,11 @@ void change(long long a[])
     }
 }
 
-int main()
+long long main()
 {
     cin >> n;
 
-    for(int i = 0; i < n; i++)
+    for(long long i = 0; i < n; i++)
     {
         cin >> a[i];
         b[i] = a[i];
@@ -38,12 +38,12 @@ int main()
 
     changetest(a);
 
-    for(int i = 0; i < n; i ++)
+    for(long long i = 0; i < n; i ++)
     {
         tong[0] += a[i];
     }
 
-    for(int i = 0; i < n; i+=2)
+    for(long long i = 0; i < n; i+=2)
     {
         if(a[i] > maxC)
         {
@@ -52,7 +52,7 @@ int main()
         }
     }
 
-    for(int i = 1; i < n; i+=2)
+    for(long long i = 1; i < n; i+=2)
     {
         if(a[i] > maxL)
         {
@@ -65,12 +65,12 @@ int main()
 
     change(b);
 
-    for(int i = 0; i < n; i++)
+    for(long long i = 0; i < n; i++)
     {
         cout << b[i] << " ";
     }
 
-    for(int i = 0; i < n; i++)
+    for(long long i = 0; i < n; i++)
     {
         tong[1] += b[i];
     }

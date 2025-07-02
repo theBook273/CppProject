@@ -4,7 +4,7 @@ using namespace std;
 using ll = long long;
 
 signed main() {
-    int n, k;
+    long long n, k;
     string s, temp;
     cin >> n >> s >> k;
     temp = s;

@@ -2,5 +2,5 @@
 
 using namespace std;
 
-int n, m;
-int main() { cin >> n >> m; }
+long long n, m;
+long long main() { cin >> n >> m; }

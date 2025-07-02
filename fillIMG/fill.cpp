@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
-    vector<vector<int>> img = {{1, 1, 1}, {1, 1, 0}, {1, 0, 1}};
+    vector<vector<long long>> img = {{1, 1, 1}, {1, 1, 0}, {1, 0, 1}};
 }

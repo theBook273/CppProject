@@ -34,7 +34,7 @@ void init() {
     tracker.clear();
 }
 
-int main() {
+long long main() {
     fast_io;
     cin >> ck;
     while (ck != -1) {

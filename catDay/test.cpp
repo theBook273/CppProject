@@ -2,7 +2,7 @@
 
 using namespace  std;
 
-int main() {
+long long main() {
 	double a , b;
 
 	cout << "Nhap nam sinh: ";

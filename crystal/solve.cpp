@@ -2,8 +2,8 @@
 
 using namespace std;
 
-int a[3] = {0, 0, 0};
-int x;
+long long a[3] = {0, 0, 0};
+long long x;
 
 bool check() {
     if (a[0] < x) return 0;
@@ -12,9 +12,9 @@ bool check() {
     return 1;
 }
 
-int minx(int b) {
-    int res = 1e9;
-    for (int i = 0; i < 3; i++) {
+long long minx(long long b) {
+    long long res = 1e9;
+    for (long long i = 0; i < 3; i++) {
         if (i == b) continue;
         res = min(res, a[i]);
     }
@@ -22,17 +22,17 @@ int minx(int b) {
 }
 
 signed main() {
-    int t;
+    long long t;
     cin >> t;
     while (t--) {
         a[0] = a[1] = a[2] = 0;
         cin >> x;
-        int dem = 0;
+        long long dem = 0;
         while (!check()) {
-            for (int i = 0; i < 3; i++) {
+            for (long long i = 0; i < 3; i++) {
                 a[i] = 2 * minx(i) + 1;
                 if (a[i] > x) a[i] = x;
-                // for (int i = 0; i < 3; ++i) cout << a[i] << " ";
+                // for (long long i = 0; i < 3; ++i) cout << a[i] << " ";
                 // cout << "\n";
                 dem++;
                 if (check()) break;

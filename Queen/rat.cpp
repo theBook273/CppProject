@@ -2,21 +2,21 @@
 
 using namespace std;
 
-pair<int, int> moveSet[] = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
+pair<long long, long long> moveSet[] = {{1, 0}, {0, 1}, {-1, 0}, {0, -1}};
 string moveChar[] = {"D", "R", "U", "L"};
-int n, a[1000][1000];
+long long n, a[1000][1000];
 bool checked[1000][1000];
 string temp;
 set<string> se;
 
-void moving(int x, int y) {
+void moving(long long x, long long y) {
     if (x == n - 1 && y == n - 1) {
         se.insert(temp);
         return;
     }
 
-    for (int i = 0; i < 4; i++) {
-        int tempx, tempy;
+    for (long long i = 0; i < 4; i++) {
+        long long tempx, tempy;
         tempx = x + moveSet[i].first;
         tempy = y + moveSet[i].second;
 
@@ -32,11 +32,11 @@ void moving(int x, int y) {
     }
 }
 
-int main() {
+long long main() {
     cin >> n;
 
-    for (int i = 0; i < n; i++) {
-        for (int j = 0; j < n; j++) {
+    for (long long i = 0; i < n; i++) {
+        for (long long j = 0; j < n; j++) {
             cin >> a[i][j];
             checked[i][j] = 0;
         }

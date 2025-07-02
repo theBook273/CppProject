@@ -3,7 +3,7 @@ typedef long long ll;
 
 using namespace std;
 
-int main()
+long long main()
 {
     map<long long, long long> a;
     set<long long> se;
@@ -40,7 +40,7 @@ int main()
         for (auto i : mp)
         {
             tong *= (i.second + 1);
-            tong %= int(1e9 + 7);
+            tong %= long long(1e9 + 7);
         }
 
         cout << tong << "\n";

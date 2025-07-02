@@ -2,15 +2,15 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     vector<string> tokens;
 
-    int n;
+    long long n;
 
     cin >> n;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         string temp;
 
@@ -19,7 +19,7 @@ int main()
         tokens.push_back(temp);
     }
 
-    stack<int> st;
+    stack<long long> st;
 
     for (auto i : tokens)
     {
@@ -32,40 +32,40 @@ int main()
 
             if (i == "*")
             {
-                int a = st.top();
+                long long a = st.top();
                 st.pop();
 
-                int b = st.top();
+                long long b = st.top();
                 st.pop();
 
                 st.push(a * b);
             }
             if (i == "/")
             {
-                int a = st.top();
+                long long a = st.top();
                 st.pop();
 
-                int b = st.top();
+                long long b = st.top();
                 st.pop();
 
                 st.push(b / a);
             }
             if (i == "+")
             {
-                int a = st.top();
+                long long a = st.top();
                 st.pop();
 
-                int b = st.top();
+                long long b = st.top();
                 st.pop();
 
                 st.push(a + b);
             }
             if (i == "-")
             {
-                int a = st.top();
+                long long a = st.top();
                 st.pop();
 
-                int b = st.top();
+                long long b = st.top();
                 st.pop();
 
                 st.push(b - a);
@@ -73,5 +73,5 @@ int main()
         }
     }
 
-    return (int)st.top();
+    return (long long)st.top();
 }

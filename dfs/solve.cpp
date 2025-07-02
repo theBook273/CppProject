@@ -2,24 +2,24 @@
 
 using namespace std;
 
-vector<int> v[1000000];
+vector<long long> v[1000000];
 
 bool checked[1000000], able = 0;
-int n, m, s, t, trace[1000000];
-stack<int> res;
+long long n, m, s, t, trace[1000000];
+stack<long long> res;
 
-void bfs(int x) {
+void bfs(long long x) {
     checked[x] = 1;
     trace[x] = x;
 
-    queue<int> q;
+    queue<long long> q;
     q.push(x);
 
     while (!q.empty()) {
-        int temp = q.front();
+        long long temp = q.front();
 
         q.pop();
-        for (int i : v[temp]) {
+        for (long long i : v[temp]) {
             if (!checked[i]) {
                 if (i == t) {
                     trace[i] = temp;
@@ -34,7 +34,7 @@ void bfs(int x) {
     }
 }
 
-void reveal(int x) {
+void reveal(long long x) {
     if (trace[x] != x) {
         res.push(x);
         reveal(trace[x]);
@@ -42,11 +42,11 @@ void reveal(int x) {
         res.push(x);
 }
 
-int main() {
+long long main() {
     cin >> n >> m >> s >> t;
 
-    for (int i = 0; i < m; i++) {
-        int a, b;
+    for (long long i = 0; i < m; i++) {
+        long long a, b;
 
         cin >> a >> b;
 
@@ -57,7 +57,7 @@ int main() {
         v[b].push_back(a);
     }
 
-    for (int i = 1; i <= n; i++) {
+    for (long long i = 1; i <= n; i++) {
         sort(v[i].begin(), v[i].end());
     }
 

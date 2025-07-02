@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-int n, m, res = 0;
-vector<pair<int, int>> v;
+long long n, m, res = 0;
+vector<pair<long long, long long>> v;
 
 bool check[100];
 
-// void solve(int tong, int a[], int pos) {
+// void solve(long long tong, long long a[], long long pos) {
 //     if (tong == m) {
 //         res++;
 
@@ -17,13 +17,13 @@ bool check[100];
 //         return;
 //     }
 
-//     int temp = 0;
+//     long long temp = 0;
 
 //     if (!v.empty()) {
 //         temp = v.back().second + 1;
 //     }
 
-//     for (int i = temp; i < n; i++) {
+//     for (long long i = temp; i < n; i++) {
 //         if (tong + a[i] <= m) {
 //             tong += a[i];
 //             v.push_back({a[i], i});
@@ -37,15 +37,15 @@ bool check[100];
 
 void binarySearch() {}
 
-int main() {
+long long main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
 
     cin >> n >> m;
 
-    for (int i = 0; i < n; i++) {
-        int temp;
+    for (long long i = 0; i < n; i++) {
+        long long temp;
         cin >> temp;
         v.push_back({temp, i});
     }

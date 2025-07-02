@@ -2,25 +2,25 @@
 
 using namespace std;
 
-int a[1000000];
+long long a[1000000];
 
-int tong = 0;
+long long tong = 0;
 
-int dp(int l, int r, int k) {
-    int forPiu = 0, toCut, side = 0;
+long long dp(long long l, long long r, long long k) {
+    long long forPiu = 0, toCut, side = 0;
 
     while (k--) {
-        int tong1, tong2;
+        long long tong1, tong2;
 
         tong1 = tong2 = 0;
 
-        for (int i = k - 1; i >= l; i--) {
+        for (long long i = k - 1; i >= l; i--) {
             cout << a[i] << " ";
             tong1 += a[i];
         }
         cout << endl;
 
-        for (int i = k; i <= r; i++) {
+        for (long long i = k; i <= r; i++) {
             cout << a[i] << " ";
             tong2 += a[i];
         }
@@ -47,12 +47,12 @@ int dp(int l, int r, int k) {
         return dp(toCut, r, r);
 }
 
-int main() {
-    int n;
+long long main() {
+    long long n;
 
     cin >> n;
 
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         cin >> a[i];
     }
 

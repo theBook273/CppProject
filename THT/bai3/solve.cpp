@@ -20,7 +20,7 @@ signed main() {
 
     res[0] = 0;
 
-    for (int i = 1; i <= 200000; i++) {
+    for (long long i = 1; i <= 200000; i++) {
         res[i] = tong(to_string(i)) + res[i - 1];
     }
 

@@ -1,33 +1,33 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
-bool comp(pair<int, int> a, pair<int, int> b) { return a.second > b.second; }
+bool comp(pair<long long, long long> a, pair<long long, long long> b) { return a.second > b.second; }
 
 signed main() {
     cin.tie(NULL)->sync_with_stdio(false);
 
-    int t;
+    long long t;
     cin >> t;
 
     while (t--) {
-        int n, k;
+        long long n, k;
 
         cin >> n >> k;
 
         n--;
 
-        map<int, int> mp;
+        map<long long, long long> mp;
 
-        for (int i = 0; i < k; i++) {
-            int a, b;
+        for (long long i = 0; i < k; i++) {
+            long long a, b;
             cin >> a >> b;
 
             mp[a] += b;
         }
 
-        vector<pair<int, int>> p;
+        vector<pair<long long, long long>> p;
 
         for (auto i : mp) {
             p.push_back({i.first, i.second});
@@ -35,9 +35,9 @@ signed main() {
 
         sort(p.begin(), p.end(), comp);
 
-        int tong = 0;
+        long long tong = 0;
 
-        for (int i = 0; i < p.size(); i++) {
+        for (long long i = 0; i < p.size(); i++) {
             if (i > n) break;
 
             tong += p[i].second;

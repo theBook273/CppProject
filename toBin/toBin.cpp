@@ -5,10 +5,10 @@ using namespace std;
 string textToBinary(string text)
 {
     string binary = "";
-    for (int i = 0; i < text.size(); i++)
+    for (long long i = 0; i < text.size(); i++)
     {
         string a(8, '0');
-        for (int j = 7; j >= 0; j--)
+        for (long long j = 7; j >= 0; j--)
         {
             if (text[i] % 2 == 0)
             {
@@ -28,7 +28,7 @@ string textToBinary(string text)
     return binary;
 }
 
-int main()
+long long main()
 {
     string text;
     cin >> text;

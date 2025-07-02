@@ -2,14 +2,14 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
-    int t;
+    long long t;
 
     cin >> t;
 
     while (t--)
     {
-        int n, k;
+        long long n, k;
     }
 }

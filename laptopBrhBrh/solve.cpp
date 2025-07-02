@@ -4,7 +4,7 @@ using namespace std;
 
 pair<string, long long> mp;
 
-int main() {
+long long main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
@@ -18,7 +18,7 @@ int main() {
 
         cin >> temp;
 
-        for (int j = 0; j < temp.size(); j++) {
+        for (long long j = 0; j < temp.size(); j++) {
             tong += (temp[j] - '0');
         }
 

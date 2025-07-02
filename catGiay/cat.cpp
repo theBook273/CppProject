@@ -5,8 +5,8 @@ using namespace std;
 class solution
 {
 private:
-    pair<int, int> sizeOfRectangle;
-    int ans = 0;
+    pair<long long, long long> sizeOfRectangle;
+    long long ans = 0;
 
 public:
     solution()
@@ -14,7 +14,7 @@ public:
         freopen("SHAPE.INP", "r", stdin);
         freopen("SHAPE.OUT", "w", stdout);
 
-        int length, width;
+        long long length, width;
 
         cin >> length >> width;
 
@@ -29,22 +29,22 @@ public:
         }
     }
 
-    int solve()
+    long long solve()
     {
         while (sizeOfRectangle.first % sizeOfRectangle.second != 0)
         {
-            ans += int(sizeOfRectangle.first / sizeOfRectangle.second);
+            ans += long long(sizeOfRectangle.first / sizeOfRectangle.second);
 
-            sizeOfRectangle.first -= (sizeOfRectangle.second * int(sizeOfRectangle.first / sizeOfRectangle.second));
+            sizeOfRectangle.first -= (sizeOfRectangle.second * long long(sizeOfRectangle.first / sizeOfRectangle.second));
 
             checkToSwapLenghtAndWidth();
         }
 
-        return ans + int(sizeOfRectangle.first / sizeOfRectangle.second);
+        return ans + long long(sizeOfRectangle.first / sizeOfRectangle.second);
     }
 };
 
-int main()
+long long main()
 {
     solution a;
     cout << a.solve() << endl;

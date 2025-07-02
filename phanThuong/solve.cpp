@@ -2,11 +2,11 @@
 
 using namespace std;
 
-int gift[100000];
+long long gift[100000];
 
-int nums, valueG[1000000];
+long long nums, valueG[1000000];
 
-int solve(int n)
+long long solve(long long n)
 {
     if (n < 0)
         return 0;
@@ -22,7 +22,7 @@ int solve(int n)
     return valueG[n];
 }
 
-int32_t main()
+long long32_t main()
 {
 
     cin >> nums;

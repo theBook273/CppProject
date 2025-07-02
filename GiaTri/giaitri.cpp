@@ -3,10 +3,10 @@
 using namespace std;
 
 string s;
-vector<int> v;
+vector<long long> v;
 long long k;
 
-int main()
+long long main()
 {
     cin >> s >> k;
 
@@ -18,7 +18,7 @@ int main()
         }
     }
 
-    for(int i = 1; i <= k; i++)
+    for(long long i = 1; i <= k; i++)
     {
         cout << *max_element(v.begin(),v.end());
     }

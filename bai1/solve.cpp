@@ -1,17 +1,17 @@
 #include <bits/stdc++.h>
-#define int unsigned long long
+#define long long unsigned long long
 
 using namespace std;
 
-int tong = 0;
-int n, res = 1e10 + 27;
-vector<int> temp;
+long long tong = 0;
+long long n, res = 1e10 + 27;
+vector<long long> temp;
 bool flag = 0;
 
 void build() {
     string s;
     for (auto a : temp) {
-        for (int i = 0; i < a; ++i) {
+        for (long long i = 0; i < a; ++i) {
             s += to_string(a);
         }
     }
@@ -30,12 +30,12 @@ void build() {
     }
 }
 
-void gen(int x, int y) {
+void gen(long long x, long long y) {
     if (tong == x) {
         build();
         return;
     }
-    for (int i = y; i <= x; ++i) {
+    for (long long i = y; i <= x; ++i) {
         if (tong + i <= x) {
             tong += i;
             temp.push_back(i);

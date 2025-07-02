@@ -2,9 +2,9 @@
 
 using namespace std;
 
-const int k = 1e9 + 7;
+const long long k = 1e9 + 7;
 
-int main()
+long long main()
 {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
@@ -21,7 +21,7 @@ int main()
     a[0] = x;
     a[1] = y;
 
-    for (int i = 2; i < n; i++)
+    for (long long i = 2; i < n; i++)
     {
         if ((i + 1) % 2 == 0)
         {

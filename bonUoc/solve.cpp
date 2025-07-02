@@ -7,7 +7,7 @@ long long tong = 0;
 vector<long long> primeNum;
 long long r, l;
 
-int main()
+long long main()
 {
 
     cin >> l >> r;

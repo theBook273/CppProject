@@ -3,6 +3,6 @@
 using namespace std;
 
 signed main() {
-    int n;
+    long long n;
     cin >> n;
 }

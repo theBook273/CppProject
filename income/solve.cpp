@@ -5,7 +5,7 @@ using namespace std;
 
 ll st[100000], a[100000];
 
-void initTree(ll l, int r, int id) {
+void initTree(ll l, long long r, long long id) {
     if (l == r) {
         st[id] = a[l];
         return;
@@ -18,7 +18,7 @@ void initTree(ll l, int r, int id) {
     st[id] = max(st[id * 2], st[id * 2 + 1]);
 }
 
-void replaceTree(ll l, int r, int id, int x, int i) {
+void replaceTree(ll l, long long r, long long id, long long x, long long i) {
     if (l < x || r > x) {
         return;
     }
@@ -33,7 +33,7 @@ void replaceTree(ll l, int r, int id, int x, int i) {
     st[id] = max(st[id * 2], st[id * 2 + 1]);
 }
 
-ll maxNode(int l, int r, int u, int v, int id) {
+ll maxNode(long long l, long long r, long long u, long long v, long long id) {
     if (l > v || r < u) {
         return -1e9;
     }

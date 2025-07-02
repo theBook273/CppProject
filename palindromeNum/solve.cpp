@@ -3,9 +3,9 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
-    int n = 121;
+    long long n = 121;
 
     Solution a;
 

@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
-int n, a[900009], m, res;
+long long n, a[900009], m, res;
 
-void bin(int x) {
-    int l = 1, r = n;
+void bin(long long x) {
+    long long l = 1, r = n;
     while (l <= r) {
-        int mid = (l + r) / 2;
+        long long mid = (l + r) / 2;
         if (a[mid] <= x) {
             res = mid;
             l = mid + 1;
@@ -22,7 +22,7 @@ main() {
 
     cin >> n;
 
-    for (int i = 1; i <= n; i++) {
+    for (long long i = 1; i <= n; i++) {
         cin >> a[i];
     }
 
@@ -31,7 +31,7 @@ main() {
     sort(a, a + n + 1);
 
     while (m--) {
-        int x;
+        long long x;
         cin >> x;
         bin(x);
         cout << res << "\n";

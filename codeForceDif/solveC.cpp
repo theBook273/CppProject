@@ -2,18 +2,18 @@
 
 using namespace std;
 
-int main() {
-    int q;
+long long main() {
+    long long q;
     cin >> q;
 
     while (q--) {
-        int n;
+        long long n;
         cin >> n;
 
-        vector<int> one, two, both;
+        vector<long long> one, two, both;
 
-        for (int i = 0; i < n; i++) {
-            int time;
+        for (long long i = 0; i < n; i++) {
+            long long time;
 
             string skill;
 
@@ -28,7 +28,7 @@ int main() {
             }
         }
 
-        int tong = 1e9;
+        long long tong = 1e9;
 
         if (!one.empty() && !two.empty()) {
             tong = *min_element(two.begin(), two.end()) +

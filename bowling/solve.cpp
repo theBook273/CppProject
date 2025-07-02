@@ -2,17 +2,17 @@
 
 using namespace std;
 
-int main() {
-    int n;
+long long main() {
+    long long n;
 
     cin >> n;
 
-    for (int i = 0; i < n; i++) {
-        int a;
+    for (long long i = 0; i < n; i++) {
+        long long a;
 
         cin >> a;
 
-        int dem = 1;
+        long long dem = 1;
 
         while (a - dem >= 0) {
             a -= dem;

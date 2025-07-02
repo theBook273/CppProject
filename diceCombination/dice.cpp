@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     long long n, tong = 0;
     cin >> n;
@@ -15,9 +15,9 @@ int main()
     }
     else
     {
-        for (int i = 7; i <= n; i++)
+        for (long long i = 7; i <= n; i++)
         {
-            for (int j = 1; j <= 5; j++)
+            for (long long j = 1; j <= 5; j++)
             {
                 tong += a[j];
                 a[j] = a[j + 1];
@@ -26,7 +26,7 @@ int main()
             tong += a[6];
             a[5] = a[6];
 
-            tong %= int(1e9 + 7);
+            tong %= long long(1e9 + 7);
             a[6] = tong;
 
             tong = 0;

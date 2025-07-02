@@ -3,17 +3,17 @@
 using namespace std;
 
 bool a[2000000];
-int n;
+long long n;
 
-int main()
+long long main()
 {
     memset(a,1,2000000);
 
-    for(int i = 2;i <= 1000012; i++)
+    for(long long i = 2;i <= 1000012; i++)
     {
         if(a[i] == 1)
         {
-            for(int j = 2; j * i < 2000000; j++)
+            for(long long j = 2; j * i < 2000000; j++)
             {
                 a[i*j] = 0;
             }
@@ -22,7 +22,7 @@ int main()
 
     cin >> n;
 
-    for(int i = n+1; i <= 2000000; i++)
+    for(long long i = n+1; i <= 2000000; i++)
     {
         if(a[i])
         {

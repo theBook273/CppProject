@@ -1,16 +1,16 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
-int tree[100009];
+long long tree[100009];
 
 signed main() {
     cin.tie(NULL)->sync_with_stdio(false);
-    int n;
+    long long n;
     cin >> n;
 
-    for (int i = n; i <= n * 2 - 1; i++) {
+    for (long long i = n; i <= n * 2 - 1; i++) {
         tree[i] = 1;
     }
 }

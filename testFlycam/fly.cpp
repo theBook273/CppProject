@@ -2,11 +2,11 @@
 
 using namespace std;
 
-int main() {
+long long main() {
   ios_base::sync_with_stdio(false);
   cin.tie(NULL);
 
-  int t;
+  long long t;
   cin >> t;
 
   while (t--) {

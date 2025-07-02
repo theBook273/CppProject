@@ -3,15 +3,15 @@ using namespace std;
 
 typedef long long ll;
 
-int main() {
+long long main() {
     ios_base::sync_with_stdio(false);
     cin.tie(0);
 
-    int N;
+    long long N;
     cin >> N;
     vector<ll> a(N);
     ll total_sum = 0;
-    for (int i = 0; i < N; ++i) {
+    for (long long i = 0; i < N; ++i) {
         cin >> a[i];
         total_sum += a[i];
     }
@@ -20,7 +20,7 @@ int main() {
     ll current_min = a[0];
     ll min_single = current_min;
     ll sum = current_min;
-    for (int i = 1; i < N; ++i) {
+    for (long long i = 1; i < N; ++i) {
         sum = min(a[i], sum + a[i]);
         current_min = min(current_min, sum);
         min_single = min(min_single, current_min);
@@ -31,7 +31,7 @@ int main() {
     current_min = a[0];
     left_min[0] = current_min;
     sum = current_min;
-    for (int i = 1; i < N; ++i) {
+    for (long long i = 1; i < N; ++i) {
         sum = min(a[i], sum + a[i]);
         left_min[i] = min(left_min[i - 1], sum);
     }
@@ -41,14 +41,14 @@ int main() {
     current_min = a[N - 1];
     right_min[N - 1] = current_min;
     sum = current_min;
-    for (int i = N - 2; i >= 0; --i) {
+    for (long long i = N - 2; i >= 0; --i) {
         sum = min(a[i], sum + a[i]);
         right_min[i] = min(right_min[i + 1], sum);
     }
 
     // Tìm tổng nhỏ nhất của hai đoạn không giao nhau (sum_min_double)
     ll min_double = LLONG_MAX;
-    for (int i = 0; i < N - 1; ++i) {
+    for (long long i = 0; i < N - 1; ++i) {
         ll current = left_min[i] + right_min[i + 1];
         if (current < min_double) {
             min_double = current;

@@ -18,7 +18,7 @@ void makeU(long long x, long long y) {
     }
 }
 
-int main() {
+long long main() {
     long long n, q;
     cin >> n;
 

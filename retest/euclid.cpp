@@ -7,11 +7,11 @@ using namespace std;
 
 // Function to calculate the sum of pairwise distances for a single coordinate
 // (x or y)
-long long sum_of_distances(const vector<int>& coords, int n) {
+long long sum_of_distances(const vector<long long>& coords, long long n) {
     long long total = 0;
     long long prefix_sum = 0;
 
-    for (int i = 0; i < n; ++i) {
+    for (long long i = 0; i < n; ++i) {
         total += 1LL * coords[i] * i - prefix_sum;
         prefix_sum += coords[i];
     }
@@ -19,18 +19,18 @@ long long sum_of_distances(const vector<int>& coords, int n) {
     return total;
 }
 
-int main() {
-    int n;
+long long main() {
+    long long n;
     cin >> n;
 
-    vector<pair<int, int>> points(n);
-    vector<int> x_coords(n), y_coords(n);
+    vector<pair<long long, long long>> polong longs(n);
+    vector<long long> x_coords(n), y_coords(n);
 
-    // Reading points and separating x and y coordinates
-    for (int i = 0; i < n; ++i) {
-        cin >> points[i].first >> points[i].second;
-        x_coords[i] = points[i].first;
-        y_coords[i] = points[i].second;
+    // Reading polong longs and separating x and y coordinates
+    for (long long i = 0; i < n; ++i) {
+        cin >> polong longs[i].first >> polong longs[i].second;
+        x_coords[i] = polong longs[i].first;
+        y_coords[i] = polong longs[i].second;
     }
 
     // Sort x and y coordinates

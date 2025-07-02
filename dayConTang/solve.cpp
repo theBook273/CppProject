@@ -7,7 +7,7 @@ class solve {
     long long longestUp(vector<long long> a) {
         long long tang[a.size()];
 
-        for (int i = 0; i < a.size(); i++) {
+        for (long long i = 0; i < a.size(); i++) {
             tang[i] = 1;
         }
 
@@ -23,7 +23,7 @@ class solve {
     }
 };
 
-int main() {
+long long main() {
     vector<long long> a;
     long long n;
 

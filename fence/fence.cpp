@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
@@ -10,7 +10,7 @@ int main()
     freopen("FENCES.INP", "r", stdin);
     freopen("FENCES.OUT", "w", stdout);
 
-    int n, m;
+    long long n, m;
 
     cin >> m >> n;
 

@@ -5,10 +5,10 @@ using namespace std;
 class circularLinkedList {
 private:
   struct node {
-    int data;
+    long long data;
     node *next;
 
-    node(int val) {
+    node(long long val) {
       data = val;
       next = nullptr;
     }
@@ -17,7 +17,7 @@ private:
 public:
   node *head = nullptr;
 
-  void push_back(int val) {
+  void push_back(long long val) {
     node *temp = new node(val);
     if (head == nullptr) {
       head = temp;
@@ -46,10 +46,10 @@ public:
     }
   }
 
-  void showFrom(int x) {
+  void showFrom(long long x) {
     node *p1, *p2;
     p1 = p2 = head;
-    for (int i = 0; i < x; i++) {
+    for (long long i = 0; i < x; i++) {
       p2 = p2->next;
       p1 = p1->next;
     }
@@ -68,18 +68,18 @@ public:
 signed main() {
   circularLinkedList a;
 
-  int n;
+  long long n;
   cin >> n;
 
-  for (int i = 0; i < n; i++) {
-    int temp = 0;
+  for (long long i = 0; i < n; i++) {
+    long long temp = 0;
     cin >> temp;
     a.push_back(temp);
   }
 
   a.makeCircle();
 
-  int x;
+  long long x;
   cin >> x;
 
   a.showFrom(x);

@@ -22,7 +22,7 @@ unsigned long long tong(string s) {
     return tong;
 }
 
-int main() {
+long long main() {
     ios_base::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);

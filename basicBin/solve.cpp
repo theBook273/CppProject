@@ -1,23 +1,23 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
-int n, q, a[100008];
+long long n, q, a[100008];
 
 signed main() {
     cin.tie(NULL)->sync_with_stdio(false);
     cin >> n >> q;
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         cin >> a[i];
     }
     while (q--) {
-        int b;
+        long long b;
         cin >> b;
 
-        int l = 0, r = n - 1, check = -1;
+        long long l = 0, r = n - 1, check = -1;
 
         while (l <= r) {
-            int mid = (l + r) / 2;
+            long long mid = (l + r) / 2;
             if (a[mid] >= b) {
                 if (a[mid] == b) {
                     check = mid;

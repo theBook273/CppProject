@@ -4,7 +4,7 @@ using namespace std;
 
 long long n, a;
 
-int main()
+long long main()
 {
     string s;
 

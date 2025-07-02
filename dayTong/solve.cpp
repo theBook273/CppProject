@@ -1,18 +1,18 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-int n, k, a[100000], tong = 0;
-vector<int> s;
-vector<vector<int>> res;
+long long n, k, a[100000], tong = 0;
+vector<long long> s;
+vector<vector<long long>> res;
 
-void duyet(int x) {
+void duyet(long long x) {
     if (tong == k) {
         sort(s.begin(), s.end());
         res.push_back(s);
         return;
     }
 
-    for (int i = x + 1; i < n; i++) {
+    for (long long i = x + 1; i < n; i++) {
         if (tong + a[i] <= k) {
             tong += a[i];
             s.push_back(a[i]);
@@ -23,9 +23,9 @@ void duyet(int x) {
     }
 }
 
-int main() {
+long long main() {
     cin >> n >> k;
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         cin >> a[i];
     }
 
@@ -35,7 +35,7 @@ int main() {
 
     for (auto i : res) {
         cout << "[";
-        for (int j = 0; j < i.size(); j++) {
+        for (long long j = 0; j < i.size(); j++) {
             cout << i[j];
             if (j + 1 < i.size()) cout << " ";
         }

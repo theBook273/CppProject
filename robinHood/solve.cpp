@@ -65,7 +65,7 @@ signed main() {
 
     cin >> loop;
 
-    for (int dem = 1; dem <= loop; dem++) {
+    for (long long dem = 1; dem <= loop; dem++) {
         cout << "Case " << dem << ": " << endl;
         cin >> n >> q;
 

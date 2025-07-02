@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
-vector<int> a[100000];
-int n, m, id[100000], low[100000], cnt = 1, bridge = 0, point = 0;
+vector<long long> a[100000];
+long long n, m, id[100000], low[100000], cnt = 1, bridge = 0, polong long = 0;
 
-void dfs(int u, int p) {
+void dfs(long long u, long long p) {
     id[u] = low[u] = ++cnt;
-    int node = (p != 0);
+    long long node = (p != 0);
 
     for (auto v : a[u])
         if (v != p) {
@@ -24,20 +24,20 @@ void dfs(int u, int p) {
                 if (low[v] >= id[u]) node++;
             }
         }
-    if (node >= 2) point++;
+    if (node >= 2) polong long++;
 }
 signed main() {
     cin >> n >> m;
 
-    for (int i = 1; i <= m; i++) {
-        int v1, v2;
+    for (long long i = 1; i <= m; i++) {
+        long long v1, v2;
         cin >> v1 >> v2;
         a[v1].push_back(v2);
         a[v2].push_back(v1);
     }
 
-    for (int i = 1; i <= n; i++) {
+    for (long long i = 1; i <= n; i++) {
         if (!id[i]) dfs(i, 0);
     }
-    cout << point << " " << bridge;
+    cout << polong long << " " << bridge;
 }

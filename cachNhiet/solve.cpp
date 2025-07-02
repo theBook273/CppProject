@@ -16,7 +16,7 @@ signed main() {
 
     sort(a, a + n);
 
-    int l = 0, r = n - 1;
+    long long l = 0, r = n - 1;
 
     while (l <= r) {
         tong += a[r] - a[l];

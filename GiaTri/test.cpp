@@ -5,11 +5,11 @@ using namespace std;
 long long a,b,tong(0);
 vector<long long >v;
 
-bool check(int n)
+bool check(long long n)
 {
-    for(int i(2); pow(i,2) <= n; i++)
+    for(long long i(2); pow(i,2) <= n; i++)
     {
-        if(n % (int)pow(i,2) == 0)
+        if(n % (long long)pow(i,2) == 0)
         {
             return 1;
         }
@@ -17,15 +17,15 @@ bool check(int n)
     return 0;
 }
 
-int main()
+long long main()
 {
 
 
     cin >> a >> b;
 
-    for(int i(a); i <= b; i++)
+    for(long long i(a); i <= b; i++)
     {
-        for(int j(i+1); j <= b; j++)
+        for(long long j(i+1); j <= b; j++)
         {
             if(check(i * j))
             {

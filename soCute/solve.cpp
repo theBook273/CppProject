@@ -25,11 +25,11 @@ class solution {
     }
 };
 
-int main() {
+long long main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int n;
+    long long n;
     cin >> n;
 
     while (n--) {

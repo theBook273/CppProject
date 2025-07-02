@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     string t, s;
 
@@ -13,15 +13,15 @@ int main()
         return 0;
     }
 
-    int arr[26] = {0};
+    long long arr[26] = {0};
 
-    for (int i = 0; i < s.size(); i++)
+    for (long long i = 0; i < s.size(); i++)
     {
         arr[s[i] - 'a']++;
         arr[t[i] - 'a']--;
     }
 
-    for (int i = 0; i <= 25; i++)
+    for (long long i = 0; i <= 25; i++)
     {
         if (arr[i] != 0)
         {

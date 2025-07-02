@@ -6,7 +6,7 @@ long long n, k, c;
 vector<long long> x;
 vector<long long> y;
 
-int main() {
+long long main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
@@ -15,8 +15,8 @@ int main() {
 
     cin >> n >> k >> c;
 
-    for (int i = 0; i < n; i++) {
-        int stt;
+    for (long long i = 0; i < n; i++) {
+        long long stt;
 
         cin >> stt;
 
@@ -43,7 +43,7 @@ int main() {
     x.push_back(3e9);
     y.push_back(3e9);
 
-    for (int i = 0; i < k; i++) {
+    for (long long i = 0; i < k; i++) {
         long long dx, dy, dx1, dy1;
 
         cin >> dx >> dy >> dx1 >> dy1;

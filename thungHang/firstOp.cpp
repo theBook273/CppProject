@@ -8,15 +8,15 @@ void solve()
 
     cin >> s;
 
-    int n = s.size(), w, res = 0;
+    long long n = s.size(), w, res = 0;
 
     cin >> w;
 
     s = 'X' + s;
 
-    deque<int> vt;
+    deque<long long> vt;
 
-    for (int l = 1, r = 1, cnt = 0; r <= n; r++)
+    for (long long l = 1, r = 1, cnt = 0; r <= n; r++)
     {
         if (s[r] == '.')
         {
@@ -28,11 +28,11 @@ void solve()
         }
         if (cnt == w)
         {
-            int maxx = 0;
+            long long maxx = 0;
 
-            for (int i = 0; i < (int)vt.size(); i++)
+            for (long long i = 0; i < (long long)vt.size(); i++)
             {
-                maxx += min(vt[i] - i - l, r - (int)vt.size() + i + 1 - vt[i]);
+                maxx += min(vt[i] - i - l, r - (long long)vt.size() + i + 1 - vt[i]);
             }
 
             res = min(res, maxx);
@@ -54,7 +54,7 @@ void solve()
     cout << res << endl;
 }
 
-int main()
+long long main()
 {
     solve();
 }

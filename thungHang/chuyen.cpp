@@ -9,7 +9,7 @@ ll maxSizeAvailabeAndUpdateBoundaries(string s)
 {
     vector<char> v(256, 0);
     ll left = 0, maxLenght = INT_MIN;
-    for (int right = 0; right < s.size(); right++)
+    for (long long right = 0; right < s.size(); right++)
     {
         v[s[right]]++;
 
@@ -37,7 +37,7 @@ ll maxSizeAvailabeAndUpdateBoundaries(string s)
 vector<ll> markSpacePos(string s)
 {
     vector<ll> space;
-    for (int i = 0; i < s.size(); i++)
+    for (long long i = 0; i < s.size(); i++)
     {
         if (s[i] == '.')
         {
@@ -59,7 +59,7 @@ ll step(string s, ll target)
 
     vector<ll> posOfSpace = markSpacePos(s);
 
-    for (int i = startOfSpace - 1; i >= 0; i--)
+    for (long long i = startOfSpace - 1; i >= 0; i--)
     {
         if (s[i] == '.')
         {
@@ -73,7 +73,7 @@ ll step(string s, ll target)
         }
     }
 
-    for (int i = endOfSpace + 1; i < s.size(); i++)
+    for (long long i = endOfSpace + 1; i < s.size(); i++)
     {
         if (s[i] == '.')
         {
@@ -90,7 +90,7 @@ ll step(string s, ll target)
     return res;
 }
 
-int main()
+long long main()
 {
     ll t;
 

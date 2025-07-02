@@ -2,17 +2,17 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
-    int n, k;
+    long long n, k;
 
-    deque<int> q;
+    deque<long long> q;
 
     cin >> n >> k;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
-        int temp;
+        long long temp;
 
         cin >> temp;
 
@@ -25,7 +25,7 @@ int main()
         q.push_back(0);
     }
 
-    for (int i : q)
+    for (long long i : q)
     {
         cout << i << " ";
     }

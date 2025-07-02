@@ -2,14 +2,14 @@
 
 using namespace std;
 
-int n, m;
+long long n, m;
 
 long long sum(long long a[], long long d) {
     long long tong = 0, check = 0;
 
     if (d == 1) return accumulate(a, a + n, 0);
 
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         if (check == d && n - i >= d) check = 0;
         tong += (max(a[i] - check, 0ll));
         // cout << check << " " << a[i] << " " << tong << " \n";
@@ -19,7 +19,7 @@ long long sum(long long a[], long long d) {
     return tong;
 }
 
-int main() {
+long long main() {
     cin >> n >> m;
 
     long long a[n];
@@ -28,7 +28,7 @@ int main() {
         cin >> i;
     }
 
-    sort(a, a + n, greater<int>());
+    sort(a, a + n, greater<long long>());
 
     if (m > accumulate(a, a + n, 0)) {
         cout << "IMPOSSIBLE";

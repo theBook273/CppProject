@@ -1,21 +1,21 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
-int n, q, a[1000000];
+long long n, q, a[1000000];
 
 signed main() {
     cin.tie(NULL)->sync_with_stdio(false);
     cin >> n >> q;
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         cin >> a[i];
     }
 
     while (q--) {
-        int b;
+        long long b;
         cin >> b;
 
-        int res = lower_bound(a, a + n, b) - a;
+        long long res = lower_bound(a, a + n, b) - a;
 
         if (res == n)
             cout << -1 << "\n";

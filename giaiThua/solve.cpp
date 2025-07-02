@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
-typedef unsigned long long int;
+typedef unsigned long long long long;
 
 using namespace std;
 
-int32_t main()
+long long32_t main()
 {
 }

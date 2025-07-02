@@ -16,7 +16,7 @@ public:
 
     string solve()
     {
-        for (int i = 0; i < s.size(); i++)
+        for (long long i = 0; i < s.size(); i++)
         {
             if (s[i] == '<')
             {
@@ -57,7 +57,7 @@ public:
     }
 };
 
-int main()
+long long main()
 {
     solution a;
     cout << a.solve() << endl;

@@ -2,11 +2,11 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     long long tong = 0;
 
-    for (int i = 0; i < 6; i++)
+    for (long long i = 0; i < 6; i++)
     {
         long long temp;
 

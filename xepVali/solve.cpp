@@ -2,15 +2,15 @@
 
 using namespace std;
 
-int n, w;
+long long n, w;
 
-map<int, int> tempChosenTimes, resChosen;
+map<long long, long long> tempChosenTimes, resChosen;
 
-pair<pair<int, double>, pair<int, int>> spcAndVal[10000];
-pair<int, int> maxSpcAndVal = {0, 0}, res = {0, 0};
+pair<pair<long long, double>, pair<long long, long long>> spcAndVal[10000];
+pair<long long, long long> maxSpcAndVal = {0, 0}, res = {0, 0};
 
-bool comp(pair<pair<int, double>, pair<int, int>> a,
-          pair<pair<int, double>, pair<int, int>> b) {
+bool comp(pair<pair<long long, double>, pair<long long, long long>> a,
+          pair<pair<long long, double>, pair<long long, long long>> b) {
     return a.first.second > b.first.second;
 }
 
@@ -23,7 +23,7 @@ void solve() {
         }
     }
 
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         if (maxSpcAndVal.first + spcAndVal[i].second.first <= w) {
             maxSpcAndVal.first += spcAndVal[i].second.first;
             maxSpcAndVal.second += spcAndVal[i].second.second;
@@ -39,11 +39,11 @@ void solve() {
     }
 }
 
-int main() {
+long long main() {
     cin.tie(0)->sync_with_stdio(false);
 
     cin >> n >> w;
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         spcAndVal[i].first.first = i;
         cin >> spcAndVal[i].second.first >> spcAndVal[i].second.second;
         spcAndVal[i].first.second =
@@ -52,7 +52,7 @@ int main() {
 
     sort(spcAndVal, spcAndVal + n, comp);
 
-    // for (int i = 0; i < n; i++) {
+    // for (long long i = 0; i < n; i++) {
     //     cout << spcAndVal[i].first << " " << spcAndVal[i].second << endl;
     // }
 

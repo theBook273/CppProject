@@ -3,10 +3,10 @@
 using namespace std;
 using ll = long long;
 
-vector<pair<int, int>> v[10000];
+vector<pair<long long, long long>> v[10000];
 ll dis[10000];
 ll n, m;
-map<int, int> mp;
+map<long long, long long> mp;
 
 signed main() {
     ios_base::sync_with_stdio(false);
@@ -17,7 +17,7 @@ signed main() {
 
     cin >> n >> m;
 
-    for (int i = 0; i < m; i++) {
+    for (long long i = 0; i < m; i++) {
         ll a, b, l;
         cin >> a >> b >> l;
 
@@ -28,9 +28,9 @@ signed main() {
         v[b].push_back({a, l});
     }
 
-    int x = 1;
+    long long x = 1;
     dis[1] = 0;
-    stack<int> q;
+    stack<long long> q;
     q.push(x);
 
     while (!q.empty()) {

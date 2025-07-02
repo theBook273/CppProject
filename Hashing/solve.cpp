@@ -3,17 +3,17 @@
 using namespace std;
 
 string s;
-int res = 0;
-int n;
+long long res = 0;
+long long n;
 
-void findMax(int curSize) {
-    unordered_map<string, int> dem;
+void findMax(long long curSize) {
+    unordered_map<string, long long> dem;
 
     // cout << curSize << endl;
     // cout << s << endl;
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         string temp;
-        for (int j = i; j < i + curSize && j < n; j++) {
+        for (long long j = i; j < i + curSize && j < n; j++) {
             temp += s[j];
         }
         dem[temp]++;
@@ -28,11 +28,11 @@ void findMax(int curSize) {
 }
 
 void binCheck() {
-    int l = 0, r = s.size();
-    int temp = res;
+    long long l = 0, r = s.size();
+    long long temp = res;
 
     while (l <= r) {
-        int m = (l + r) / 2;
+        long long m = (l + r) / 2;
         findMax(m);
         if (res != temp) {
             l = m + 1;
@@ -42,7 +42,7 @@ void binCheck() {
     }
 }
 
-int main() {
+long long main() {
     cin >> n;
 
     cin >> s;

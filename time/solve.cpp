@@ -8,11 +8,11 @@ signed main() {
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int h, m, a, b;
+    long long h, m, a, b;
 
     cin >> h >> m >> a >> b;
 
-    int gioDoi = h - a;
+    long long gioDoi = h - a;
     while (gioDoi > 23) {
         gioDoi -= 24;
     }

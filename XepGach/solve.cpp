@@ -3,20 +3,20 @@
 using namespace std;
 using ll = long long;
 
-int main() {
+long long main() {
     cin.tie(NULL)->sync_with_stdio(false);
-    int t;
+    long long t;
 
     cin >> t;
 
     while (t--) {
-        int n;
+        long long n;
 
         cin >> n;
 
         pair<ll, ll> a[n];
 
-        for (int i = 0; i < n; i++) {
+        for (long long i = 0; i < n; i++) {
             cin >> a[i].first >> a[i].second;
         }
 
@@ -26,8 +26,8 @@ int main() {
 
         res.push_back(0);
 
-        for (int i = 0; i < n; i++) {
-            int len =
+        for (long long i = 0; i < n; i++) {
+            long long len =
                 upper_bound(res.begin(), res.end(), a[i].second) - res.begin();
             if (len == res.size())
                 res.push_back(a[i].second);

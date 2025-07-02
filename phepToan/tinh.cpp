@@ -2,9 +2,9 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
-    int n;
+    long long n;
 
     cin >> n;
 

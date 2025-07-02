@@ -2,13 +2,13 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     string s;
 
     getline(cin, s);
 
-    int start = 0, last = s.size() - 1;
+    long long start = 0, last = s.size() - 1;
 
     while (start <= last)
     {

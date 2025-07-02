@@ -2,13 +2,13 @@
 
 using namespace std;
 
-int main() {
-    int t;
+long long main() {
+    long long t;
     cin >> t;
     while (t--) {
         string s;
         cin >> s;
-        map<char, int> dem;
+        map<char, long long> dem;
         for (auto i : s) {
             dem[i]++;
         }

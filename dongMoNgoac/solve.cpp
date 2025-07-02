@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     string s;
 
@@ -17,7 +17,7 @@ int main()
         return 0;
     }
 
-    for (int i = 0; i < s.size(); i++)
+    for (long long i = 0; i < s.size(); i++)
     {
         if (s[i] == '[' || s[i] == '{' || s[i] == '(')
         {

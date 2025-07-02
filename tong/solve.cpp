@@ -1,10 +1,10 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-int n, k, s, tong = 0, sizet = 0, res = 0;
-vector<int> str;
+long long n, k, s, tong = 0, sizet = 0, res = 0;
+vector<long long> str;
 
-void solve(int a) {
+void solve(long long a) {
     if (sizet == k && tong == s) {
         res++;
         // for (auto i : str) cout << i << " ";
@@ -12,7 +12,7 @@ void solve(int a) {
         return;
     }
 
-    for (int i = a + 1; i <= n; i++) {
+    for (long long i = a + 1; i <= n; i++) {
         if (tong + i <= s && sizet + 1 <= k) {
             tong += i;
             sizet++;
@@ -25,7 +25,7 @@ void solve(int a) {
     }
 }
 
-int main() {
+long long main() {
     cin >> n >> k >> s;
     solve(0);
 

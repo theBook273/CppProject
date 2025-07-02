@@ -1,23 +1,23 @@
 #include <bits/stdc++.h>
-#define REP(i, a, b) for (int i = a; i <= b; i++)
+#define REP(i, a, b) for (long long i = a; i <= b; i++)
 
 using namespace std;
 
 vector<long> road[500001];
 bool visited[500001];
-int h[500001];
+long long h[500001];
 long m, n, k, group = 1;
 
 void bfs(long u) {
     visited[u] = 1;
-    queue<int> q;
+    queue<long long> q;
     q.push(u);
 
     while (!q.empty()) {
-        int temp = q.front();
+        long long temp = q.front();
         q.pop();
 
-        for (int i : road[temp]) {
+        for (long long i : road[temp]) {
             if (!visited[i] && h[i] <= h[temp]) {
                 visited[i] = 1;
                 group++;
@@ -27,7 +27,7 @@ void bfs(long u) {
     }
 }
 
-int main() {
+long long main() {
     cin.tie(NULL)->sync_with_stdio(false);
     cin >> m >> n >> k;
     REP(i, 1, m) { cin >> h[i]; }

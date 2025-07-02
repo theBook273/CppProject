@@ -1,5 +1,5 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
@@ -12,16 +12,16 @@ signed main() {
         string s, t;
         cin >> s >> t;
 
-        int num[100000];
+        long long num[100000];
 
-        for (int i = 0; i < s.size(); i++) {
-            int m = min(s[i], t[i]), l = max(s[i], t[i]);
+        for (long long i = 0; i < s.size(); i++) {
+            long long m = min(s[i], t[i]), l = max(s[i], t[i]);
             num[i] = l - m;
         }
 
         string res;
 
-        for (int i = 0; i < s.size(); i++) {
+        for (long long i = 0; i < s.size(); i++) {
             char m = min(s[i], t[i]);
             if (num[i] < 13)
                 res.push_back(m);

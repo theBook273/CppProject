@@ -1,27 +1,27 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
-int n, m, a[1000];
+long long n, m, a[1000];
 
 signed main() {
     cin.tie(NULL)->sync_with_stdio(false);
 
-    int t;
+    long long t;
     cin >> t;
 
     while (t--) {
         cin >> n >> m;
 
-        for (int i = 0; i < n; i++) {
+        for (long long i = 0; i < n; i++) {
             cin >> a[i];
         }
 
-        sort(a, a + n, greater<int>());
+        sort(a, a + n, greater<long long>());
 
-        int res = 1e9;
+        long long res = 1e9;
 
-        for (int i = 0; i < n; i++) {
+        for (long long i = 0; i < n; i++) {
             m -= a[i];
             if (m >= 0) res = min(res, m);
         }

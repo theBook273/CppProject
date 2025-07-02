@@ -3,7 +3,7 @@
 using namespace std;
 long long x, res = 1e9, inbox = 1, putted = 0;
 
-int main()
+long long main()
 {
     cin >> x;
 

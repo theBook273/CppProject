@@ -2,17 +2,17 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     string s;
 
     cin >> s;
 
-    unordered_map<char, int> mp;
+    unordered_map<char, long long> mp;
 
-    int left = 0, maxLeght = 0;
+    long long left = 0, maxLeght = 0;
 
-    for (int right = 0; right < s.size(); right++)
+    for (long long right = 0; right < s.size(); right++)
     {
         mp[s[right]]++;
 

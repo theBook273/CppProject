@@ -1,7 +1,7 @@
 struct ListNode {
-    int val;
+    long long val;
     ListNode *next;
-    ListNode(int x) : val(x), next(nullptr) {}
+    ListNode(long long x) : val(x), next(nullptr) {}
 };
 
 class Solution {

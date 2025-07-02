@@ -6,31 +6,31 @@ using namespace std;
 signed main() {
   cin.tie(0)->sync_with_stdio(0);
 
-  int t;
+  long long t;
   cin >> t;
   while (t--) {
-    int n;
+    long long n;
     cin >> n;
 
-    vector<int> a(n);
+    vector<long long> a(n);
 
-    vector<int> minT(n), maxP(n);
+    vector<long long> minT(n), maxP(n);
 
-    for (int &i : a)
+    for (long long &i : a)
       cin >> i;
 
     minT[0] = a[0];
     maxP[n - 1] = a[n - 1];
 
-    for (int i = 1; i < n; i++) {
+    for (long long i = 1; i < n; i++) {
       minT[i] = min(minT[i - 1], a[i]);
     }
 
-    for (int i = n - 2; i >= 0; i--) {
+    for (long long i = n - 2; i >= 0; i--) {
       maxP[i] = max(maxP[i + 1], a[i]);
     }
 
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
       cout << (a[i] == minT[i] || a[i] == maxP[i]);
     }
     cout << "\n";

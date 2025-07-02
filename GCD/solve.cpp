@@ -3,22 +3,22 @@ typedef long long ll;
 
 using namespace std;
 
-int const MOD = (1e9 + 7);
+long long const MOD = (1e9 + 7);
 
-int main()
+long long main()
 {
     ll a[100000], b[100000], m, n;
     unsigned long long tichA = 1, tichB = 1;
 
     cin >> n >> m;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         cin >> a[i];
         tichA *= a[i];
     }
 
-    for (int i = 0; i < m; i++)
+    for (long long i = 0; i < m; i++)
     {
         cin >> b[i];
         tichB *= b[i];

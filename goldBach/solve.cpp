@@ -3,9 +3,9 @@
 using namespace std;
 using ll = long long;
 
-ll solve(int x) { for (int i = 2; i <= 1e) }
+ll solve(long long x) { for (long long i = 2; i <= 1e) }
 signed main() {
-    int n;
+    long long n;
     cin >> n;
 
     cout << solve(n) << endl;

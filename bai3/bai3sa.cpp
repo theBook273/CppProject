@@ -1,15 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
+long long main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
 
-    int N;
+    long long N;
     cin >> N;
-    vector<pair<int, int>> boxes(N);
+    vector<pair<long long, long long>> boxes(N);
     for (auto& box : boxes) {
-        int a, b;
+        long long a, b;
         cin >> a >> b;
         if (a > b) swap(a, b);
         box = {a, b};
@@ -17,10 +17,10 @@ int main() {
 
     sort(boxes.begin(), boxes.end());
 
-    vector<int> lis;
+    vector<long long> lis;
 
     for (const auto& box : boxes) {
-        int h = box.second;
+        long long h = box.second;
         auto it = lower_bound(lis.begin(), lis.end(), h);
         if (it == lis.end()) {
             lis.push_back(h);

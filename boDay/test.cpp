@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     long long n, tong = 0;
 
@@ -14,9 +14,9 @@ int main()
 
     deque<char> q;
 
-    unordered_map<char, int> se;
+    unordered_map<char, long long> se;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         q.push_back(s[i]);
 
@@ -62,7 +62,7 @@ int main()
     q.clear();
     se.clear();
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         q.push_back(s[i]);
 

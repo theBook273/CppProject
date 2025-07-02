@@ -1,15 +1,15 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int N, k;
-vector<int> x;
+long long N, k;
+vector<long long> x;
 
-bool check(int D) {
-    int count = 0;
-    int current = 0;
+bool check(long long D) {
+    long long count = 0;
+    long long current = 0;
     while (current < N) {
         count++;
-        int target = x[current] + D;
+        long long target = x[current] + D;
         auto j =
             upper_bound(x.begin() + current, x.end(), target) - x.begin() - 1;
         current = upper_bound(x.begin() + j, x.end(), x[j] + D) - x.begin();
@@ -17,18 +17,18 @@ bool check(int D) {
     return count <= k;
 }
 
-int main() {
+long long main() {
     // ifstream fin("BUS.INP");
     // ofstream fout("BUS.OUT");
     cin >> N >> k;
     x.resize(N);
-    for (int i = 0; i < N; i++) {
+    for (long long i = 0; i < N; i++) {
         cin >> x[i];
     }
-    int left = 0, right = x.back() - x[0];
-    int Y = right;
+    long long left = 0, right = x.back() - x[0];
+    long long Y = right;
     while (left <= right) {
-        int mid = (left + right) / 2;
+        long long mid = (left + right) / 2;
         if (check(mid)) {
             Y = mid;
             right = mid - 1;

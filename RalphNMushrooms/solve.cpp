@@ -2,23 +2,23 @@
 
 using namespace std;
 
-const int maxn = 1e6 + 8;
+const long long maxn = 1e6 + 8;
 
-int n, m, s, num[maxn], low[maxn], dem, res;
-vector<int> a[maxn];
-stack<int> st;
-stack<pair<int, int>> mus;
-vector<int> road[1000][1000];
+long long n, m, s, num[maxn], low[maxn], dem, res;
+vector<long long> a[maxn];
+stack<long long> st;
+stack<pair<long long, long long>> mus;
+vector<long long> road[1000][1000];
 
-int csc(int x) {
-    int res = (2 + (x - 1)) * x;
+long long csc(long long x) {
+    long long res = (2 + (x - 1)) * x;
     res /= 2;
     return res;
 }
 
-int pick(int x) {
-    int dem = 1;
-    int tong = x;
+long long pick(long long x) {
+    long long dem = 1;
+    long long tong = x;
     while (x - csc(dem) >= 0) {
         tong += x - csc(dem);
         dem++;
@@ -26,7 +26,7 @@ int pick(int x) {
     return tong;
 }
 
-void tarjan(int current, int x) {
+void tarjan(long long current, long long x) {
     if (current != -1) {
         mus.push({current, x});
     }
@@ -42,11 +42,11 @@ void tarjan(int current, int x) {
         }
     }
 
-    vector<int> load;
+    vector<long long> load;
 
     if (num[x] == low[x]) {
-        map<int, int> check;
-        int temp;
+        map<long long, long long> check;
+        long long temp;
         do {
             temp = st.top();
             check[temp]++;
@@ -75,10 +75,10 @@ void tarjan(int current, int x) {
     }
 }
 
-int main() {
+long long main() {
     cin >> n >> m;
-    for (int i = 0; i < m; i++) {
-        int x, y, z;
+    for (long long i = 0; i < m; i++) {
+        long long x, y, z;
         cin >> x >> y >> z;
         a[x].push_back(y);
         road[x][y].push_back(z);

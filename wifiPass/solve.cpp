@@ -2,19 +2,19 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     freopen("PASS.INP", "r", stdin);
     freopen("PASS.OUT", "w", stdout);
 
     string a;
 
-    vector<int> alphabet(27, 0);
-    queue<int> loc;
+    vector<long long> alphabet(27, 0);
+    queue<long long> loc;
 
     cin >> a;
 
-    for (int i = 0; i < 26; i++)
+    for (long long i = 0; i < 26; i++)
     {
         cin >> alphabet[i];
         if (alphabet[i] != 0)
@@ -23,7 +23,7 @@ int main()
         }
     }
 
-    for (int i = 0; i < a.length(); i++)
+    for (long long i = 0; i < a.length(); i++)
     {
         if (a[i] == '*')
         {

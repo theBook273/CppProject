@@ -1,7 +1,7 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-int n, q;
+long long n, q;
 
 deque<string> land;
 
@@ -9,9 +9,9 @@ void add(string rowToAdd) { land.push_back(rowToAdd); }
 
 void remove() { land.pop_front(); }
 
-void path(int start, int end) {
+void path(long long start, long long end) {
     long long cach = 0;
-    pair<int, int> moveSet[] = {{1, -1}, {1, 0}, {1, 1}};
+    pair<long long, long long> moveSet[] = {{1, -1}, {1, 0}, {1, 1}};
 
     if (land[0][start - 1] != land[land.size() - 1][end - 1]) {
         cout << 0 << endl;
@@ -23,11 +23,11 @@ void path(int start, int end) {
         return;
     }
 
-    queue<pair<int, int>> locAtMoment;
+    queue<pair<long long, long long>> locAtMoment;
     locAtMoment.push({0, start - 1});
 
     while (!locAtMoment.empty()) {
-        pair<int, int> temp = locAtMoment.front();
+        pair<long long, long long> temp = locAtMoment.front();
         locAtMoment.pop();
 
         if (temp.first == land.size() - 1 && temp.second == end - 1) {
@@ -36,7 +36,7 @@ void path(int start, int end) {
         }
 
         for (auto i : moveSet) {
-            int moX = temp.first + i.first, moY = temp.second + i.second;
+            long long moX = temp.first + i.first, moY = temp.second + i.second;
 
             if (moX < land.size() && moY < n) {
                 if (land[moX][moY] == land[temp.first][temp.second]) {
@@ -49,7 +49,7 @@ void path(int start, int end) {
     cout << cach << endl;
 }
 
-int main() {
+long long main() {
     // freopen("input.txt", "r", stdin);
     // freopen("land.txt", "w", stdout);
 
@@ -74,7 +74,7 @@ int main() {
             remove();
 
         } else if (temp == "path") {
-            int temp1, temp2;
+            long long temp1, temp2;
 
             cin >> temp1 >> temp2;
 

@@ -2,20 +2,20 @@
 
 using namespace std;
 
-const int maxn = 5 * 1e5 + 27;
+const long long maxn = 5 * 1e5 + 27;
 
-int a[maxn];
-int n, k;
+long long a[maxn];
+long long n, k;
 string s;
-pair<int, pair<int, char>> ind[maxn];
+pair<long long, pair<long long, char>> ind[maxn];
 
-bool check(int x) {
+bool check(long long x) {
     bool mark[maxn];
     memset(mark, 0, sizeof(mark));
     if (ind[x].second.second == 'B') {
         mark[ind[x].second.first] = 1;
-        int l = 1e9, r = -1e9;
-        for (int i = x; i < n; ++i) {
+        long long l = 1e9, r = -1e9;
+        for (long long i = x; i < n; ++i) {
             if (ind[i].second.second == 'B') {
                 l = min(l, ind[i].second.first);
                 r = max(r, ind[i].second.first);
@@ -24,9 +24,9 @@ bool check(int x) {
             }
         }
 
-        int dem = 0;
+        long long dem = 0;
 
-        for (int i = l + 1; i < r; ++i) {
+        for (long long i = l + 1; i < r; ++i) {
             if (mark[i]) {
                 dem++;
             }
@@ -36,9 +36,9 @@ bool check(int x) {
         return 1;
     }
     if (ind[x].second.second == 'R') {
-        int l = ind[x].second.first;
-        int r = ind[x].second.first;
-        for (int i = x; i < n; ++i) {
+        long long l = ind[x].second.first;
+        long long r = ind[x].second.first;
+        for (long long i = x; i < n; ++i) {
             if (ind[i].second.second == 'B') {
                 l = min(l, ind[i].second.first);
                 r = max(r, ind[i].second.first);
@@ -47,30 +47,30 @@ bool check(int x) {
             }
         }
 
-        int dem = 0;
-        for (int i = l + 1; i < r; ++i) {
+        long long dem = 0;
+        for (long long i = l + 1; i < r; ++i) {
             if (mark[i]) dem++;
         }
         return (dem + 1 <= k);
     }
 }
 
-int main() {
+long long main() {
     cin.tie(0)->sync_with_stdio(0);
-    // int t;
+    // long long t;
     // cin >> t;
     // while (t--) {
     cin >> n >> k;
     cin >> s;
-    int dem = 0;
+    long long dem = 0;
 
-    for (int i = 0; i < n; ++i) {
+    for (long long i = 0; i < n; ++i) {
         cin >> ind[i].first;
         ind[i].second.first = i;
         ind[i].second.second = s[i];
     }
 
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         if (s[i] == 'B') {
             dem++;
             while (s[i + 1] == 'B') {
@@ -86,11 +86,11 @@ int main() {
 
     sort(ind, ind + n);
 
-    int res = INT_MAX;
+    long long res = INT_MAX;
 
-    int l = 0, r = n - 1;
+    long long l = 0, r = n - 1;
     while (l <= r) {
-        int m = (l + r) / 2;
+        long long m = (l + r) / 2;
         if (check(m)) {
             res = min(res, ind[m].first);
             r = m - 1;

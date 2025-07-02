@@ -4,9 +4,9 @@ using namespace std;
 
 bool passed = 0;
 
-int main()
+long long main()
 {
-    int n;
+    long long n;
 
     cin >> n;
 
@@ -15,7 +15,7 @@ int main()
     while(!passed)
     {
         passed = 1;
-        for(int i = 1; i <= n; i++)
+        for(long long i = 1; i <= n; i++)
         {
             if(t % i != 0)
             {
@@ -26,5 +26,5 @@ int main()
         t++;
     }
 
-    cout << ((t - 1) % int(1e9+7));
+    cout << ((t - 1) % long long(1e9+7));
 }

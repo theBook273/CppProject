@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
-int a[99999999];
-int input[100000];
+long long a[99999999];
+long long input[100000];
 
-bool check(int n) {
+bool check(long long n) {
     string s = to_string(n);
     string copied = s;
 
@@ -18,7 +18,7 @@ bool check(int n) {
     }
 
     string temp = "1379";
-    int check = 0;
+    long long check = 0;
 
     for (auto i : temp) {
         s += i;
@@ -32,20 +32,20 @@ signed main() {
     cin.tie(NULL)->sync_with_stdio(false);
     memset(a, 1, sizeof(a));
     a[0] = a[1] = a[99999998] = 0;
-    for (int i = 2; i < 99999999; i++)
+    for (long long i = 2; i < 99999999; i++)
         if (a[i])
-            for (int j = 2; i * j < 99999999; j++) a[i * j] = 0;
+            for (long long j = 2; i * j < 99999999; j++) a[i * j] = 0;
 
-    int n;
+    long long n;
     cin >> n;
 
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         cin >> input[i];
     }
 
-    int tong = 0;
+    long long tong = 0;
 
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         if (check(input[i])) {
             cout << input[i] << " ";
             tong += input[i];

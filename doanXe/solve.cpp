@@ -6,8 +6,8 @@ using ll = long long;
 ll m, n, k;
 vector<ll> a;
 
-bool check(int dis) {
-    for (int i = 1; i < a.size(); i++) {
+bool check(long long dis) {
+    for (long long i = 1; i < a.size(); i++) {
         if (a[i] < dis)
             return false;
         else
@@ -20,18 +20,18 @@ signed main() {
     // freopen("supermar.inp", "r", stdin);
     // freopen("supermar.out", "w", stdout);
     cin >> n >> m >> k;
-    for (int i = 0; i < n; i++) {
-        int temp;
+    for (long long i = 0; i < n; i++) {
+        long long temp;
         cin >> temp;
         a.push_back(temp);
     }
 
     sort(a.begin(), a.end());
 
-    int l = 1, r = 1e9;
+    long long l = 1, r = 1e9;
 
     while (l <= r) {
-        int mid = (l + r) / 2;
+        long long mid = (l + r) / 2;
         if (check(mid)) {
             l = mid + 1;
         } else {

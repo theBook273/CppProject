@@ -3,11 +3,11 @@
 using namespace std;
 using ll = long long;
 
-int m[1000000];
+long long m[1000000];
 
 signed main() {
     cin.tie()->sync_with_stdio(false);
-    int n, temp, cnt = 0;
+    long long n, temp, cnt = 0;
     cin >> n;
 
     while (cin >> temp) {
@@ -23,7 +23,7 @@ signed main() {
         }
     }
 
-    for (int i = 1; i <= n; i++) {
+    for (long long i = 1; i <= n; i++) {
         if (m[i] == 0) {
             cout << "NO";
             return 0;

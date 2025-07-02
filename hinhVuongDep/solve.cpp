@@ -7,9 +7,9 @@ ll a[3][3], standard = 0;
 
 ll tongNgang(ll a[3][3]) {
     ll tong = 0;
-    for (int i = 0; i < 3; i++) {
+    for (long long i = 0; i < 3; i++) {
         ll temp = 0;
-        for (int j = 0; j < 3; j++) {
+        for (long long j = 0; j < 3; j++) {
             temp += a[i][j];
         }
         tong = max(tong, temp);
@@ -19,9 +19,9 @@ ll tongNgang(ll a[3][3]) {
 
 ll tongDoc(ll a[3][3]) {
     ll tong = 0;
-    for (int i = 0; i < 3; i++) {
+    for (long long i = 0; i < 3; i++) {
         ll temp = 0;
-        for (int j = 0; j < 3; j++) {
+        for (long long j = 0; j < 3; j++) {
             temp += a[j][i];
         }
         tong = max(tong, temp);
@@ -31,14 +31,14 @@ ll tongDoc(ll a[3][3]) {
 
 ll tongCheo(ll a[3][3]) {
     ll tong = 0, temp = 0;
-    for (int i = 0, j = 0; i < 3 && j < 3; j++, i++) {
+    for (long long i = 0, j = 0; i < 3 && j < 3; j++, i++) {
         temp += a[i][j];
     }
     tong = max(tong, temp);
 
     temp = 0;
 
-    for (int i = 0, j = 2; i < 3 && j >= 0; i++, j--) {
+    for (long long i = 0, j = 2; i < 3 && j >= 0; i++, j--) {
         temp += a[i][j];
     }
 
@@ -48,10 +48,10 @@ ll tongCheo(ll a[3][3]) {
 }
 
 void solveNgang(ll a[3][3]) {
-    for (int i = 0; i < 3; i++) {
-        pair<int, int> pos = {-1, -1};
+    for (long long i = 0; i < 3; i++) {
+        pair<long long, long long> pos = {-1, -1};
         ll tong = 0;
-        for (int j = 0; j < 3; j++) {
+        for (long long j = 0; j < 3; j++) {
             if (a[i][j] == 0) pos = {i, j};
             tong += a[i][j];
         }
@@ -62,10 +62,10 @@ void solveNgang(ll a[3][3]) {
 }
 
 void solveDoc(ll a[3][3]) {
-    for (int i = 0; i < 3; i++) {
-        pair<int, int> pos = {-1, -1};
+    for (long long i = 0; i < 3; i++) {
+        pair<long long, long long> pos = {-1, -1};
         ll tong = 0;
-        for (int j = 0; j < 3; j++) {
+        for (long long j = 0; j < 3; j++) {
             if (a[j][i] == 0) pos = {j, i};
             tong += a[j][i];
         }
@@ -76,9 +76,9 @@ void solveDoc(ll a[3][3]) {
 }
 
 void solveCheoTrai(ll a[3][3]) {
-    pair<int, int> pos = {-1, -1};
+    pair<long long, long long> pos = {-1, -1};
     ll tong = 0;
-    for (int i = 0, j = 0; i < 3 && j < 3; i++, j++) {
+    for (long long i = 0, j = 0; i < 3 && j < 3; i++, j++) {
         if (a[i][j] == 0) pos = {i, j};
         tong += a[i][j];
     }
@@ -87,9 +87,9 @@ void solveCheoTrai(ll a[3][3]) {
 }
 
 void solveCheoPhai(ll a[3][3]) {
-    pair<int, int> pos = {-1, -1};
+    pair<long long, long long> pos = {-1, -1};
     ll tong = 0;
-    for (int i = 0, j = 2; i < 3 && j >= 0; i++, j--) {
+    for (long long i = 0, j = 2; i < 3 && j >= 0; i++, j--) {
         if (a[i][j] == 0) pos = {i, j};
         tong += a[i][j];
     }
@@ -99,9 +99,9 @@ void solveCheoPhai(ll a[3][3]) {
 
 bool checkNgang(ll a[3][3]) {
     ll tong = 0;
-    for (int i = 0; i < 3; i++) {
+    for (long long i = 0; i < 3; i++) {
         ll temp = 0;
-        for (int j = 0; j < 3; j++) {
+        for (long long j = 0; j < 3; j++) {
             if (a[i][j] == 0) temp++;
         }
         tong = max(tong, temp);
@@ -111,9 +111,9 @@ bool checkNgang(ll a[3][3]) {
 
 bool checkDoc(ll a[3][3]) {
     ll tong = 0;
-    for (int i = 0; i < 3; i++) {
+    for (long long i = 0; i < 3; i++) {
         ll temp = 0;
-        for (int j = 0; j < 3; j++) {
+        for (long long j = 0; j < 3; j++) {
             if (a[j][i] == 0) temp++;
         }
         tong = max(tong, temp);
@@ -124,7 +124,7 @@ bool checkDoc(ll a[3][3]) {
 bool checkCheoTrai(ll a[3][3]) {
     ll tong = 0;
     ll temp = 0;
-    for (int i = 0, j = 0; i < 3 && j < 3; i++, j++) {
+    for (long long i = 0, j = 0; i < 3 && j < 3; i++, j++) {
         if (a[i][j] == 0) temp++;
     }
 
@@ -133,8 +133,8 @@ bool checkCheoTrai(ll a[3][3]) {
     if (tong == 3) {
         ll sumRow[3] = {0, 0, 0};
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (long long i = 0; i < 3; i++) {
+            for (long long j = 0; j < 3; j++) {
                 sumRow[i] += a[i][j];
             }
         }
@@ -153,7 +153,7 @@ bool checkCheoPhai(ll a[3][3]) {
     ll tong = 0;
     ll temp = 0;
 
-    for (int i = 0, j = 2; i < 3 && j >= 0; i++, j--) {
+    for (long long i = 0, j = 2; i < 3 && j >= 0; i++, j--) {
         if (a[i][j] == 0) temp++;
     }
 
@@ -162,8 +162,8 @@ bool checkCheoPhai(ll a[3][3]) {
     if (tong == 3) {
         ll sumRow[3] = {0, 0, 0};
 
-        for (int i = 0; i < 3; i++) {
-            for (int j = 0; j < 3; j++) {
+        for (long long i = 0; i < 3; i++) {
+            for (long long j = 0; j < 3; j++) {
                 sumRow[i] += a[i][j];
             }
         }
@@ -182,8 +182,8 @@ signed main() {
     freopen("HVDEP.INP", "r", stdin);
     freopen("HVDEP.OUT", "w", stdout);
 
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
+    for (long long i = 0; i < 3; i++) {
+        for (long long j = 0; j < 3; j++) {
             cin >> a[i][j];
         }
     }
@@ -204,8 +204,8 @@ signed main() {
         solveNgang(a);
     }
 
-    for (int i = 0; i < 3; i++) {
-        for (int j = 0; j < 3; j++) {
+    for (long long i = 0; i < 3; i++) {
+        for (long long j = 0; j < 3; j++) {
             cout << a[i][j] << " ";
         }
         cout << endl;

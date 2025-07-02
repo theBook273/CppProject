@@ -8,14 +8,14 @@ signed main() {
 
     cin >> s;
 
-    for (int i = 0; i < s.size(); i++) {
+    for (long long i = 0; i < s.size(); i++) {
         s[i] = toupper(s[i]);
     }
 
-    int l = 0, res = 0;
+    long long l = 0, res = 0;
     char resC;
 
-    for (int r = 0; r < s.size(); r++) {
+    for (long long r = 0; r < s.size(); r++) {
         if (s[r + 1] != s[l]) {
             if (r - l + 1 > res) {
                 resC = s[l];

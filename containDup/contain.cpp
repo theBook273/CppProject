@@ -2,24 +2,24 @@
 
 using namespace std;
 
-vector<int> nums;
+vector<long long> nums;
 
-int main()
+long long main()
 {
-    int n;
+    long long n;
 
     cin >> n;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
-        int a;
+        long long a;
         cin >> a;
         nums.push_back(a);
     }
 
-    set<int> s;
+    set<long long> s;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         s.insert(nums[i]);
     }

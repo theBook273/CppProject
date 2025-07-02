@@ -17,9 +17,9 @@ public:
         cin >> participants >> numberOfTasks >> timeLimit;
     }
 
-    pair<ll, ll> createPointAndPenalty()
+    pair<ll, ll> createPolong longAndPenalty()
     {
-        pair<ll, ll> pointAndPenalty = {0, 0};
+        pair<ll, ll> polong longAndPenalty = {0, 0};
 
         ll tempTime = 0, timeInTotal = 0;
 
@@ -36,14 +36,14 @@ public:
         {
             tempTime += sortedTime.top();
             timeInTotal += sortedTime.top();
-            pointAndPenalty.second += tempTime;
+            polong longAndPenalty.second += tempTime;
             sortedTime.pop();
         }
 
-        pointAndPenalty.first = (numberOfTasks - sortedTime.size());
-        pointAndPenalty.second = 0 - pointAndPenalty.second;
+        polong longAndPenalty.first = (numberOfTasks - sortedTime.size());
+        polong longAndPenalty.second = 0 - polong longAndPenalty.second;
 
-        return pointAndPenalty;
+        return polong longAndPenalty;
     }
 
     ll solve()
@@ -51,15 +51,15 @@ public:
         for (ll i = 0; i < participants; i++)
         {
 
-            pair<ll, ll> point = createPointAndPenalty();
+            pair<ll, ll> polong long = createPolong longAndPenalty();
 
             if (i == 0)
             {
-                rudolf = point;
+                rudolf = polong long;
             }
             else
             {
-                if (rudolf < point)
+                if (rudolf < polong long)
                 {
                     ans++;
                 }
@@ -69,7 +69,7 @@ public:
     }
 };
 
-int main()
+long long main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);

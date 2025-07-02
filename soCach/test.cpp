@@ -2,17 +2,17 @@
 
 using namespace std;
 
-int bin[10000];
-int n;
+long long bin[10000];
+long long n;
 
-void solve(int current)
+void solve(long long current)
 {
-    for (int i = 0; i <= 1; i++)
+    for (long long i = 0; i <= 1; i++)
     {
         bin[current] = i;
         if (current == n - 1)
         {
-            for (int j = 0; j < n; j++)
+            for (long long j = 0; j < n; j++)
             {
                 cout << bin[j];
             }
@@ -23,7 +23,7 @@ void solve(int current)
     }
 }
 
-int main()
+long long main()
 {
     cin >> n;
     solve(0);

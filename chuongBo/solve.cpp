@@ -2,20 +2,20 @@
 
 using namespace std;
 using ll = long long;
-vector<pair<int, int>> v;
+vector<pair<long long, long long>> v;
 
-bool comp(pair<int, int> a, pair<int, int> b) { return a.second < b.second; }
+bool comp(pair<long long, long long> a, pair<long long, long long> b) { return a.second < b.second; }
 
 signed main() {
-    int n;
+    long long n;
     cin >> n;
 
-    for (int i = 0; i < n; i++) {
-        int m;
+    for (long long i = 0; i < n; i++) {
+        long long m;
         cin >> m;
         v.push_back({m, 0});
-        for (int j = 0; j < m; j++) {
-            int temp;
+        for (long long j = 0; j < m; j++) {
+            long long temp;
             cin >> temp;
             v.back().second = max(temp, v.back().second);
         }

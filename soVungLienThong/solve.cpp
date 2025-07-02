@@ -16,7 +16,7 @@ void bfs(ll u) {
     while (!q.empty()) {
         ll temp = q.front();
         q.pop();
-        for (int i : v[temp]) {
+        for (long long i : v[temp]) {
             if (!visited[i]) {
                 visited[i] = 1;
                 // cout << i << " ";
@@ -31,14 +31,14 @@ signed main() {
     ll n, m;
     cin >> n >> m;
 
-    for (int i = 0; i < m; i++) {
+    for (long long i = 0; i < m; i++) {
         ll a, b;
         cin >> a >> b;
         v[a].push_back(b);
         v[b].push_back(a);
     }
 
-    for (int i = 1; i <= n; i++) {
+    for (long long i = 1; i <= n; i++) {
         if (!visited[i]) {
             bfs(i);
             tong++;

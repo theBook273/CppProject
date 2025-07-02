@@ -2,6 +2,6 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
 }

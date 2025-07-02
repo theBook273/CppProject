@@ -3,7 +3,7 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     Solution a;
     vector<string> v = a.generateParenthesis(3);

@@ -2,10 +2,10 @@
 
 using namespace std;
 
-pair<int, int> moveSet[] = {{0, 1}, {0, -1}, {-1, 0}, {1, 0}, {1, 1}, {-1, -1}, {1, -1}, {-1, 1}, {0, 0}};
+pair<long long, long long> moveSet[] = {{0, 1}, {0, -1}, {-1, 0}, {1, 0}, {1, 1}, {-1, -1}, {1, -1}, {-1, 1}, {0, 0}};
 // U D L R
-int x, y, n;
-pair<int, int> posOfB = {0, 0};
+long long x, y, n;
+pair<long long, long long> posOfB = {0, 0};
 
 bool check()
 {
@@ -19,7 +19,7 @@ bool check()
     return 0;
 }
 
-int main()
+long long main()
 {
     cin >> x >> y;
 
@@ -36,7 +36,7 @@ int main()
         cout << 0 << endl;
     }
 
-    for (int i = 1; i <= n; i++)
+    for (long long i = 1; i <= n; i++)
     {
         switch (s[i - 1])
         {

@@ -2,15 +2,15 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     string s;
     cin >> s;
 
-    int left = 0, right = 0;
-    int ans = 0;
+    long long left = 0, right = 0;
+    long long ans = 0;
 
-    vector<int> mp(256, -1);
+    vector<long long> mp(256, -1);
 
     while (right < s.size())
     {

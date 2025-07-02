@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     string s;
 
@@ -10,7 +10,7 @@ int main()
 
     cin >> s;
 
-    for (int i = 0; i < s.length(); i++)
+    for (long long i = 0; i < s.length(); i++)
     {
         if (s[i] != '(' && s[i] != ')')
         {

@@ -4,14 +4,14 @@ using namespace std;
 using ll = long long;
 
 signed main() {
-    int n;
+    long long n;
 
     cin >> n;
 
     char s[n];
     string temp = "";
     vector<string> cut, s1, s2, s3;
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         cin >> s[i];
         temp.push_back(s[i]);
         if (s[i] == ',' || s[i] == ';') {

@@ -2,10 +2,10 @@
 
 using namespace std;
 long long a[1000000], n;
-unordered_map<string, int> dem;
+unordered_map<string, long long> dem;
 vector<long long> nev;
 
-int main()
+long long main()
 {
     long k = 0;
     freopen("FINDDANTE.INP", "r", stdin);

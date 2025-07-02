@@ -1,22 +1,22 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
-int tong, n, x, y, a[200025];
+long long tong, n, x, y, a[200025];
 
-int calc(int a[], int x) {
-    int res = 0;
-    int j = 0;
+long long calc(long long a[], long long x) {
+    long long res = 0;
+    long long j = 0;
 
-    for (int i = n - 1; i >= 0; --i) {
+    for (long long i = n - 1; i >= 0; --i) {
         while (j < n && tong - a[j] - a[i] >= x) {
             ++j;
         }
         res += (n - j);
     }
 
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         if (tong - 2 * a[i] < x) res--;
     }
 
@@ -26,7 +26,7 @@ int calc(int a[], int x) {
 signed main() {
     cin.tie(NULL)->sync_with_stdio(false);
 
-    int t;
+    long long t;
     cin >> t;
 
     while (t--) {
@@ -36,7 +36,7 @@ signed main() {
 
         memset(a, 0, sizeof(a));
 
-        for (int i = 0; i < n; i++) {
+        for (long long i = 0; i < n; i++) {
             cin >> a[i];
             tong += a[i];
         }

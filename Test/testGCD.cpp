@@ -2,4 +2,4 @@
 
 using namespace std;
 
-int main() { cout << "Hello, World!"; }
+long long main() { cout << "Hello, World!"; }

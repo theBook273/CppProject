@@ -5,22 +5,22 @@ using namespace std;
 signed main() {
   string ans[] = {"Bob\n", "Alice\n"};
 
-  int t;
+  long long t;
   cin >> t;
   while (t--) {
     bool flag = 0;
-    int n, k;
+    long long n, k;
     cin >> n >> k;
 
     vector<char> temp(n);
-    vector<int> a;
+    vector<long long> a;
 
     for (char &i : temp) {
       cin >> i;
       a.push_back(i - '0');
     }
 
-    int tong = 0;
+    long long tong = 0;
 
     for (auto i : a) {
       tong += i;

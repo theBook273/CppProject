@@ -1,15 +1,15 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
-const int maxn(1e4 + 8);
-int n, m, dem, res;
-int id[maxn], low[maxn];
-vector<int> a[maxn];
-stack<int> tracker;
+const long long maxn(1e4 + 8);
+long long n, m, dem, res;
+long long id[maxn], low[maxn];
+vector<long long> a[maxn];
+stack<long long> tracker;
 
-void dfs(int x) {
+void dfs(long long x) {
     id[x] = low[x] = ++dem;
     tracker.push(x);
     for (auto i : a[x]) {
@@ -37,13 +37,13 @@ signed main() {
     cin.tie(NULL)->sync_with_stdio(false);
     cin >> n >> m;
 
-    for (int i = 0; i < m; ++i) {
-        int u, v;
+    for (long long i = 0; i < m; ++i) {
+        long long u, v;
         cin >> u >> v;
         a[u].push_back(v);
     }
 
-    for (int i = 1; i <= n; ++i) {
+    for (long long i = 1; i <= n; ++i) {
         if (id[i] == 0) {
             dfs(i);
         }

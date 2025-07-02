@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     long long n, tong = 0;
 
@@ -12,11 +12,11 @@ int main()
 
     cin >> s;
 
-    int left = 0;
+    long long left = 0;
 
-    unordered_map<char, vector<int>> vaoDau, raCuoi;
+    unordered_map<char, vector<long long>> vaoDau, raCuoi;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         vaoDau[s[i]].push_back(i);
     }
@@ -27,7 +27,7 @@ int main()
         return 0;
     }
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         if (vaoDau[s[i]].size() > 1)
         {
@@ -40,7 +40,7 @@ int main()
         break;
     }
 
-    for (int i = n - 1; i >= 0; i--)
+    for (long long i = n - 1; i >= 0; i--)
     {
         if (vaoDau[s[i]].size() > 1)
         {
@@ -52,7 +52,7 @@ int main()
         break;
     }
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         if (raCuoi[s[i]].size() >= 1)
         {

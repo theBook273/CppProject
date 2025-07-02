@@ -4,13 +4,13 @@ using namespace std;
 
 string s[100000];
 
-int main()
+long long main()
 {
-    int n;
+    long long n;
 
     cin >> n;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         cin >> s[i];
     }
@@ -18,7 +18,7 @@ int main()
     unordered_map<string, vector<string>> mapS;
     set<string> a;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         string temp = s[i];
         sort(temp.begin(), temp.end());

@@ -27,7 +27,7 @@ bool dfs(ll x, ll tar, ll re) {
 
 signed main() {
     cin >> n >> m >> q;
-    for (int i = 0; i < m; i++) {
+    for (long long i = 0; i < m; i++) {
         ll a, b;
         cin >> a >> b;
         v[a].push_back(b);

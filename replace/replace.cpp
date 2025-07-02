@@ -2,19 +2,19 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
-    int n;
+    long long n;
 
     string s;
 
     cin >> s >> n;
 
-    unordered_map<char, int> mp;
+    unordered_map<char, long long> mp;
 
-    int left = 0, replacement = 0, res = 0;
+    long long left = 0, replacement = 0, res = 0;
 
-    for (int right = 0; right < s.size(); right++)
+    for (long long right = 0; right < s.size(); right++)
     {
         mp[s[right]]++;
 

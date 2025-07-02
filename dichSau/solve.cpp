@@ -2,21 +2,21 @@
 
 using namespace std;
 
-int main() {
-    int n, m;
+long long main() {
+    long long n, m;
 
     cin >> n >> m;
 
     char a[n];
 
-    int b[n];
+    long long b[n];
 
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         cin >> a[i];
         b[i] = a[i];
     }
 
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         if ('a' <= a[i] && a[i] <= 'z') {
             a[i] = toupper(a[i]);
         } else {

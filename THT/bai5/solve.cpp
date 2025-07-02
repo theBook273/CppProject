@@ -29,9 +29,9 @@ signed main() {
             if (temp <= n) cnt[temp]++;
         }
 
-        for (int i = 1; i <= n; i++) {
+        for (long long i = 1; i <= n; i++) {
             if (cnt[i] > 0)
-                for (int j = i; j <= n; j += i) res[j] += cnt[i];
+                for (long long j = i; j <= n; j += i) res[j] += cnt[i];
         }
         cout << *max_element(res + 1, res + n + 1) << endl;
     }

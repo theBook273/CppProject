@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     string a, b;
 
@@ -10,7 +10,7 @@ int main()
 
     cin >> a >> mark >> b;
 
-    int maxofsize = max(a.size() + 1, b.size() + 2);
+    long long maxofsize = max(a.size() + 1, b.size() + 2);
 
     string disA = "#", disB = mark + "#";
 
@@ -29,18 +29,18 @@ int main()
     cout << disA << endl;
     cout << disB << endl;
 
-    for (int i = 0; i < maxofsize; i++)
+    for (long long i = 0; i < maxofsize; i++)
     {
         cout << "-";
     }
     cout << endl;
 
-    stack<int> res;
-    int nho = 0;
+    stack<long long> res;
+    long long nho = 0;
 
     if (mark == "+")
     {
-        for (int i = disA.size() - 1; i >= 0; i--)
+        for (long long i = disA.size() - 1; i >= 0; i--)
         {
             if (disA[i] != '#' && disB[i] != '#' && disB[i] != '+')
             {
@@ -76,7 +76,7 @@ int main()
 
     if (mark == "-")
     {
-        for (int i = disA.size() - 1; i >= 0; i--)
+        for (long long i = disA.size() - 1; i >= 0; i--)
         {
             if (disA[i] != '#' && disB[i] != '#' && disB[i] != '+')
             {
@@ -110,7 +110,7 @@ int main()
         res.pop();
     }
 
-    int temp = 0;
+    long long temp = 0;
 
     while (temp + res.size() < maxofsize)
     {

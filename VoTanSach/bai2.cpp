@@ -2,10 +2,10 @@
 
 using namespace std;
 
-int num[] = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6};
+long long num[] = {6, 2, 5, 5, 4, 5, 6, 3, 7, 6};
 long long tong = 0;
 
-int main() {
+long long main() {
     string s;
 
     cin >> s;

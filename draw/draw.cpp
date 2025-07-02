@@ -2,10 +2,10 @@
 
 using namespace std;
 vector<char> a[10000000];
-int tong = 0;
-int n, m;
+long long tong = 0;
+long long n, m;
 
-void solve(int i, int j)
+void solve(long long i, long long j)
 {
     a[i][j] = '.';
 
@@ -30,22 +30,22 @@ void solve(int i, int j)
     }
 }
 
-int main()
+long long main()
 {
 
     cin >> n >> m;
 
-    for (int i = 0; i < n + 2; i++)
+    for (long long i = 0; i < n + 2; i++)
     {
-        for (int j = 0; j < m + 2; j++)
+        for (long long j = 0; j < m + 2; j++)
         {
             a[i].push_back('.');
         }
     }
 
-    for (int i = 1; i <= n; i++)
+    for (long long i = 1; i <= n; i++)
     {
-        for (int j = 1; j <= m; j++)
+        for (long long j = 1; j <= m; j++)
         {
             char temp;
             cin >> temp;
@@ -53,9 +53,9 @@ int main()
         }
     }
 
-    for (int i = 1; i <= n; i++)
+    for (long long i = 1; i <= n; i++)
     {
-        for (int j = 1; j <= m; j++)
+        for (long long j = 1; j <= m; j++)
         {
             if (a[i][j] == '*')
             {

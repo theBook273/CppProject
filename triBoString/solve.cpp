@@ -16,12 +16,12 @@ long long solve(long long n, long long k) {
     return 0;
 }
 
-int main() {
-    for (int i = 1; i <= 50; i++) {
+long long main() {
+    for (long long i = 1; i <= 50; i++) {
         fibo[i] = (long long)pow(2, i) - 1;
     }
 
-    // int t;
+    // long long t;
 
     // cin >> t;
 

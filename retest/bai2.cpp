@@ -1,15 +1,15 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
-int n, a[200009], x;
-map<int, int> mp;
+long long n, a[200009], x;
+map<long long, long long> mp;
 
 main() {
     cin >> n >> x;
 
-    for (int i = 1; i <= n; i++) {
+    for (long long i = 1; i <= n; i++) {
         cin >> a[i];
         if (mp.count(a[i])) {
             if (a[i] * 2 == x) {

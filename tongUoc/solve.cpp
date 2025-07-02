@@ -1,15 +1,15 @@
 #include <bits/stdc++.h>
 
 using namespace std;
-// using int = long long;
+// using long long = long long;
 
-const int mod = 1e9 + 7;
+const long long mod = 1e9 + 7;
 
-int prime[1000005], congDon[1000005];
+long long prime[1000005], congDon[1000005];
 
-int primeNum(int n) {
-    int temp = prime[n];
-    int tong = 0;
+long long primeNum(long long n) {
+    long long temp = prime[n];
+    long long tong = 0;
 
     tong += prime[n];
 
@@ -33,14 +33,14 @@ signed main() {
 
     prime[0] = prime[1] = 0;
 
-    for (int i = 2; i * i <= 1e6; i++) {
+    for (long long i = 2; i * i <= 1e6; i++) {
         if (prime[i] == 0) {
-            for (int j = i; j * i <= 1e6; j++)
+            for (long long j = i; j * i <= 1e6; j++)
                 if (prime[i * j] == 0) prime[j * i] = i;
         }
     }
 
-    for (int i = 2; i <= 1e6; i++) {
+    for (long long i = 2; i <= 1e6; i++) {
         if (prime[i] == 0) {
             prime[i] = i;
         }
@@ -49,17 +49,17 @@ signed main() {
     congDon[0] = 0;
     congDon[1] = 0;
 
-    for (int i = 2; i <= 1e6; i++) {
+    for (long long i = 2; i <= 1e6; i++) {
         congDon[i] = (congDon[i - 1] + primeNum(i)) % mod;
     }
 
     // cout << congDon[99] << endl;
 
-    int t;
+    long long t;
     cin >> t;
 
     while (t--) {
-        int l, r;
+        long long l, r;
         cin >> l >> r;
 
         cout << congDon[r] - congDon[l - 1] << "\n";

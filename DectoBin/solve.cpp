@@ -2,10 +2,10 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
-    int n;
-    stack<int> st;
+    long long n;
+    stack<long long> st;
 
     cin >> n;
 

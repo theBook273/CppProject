@@ -1,22 +1,22 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
-const int maxn = 5 * 1e4 + 8;
+const long long maxn = 5 * 1e4 + 8;
 
-int a[maxn];
-int n, k;
+long long a[maxn];
+long long n, k;
 
-bool check(int x, int pizz) {
-    int temp1 = a[n - 1];
+bool check(long long x, long long pizz) {
+    long long temp1 = a[n - 1];
 
     temp1 += x;
     pizz -= x;
 
-    for (int i = n - 2; i >= 0; i--) {
+    for (long long i = n - 2; i >= 0; i--) {
         if (a[i] * 2 < temp1) {
-            int sub = ceil(temp1 / 2.0) - a[i];
+            long long sub = ceil(temp1 / 2.0) - a[i];
             if (pizz - sub >= 0) {
                 temp1 = a[i] + sub;
                 pizz -= sub;
@@ -32,16 +32,16 @@ bool check(int x, int pizz) {
 signed main() {
     cin.tie(NULL)->sync_with_stdio(false);
     cin >> n >> k;
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         cin >> a[i];
     }
     while (k--) {
-        int pizza;
+        long long pizza;
         cin >> pizza;
-        int left = 0, right = pizza;
-        int res = a[n - 1];
+        long long left = 0, right = pizza;
+        long long res = a[n - 1];
         while (left <= right) {
-            int mid = (right + left) / 2;
+            long long mid = (right + left) / 2;
             if (check(mid, pizza)) {
                 res = mid + a[n - 1];
                 left = mid + 1;

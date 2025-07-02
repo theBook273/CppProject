@@ -2,24 +2,24 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
-    int n;
-    vector<int> prices;
+    long long n;
+    vector<long long> prices;
 
     cin >> n;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
-        int temp;
+        long long temp;
         cin >> temp;
         prices.push_back(temp);
     }
 
-    int buy = INT_MAX,
+    long long buy = INT_MAX,
         maxN = 0;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         buy = min(buy, prices[i]);
         maxN = max(maxN, prices[i] - buy);

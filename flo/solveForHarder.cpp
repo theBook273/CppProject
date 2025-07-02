@@ -18,16 +18,16 @@ using namespace std;
 long long t, m, n, tempt, caseAns = 0, c_x1, k1, k2, pred, c_x, coins;
 vector<pair<long long, long long>> dat;
 
-int main() {
+long long main() {
     fast_io;
     cin >> t;
     while (t--) {
         cin >> n >> m;
-        for (int i = 0; i < n; i++) cin >> tempt, dat.push_back({tempt, 0});
-        for (int i = 0; i < n; i++) cin >> dat[i].second;
+        for (long long i = 0; i < n; i++) cin >> tempt, dat.push_back({tempt, 0});
+        for (long long i = 0; i < n; i++) cin >> dat[i].second;
         sort(dat.begin(), dat.begin() + n);
 
-        for (int i = 0; i < n; i++) {
+        for (long long i = 0; i < n; i++) {
             // Calculate for the stand alone members
             caseAns = max(caseAns,
                           min(m / dat[i].first, dat[i].second) * dat[i].first);
@@ -36,12 +36,12 @@ int main() {
             if (i + 1 < n && dat[i + 1].first - dat[i].first == 1) {
                 // Store the amount of i+1 petals
                 c_x1 = dat[i + 1].second;
-                // Calculate the maximum amount that can be taken into
+                // Calculate the maximum amount that can be taken long longo
                 // calculation for last element which have i petals
                 k1 = min(m / dat[i].first, dat[i].second);
                 // Store the current price paid for i element
                 pred = dat[i].first * k1;
-                // Update the current amount of i petals after being taken into
+                // Update the current amount of i petals after being taken long longo
                 // calculation
                 dat[i].second -= k1;
                 // Update the remaining amount of coins for calculate with i+1

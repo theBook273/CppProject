@@ -10,31 +10,31 @@ signed main() {
     cin.tie(0);
     cout.tie(0);
 
-    int t;
+    long long t;
 
     cin >> t;
 
     while (t--) {
-        int n, k;
+        long long n, k;
         cin >> n >> k;
 
-        for (int i = 1; i <= n; i++) {
+        for (long long i = 1; i <= n; i++) {
             cin >> a[i];
         }
 
-        int res = 1e9;
+        long long res = 1e9;
 
-        for (int i = 1; i < n; i++) {
-            int tong = 0;
-            int now = a[i];
-            for (int j = i + 1; j <= n; j++) {
+        for (long long i = 1; i < n; i++) {
+            long long tong = 0;
+            long long now = a[i];
+            for (long long j = i + 1; j <= n; j++) {
                 if (a[j] - now != k) {
                     tong++;
                 }
                 now += k;
             }
             now = a[i];
-            for (int j = i - 1; j >= 1; j--) {
+            for (long long j = i - 1; j >= 1; j--) {
                 if (now - a[j] != k) {
                     tong++;
                 }

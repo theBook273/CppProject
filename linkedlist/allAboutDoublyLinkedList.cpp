@@ -3,7 +3,7 @@
 using namespace std;
 
 struct node {
-  int data;
+  long long data;
   node *prev;
   node *next;
 };
@@ -13,7 +13,7 @@ struct doubList {
   node *tail;
 };
 
-doubList *createDoublist(int val) {
+doubList *createDoublist(long long val) {
   doubList *temp = new doubList;
   temp->head = new node;
   temp->head->data = val;
@@ -23,7 +23,7 @@ doubList *createDoublist(int val) {
   return temp;
 }
 
-doubList *push_front(doubList *lis, int val) {
+doubList *push_front(doubList *lis, long long val) {
   node *temp = new node;
   temp->data = val;
   temp->prev = nullptr;
@@ -42,7 +42,7 @@ doubList *pop_front(doubList *lis) {
   return lis;
 }
 
-doubList *push_back(doubList *lis, int val) {
+doubList *push_back(doubList *lis, long long val) {
   node *temp = new node;
   temp->data = val;
   temp->next = nullptr;
@@ -61,9 +61,9 @@ doubList *pop_back(doubList *lis) {
   return lis;
 }
 
-doubList *insertAt(doubList *lis, int pos, int val) {
+doubList *insertAt(doubList *lis, long long pos, long long val) {
   node *p1 = lis->head;
-  int cnt = 0;
+  long long cnt = 0;
 
   while (p1 != nullptr && cnt <= pos) {
     if (cnt == pos) {
@@ -83,10 +83,10 @@ doubList *insertAt(doubList *lis, int pos, int val) {
   return lis;
 }
 
-doubList *removeAt(doubList *lis, int pos) {
+doubList *removeAt(doubList *lis, long long pos) {
   node *p = lis->head;
 
-  for (int i = 0; i < pos; i++) {
+  for (long long i = 0; i < pos; i++) {
     p = p->next;
   }
 
@@ -101,7 +101,7 @@ doubList *removeAt(doubList *lis, int pos) {
   return lis;
 }
 
-void printLis(doubList *lis) {
+void prlong longLis(doubList *lis) {
   node *p = lis->head;
   while (p != nullptr) {
     cout << p->data << " ";
@@ -110,19 +110,19 @@ void printLis(doubList *lis) {
 }
 
 signed main() {
-  int n;
+  long long n;
   cin >> n;
 
-  int temp;
+  long long temp;
   cin >> temp;
   doubList *lis = createDoublist(temp);
 
-  for (int i = 1; i < n; ++i) {
+  for (long long i = 1; i < n; ++i) {
     cin >> temp;
     lis = push_back(lis, temp);
   }
 
-  int k;
+  long long k;
   cin >> k;
 
   if (k == 0)
@@ -132,7 +132,7 @@ signed main() {
   else
     lis = removeAt(lis, k);
 
-  printLis(lis);
+  prlong longLis(lis);
 
   return 0;
 }

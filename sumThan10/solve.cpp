@@ -2,16 +2,16 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
-    int n;
+    long long n;
     cin >> n;
 
     while (n--)
     {
-        int a[3];
+        long long a[3];
 
-        for (int i = 0; i < 3; i++)
+        for (long long i = 0; i < 3; i++)
         {
             cin >> a[i];
         }

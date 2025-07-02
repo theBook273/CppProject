@@ -2,11 +2,11 @@
 
 using namespace std;
 
-int number[15], targetNum[15], res[100];
+long long number[15], targetNum[15], res[100];
 string inNum, target;
-int  finall = 1e9;
+long long  finall = 1e9;
 
-int main()
+long long main()
 {
     cin >> inNum >> target;
 
@@ -20,7 +20,7 @@ int main()
         targetNum[i - '0']++;
     }
 
-    for(int i = 0; i <= 10; i++)
+    for(long long i = 0; i <= 10; i++)
     {
         if(targetNum[i] != 0)
         {
@@ -40,7 +40,7 @@ int main()
         }
     }
 
-    for(int i = 0; i <= 10; i++)
+    for(long long i = 0; i <= 10; i++)
     {
         if(res[i] != 0 && res[i] < finall)
         {

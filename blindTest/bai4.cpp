@@ -1,32 +1,32 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
 main() {
     cin.tie(0)->sync_with_stdio(0);
 
-    int t;
+    long long t;
     cin >> t;
 
     while (t--) {
-        int n;
+        long long n;
         cin >> n;
-        int a[n], b[n];
+        long long a[n], b[n];
 
-        map<int, int> mp;
+        map<long long, long long> mp;
 
         for (auto &i : a) {
             cin >> i;
             mp[i]++;
         }
 
-        int j = 1;
+        long long j = 1;
 
-        set<int> s;
+        set<long long> s;
 
-        for (int i = 0; i < n; i++) {
-            int temp = s.size();
+        for (long long i = 0; i < n; i++) {
+            long long temp = s.size();
             s.insert(a[i]);
             if (s.size() != temp)
                 b[i] = a[i];

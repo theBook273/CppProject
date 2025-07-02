@@ -10,9 +10,9 @@ private:
 public:
     solution()
     {
-        for (int i = 0; i < 3; i++)
+        for (long long i = 0; i < 3; i++)
         {
-            for (int j = 0; j < 3; j++)
+            for (long long j = 0; j < 3; j++)
             {
                 cin >> a[i][j];
             }
@@ -21,7 +21,7 @@ public:
 
     char horizontal()
     {
-        for (int i = 0; i < 3; i++)
+        for (long long i = 0; i < 3; i++)
         {
             if (a[i][0] == a[i][1] && a[i][1] == a[i][2] && a[i][0] != '.')
             {
@@ -33,7 +33,7 @@ public:
 
     char vertical()
     {
-        for (int i = 0; i < 3; i++)
+        for (long long i = 0; i < 3; i++)
         {
             if (a[0][i] == a[1][i] && a[1][i] == a[2][i] && a[0][i] != '.')
             {
@@ -77,13 +77,13 @@ public:
     }
 };
 
-int main()
+long long main()
 {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
 
-    int t;
+    long long t;
     cin >> t;
     while (t--)
     {

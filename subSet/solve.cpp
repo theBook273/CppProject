@@ -3,13 +3,13 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     Solution a;
 
-    vector<int> n = {1, 2, 3};
+    vector<long long> n = {1, 2, 3};
 
-    vector<vector<int>> res = a.combinationSum(n);
+    vector<vector<long long>> res = a.combinationSum(n);
 
     for (auto i : res)
     {

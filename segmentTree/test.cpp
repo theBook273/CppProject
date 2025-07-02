@@ -54,7 +54,7 @@ void replaceST(long long id, long long l, long long r, long long i,
     st[id] = max(st[id * 2], st[id * 2 + 1]);
 }
 
-int main() {
+long long main() {
     ios_base::sync_with_stdio(false);
     cin.tie(0);
     cout.tie(0);

@@ -1,15 +1,15 @@
 
 struct ListNode {
-    int val;
+    long long val;
     ListNode* next;
     ListNode() : val(0), next(nullptr) {}
-    ListNode(int x) : val(x), next(nullptr) {}
-    ListNode(int x, ListNode* next) : val(x), next(next) {}
+    ListNode(long long x) : val(x), next(nullptr) {}
+    ListNode(long long x, ListNode* next) : val(x), next(next) {}
 };
 
 class Solution {
    public:
-    ListNode* removeElements(ListNode* head, int val) {
+    ListNode* removeElements(ListNode* head, long long val) {
         ListNode* dummy = new ListNode(0, head);
         ListNode* p1 = dummy;
 

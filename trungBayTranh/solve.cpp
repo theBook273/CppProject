@@ -2,18 +2,18 @@
 
 using namespace std;
 
-pair<int, int> a[500009];
-int n;
-int prefix[500009];
+pair<long long, long long> a[500009];
+long long n;
+long long prefix[500009];
 
-int check(int i, int j) {
+long long check(long long i, long long j) {
     if (a[j].first - a[i].first <= prefix[j] - prefix[i - 1]) return 1;
     return 0;
 }
 
-int main() {
+long long main() {
     cin >> n;
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         cin >> a[i].first >> a[i].second;
     }
 
@@ -21,16 +21,16 @@ int main() {
 
     prefix[0] = 0;
 
-    for (int i = 1; i <= n; i++) {
+    for (long long i = 1; i <= n; i++) {
         prefix[i] = prefix[i - 1] + a[i - 1].second;
     }
 
-    int res = 0;
+    long long res = 0;
 
-    for (int l = 0; l < n; l++) {
-        int r = n - 1;
+    for (long long l = 0; l < n; l++) {
+        long long r = n - 1;
         while (l <= r) {
-            int mid = (l + r) / 2;
+            long long mid = (l + r) / 2;
             if (check(l, mid)) {
                 res = max(res, prefix[mid] - prefix[l - 1] -
                                    (a[mid].first - a[l].first));

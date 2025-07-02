@@ -1,28 +1,28 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
 signed main() {
     cin.tie(NULL)->sync_with_stdio(false);
-    int t;
+    long long t;
     cin >> t;
     while (t--) {
-        int n, m;
+        long long n, m;
         cin >> n >> m;
 
-        int check = m;
+        long long check = m;
 
-        int a[n];
+        long long a[n];
 
-        map<int, int> mp;
+        map<long long, long long> mp;
 
-        for (int i = 0; i < n; i++) {
+        for (long long i = 0; i < n; i++) {
             cin >> a[i];
             mp[a[i]]++;
         }
 
-        int res = 0, temp = 0;
+        long long res = 0, temp = 0;
 
         for (auto i : mp) {
             m = check;

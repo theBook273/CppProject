@@ -1,17 +1,17 @@
 #include<bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
 main()
 {
     cin.tie(0)->sync_with_stdio(0);
-    int t;
+    long long t;
     cin >> t;
 
     while(t--)
     {
-        int n;
+        long long n;
         cin >> n;
 
         if(n - 1 >= 0) cout << n - 1;

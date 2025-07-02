@@ -11,8 +11,8 @@ using namespace std;
 
 //     string res;
 
-//     int nho = 0;
-//     for (int i = 0; i < s.size(); ++i) {
+//     long long nho = 0;
+//     for (long long i = 0; i < s.size(); ++i) {
 //         if ((s[i] - '0') - (temp[i] - '0') - nho >= 0) {
 //             res += ((s[i] - '0') - (temp[i] - '0') - nho) + '0';
 //             nho = 0;
@@ -33,10 +33,10 @@ string mul(string a, string b) {
     reverse(a.begin(), a.end());
     reverse(b.begin(), b.end());
 
-    for (int i = 0; i < a.size(); ++i) {
-        int nho = 0, j;
+    for (long long i = 0; i < a.size(); ++i) {
+        long long nho = 0, j;
         for (j = 0; j < b.size(); ++j) {
-            int x = (a[i] - '0') * (b[j] - '0') + nho + (res[i + j] - '0');
+            long long x = (a[i] - '0') * (b[j] - '0') + nho + (res[i + j] - '0');
             res[i + j] = x % 10 + '0';
             nho = x / 10;
         }
@@ -49,12 +49,12 @@ string mul(string a, string b) {
 }
 
 main() {
-    int n;
+    long long n;
     cin >> n;
 
     string a = "1";
 
-    for (int i = 1; i <= n; i++) {
+    for (long long i = 1; i <= n; i++) {
         a = mul(a, to_string(i));
     }
     cout << a << endl;

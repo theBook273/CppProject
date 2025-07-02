@@ -2,7 +2,7 @@
 
 using namespace std;
 
-bool breakGold(int n, int m) {
+bool breakGold(long long n, long long m) {
     if (n == m) {
         return 1;
     }
@@ -15,11 +15,11 @@ bool breakGold(int n, int m) {
     return 0;
 }
 
-int main() {
-    int q;
+long long main() {
+    long long q;
     cin >> q;
     while (q--) {
-        int n, m;
+        long long n, m;
         cin >> n >> m;
 
         if (n < m) {

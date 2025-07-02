@@ -6,9 +6,9 @@ long long so, n;
 
 bool tamgiac[100000000];
 
-int main()
+long long main()
 {
-    for (int i = 1; i * (i + 1) / 2 <= 10000000; i++)
+    for (long long i = 1; i * (i + 1) / 2 <= 10000000; i++)
     {
         tamgiac[i * (i + 1) / 2] = 1;
     }

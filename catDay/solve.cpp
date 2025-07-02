@@ -9,7 +9,7 @@ void solve() {
     if (v.size() == n) {
         // dem++;
         // if (dem >= 1000000) return;
-        for (int i : v) {
+        for (long long i : v) {
             cout << i << " ";
         }
         cout << endl;

@@ -2,22 +2,22 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
-    int n, k, nums[100000];
+    long long n, k, nums[100000];
 
     cin >> n >> k;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         cin >> nums[i];
     }
 
-    map<int, int> oM;
-    priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> q;
-    vector<int> res;
+    map<long long, long long> oM;
+    priority_queue<pair<long long, long long>, vector<pair<long long, long long>>, greater<pair<long long, long long>>> q;
+    vector<long long> res;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         oM[nums[i]]++;
     }

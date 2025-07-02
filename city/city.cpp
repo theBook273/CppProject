@@ -3,7 +3,7 @@ using namespace std;
 
 long long n, a[17][17], dis[1 << 17][17];
 
-int main() {
+long long main() {
     cin >> n;
 
     for (long long i = 0; i < n; i++) {
@@ -12,7 +12,7 @@ int main() {
         }
     }
 
-    for (long long mask = 1; mask < (int)pow(2, n); mask++) {
+    for (long long mask = 1; mask < (long long)pow(2, n); mask++) {
         if (__builtin_popcount(mask) == 1)
             continue;
         else

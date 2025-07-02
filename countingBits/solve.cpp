@@ -16,7 +16,7 @@ long long countOnes(long long n) {
     return result;
 }
 
-int main() {
+long long main() {
     long long n;
     cin >> n;
     cout << countOnes(n) << endl;

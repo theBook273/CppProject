@@ -2,21 +2,21 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     // freopen("CLOCK.INP", "r", stdin);
     // freopen("CLOCK.OUT", "w", stdout);
 
-    int m;
+    long long m;
     string n;
 
     cin >> n >> m;
 
     while (n.size() > 2)
     {
-        stack<int> minus;
-        int remem = 0;
-        for (int i = n.size() - 1; i >= 0; i++)
+        stack<long long> minus;
+        long long remem = 0;
+        for (long long i = n.size() - 1; i >= 0; i++)
         {
             if (i == n.size() - 1)
             {

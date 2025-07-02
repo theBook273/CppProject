@@ -5,11 +5,11 @@ using namespace std;
 long long n, s,
     a[1000000], b[1000000];
 
-int main()
+long long main()
 {
     cin >> n;
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         cin >> a[i];
     }
@@ -18,16 +18,16 @@ int main()
 
     b[0] = a[0];
 
-    for (int i = 1; i < n; i++)
+    for (long long i = 1; i < n; i++)
     {
         b[i] = b[i - 1] + a[i];
     }
 
-    for (int i = 0; i < n; i++)
+    for (long long i = 0; i < n; i++)
     {
         if (b[i] == s)
         {
-            for (int j = 0; j <= i; j++)
+            for (long long j = 0; j <= i; j++)
             {
                 cout << a[j] << " ";
             }
@@ -35,11 +35,11 @@ int main()
         }
         if (b[i] >= s)
         {
-            for (int j = 0; j <= i; j++)
+            for (long long j = 0; j <= i; j++)
             {
                 if (b[i] - b[j] == s)
                 {
-                    for (int k = j + 1; k <= i; k++)
+                    for (long long k = j + 1; k <= i; k++)
                     {
                         cout << a[k] << " ";
                     }

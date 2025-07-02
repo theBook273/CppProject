@@ -1,8 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
-int main() {
-    int n;
+long long main() {
+    long long n;
     cin >> n;
     while (n) {
         n -= ceil(n / 2.0);

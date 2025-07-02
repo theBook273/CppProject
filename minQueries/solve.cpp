@@ -2,20 +2,20 @@
 
 using namespace std;
 
-int main() {
-    int n, m;
+long long main() {
+    long long n, m;
 
     cin >> n >> m;
 
-    int a[n], tong = m;
+    long long a[n], tong = m;
 
-    vector<int> maxV;
+    vector<long long> maxV;
 
-    for (int i = 0; i < n; i++) {
+    for (long long i = 0; i < n; i++) {
         cin >> a[i];
     }
 
-    for (int i = 0; i < n - 1; i++) {
+    for (long long i = 0; i < n - 1; i++) {
         maxV.push_back(max(a[i], a[i + 1]));
     }
 
@@ -23,8 +23,8 @@ int main() {
     //     cout << i << " ";
     // }
 
-    for (int j = 0; j < m; j++) {
-        int l, r, mi = -1e9;
+    for (long long j = 0; j < m; j++) {
+        long long l, r, mi = -1e9;
 
         cin >> l >> r;
 
@@ -32,7 +32,7 @@ int main() {
             swap(l, r);
         }
 
-        for (int i = l - 1; i < r - 1; i += 2) {
+        for (long long i = l - 1; i < r - 1; i += 2) {
             mi = max(maxV[i], mi);
         }
 

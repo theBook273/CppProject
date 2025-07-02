@@ -4,16 +4,16 @@
 using namespace std;
 
 signed main() {
-  int n;
+  long long n;
   cin >> n;
 
-  vector<pair<int, int>> a(n);
+  vector<pair<long long, long long>> a(n);
 
   for (auto &i : a)
     cin >> i.first >> i.second;
 
-  vector<int> b(1e6 + 5);
-  int dau = 1e9, cuoi = 0;
+  vector<long long> b(1e6 + 5);
+  long long dau = 1e9, cuoi = 0;
 
   for (auto i : a) {
     b[i.first]++;
@@ -23,19 +23,19 @@ signed main() {
     cuoi = max(cuoi, i.second);
   }
 
-  vector<int> resolve(1e6 + 6);
+  vector<long long> resolve(1e6 + 6);
 
   resolve[0] = b[0];
 
-  for (int i = 1; i <= cuoi; i++) {
+  for (long long i = 1; i <= cuoi; i++) {
     resolve[i] = resolve[i - 1] + b[i];
   }
 
-  int res = *max_element(resolve.begin(), resolve.begin() + cuoi + 1);
+  long long res = *max_element(resolve.begin(), resolve.begin() + cuoi + 1);
 
-  int cnt = 0;
+  long long cnt = 0;
 
-  for (int i = dau; i <= cuoi; i++) {
+  for (long long i = dau; i <= cuoi; i++) {
     if (resolve[i] == res)
       cnt++;
   }

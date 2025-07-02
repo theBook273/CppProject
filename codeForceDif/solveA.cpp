@@ -2,17 +2,17 @@
 
 using namespace std;
 
-int main() {
-    int q;
+long long main() {
+    long long q;
     cin >> q;
 
     while (q--) {
         string s, eg = "codeforces";
         cin >> s;
 
-        int tong = 0;
+        long long tong = 0;
 
-        for (int i = 0; i < s.size(); i++) {
+        for (long long i = 0; i < s.size(); i++) {
             if (s[i] != eg[i]) {
                 tong++;
             }

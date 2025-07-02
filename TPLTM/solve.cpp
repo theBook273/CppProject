@@ -1,12 +1,12 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
-int n, m, id[100000], low[100000], cnt, res;
-vector<int> v[100000];
-stack<int> st;
+long long n, m, id[100000], low[100000], cnt, res;
+vector<long long> v[100000];
+stack<long long> st;
 
-void tarjan(int u) {
+void tarjan(long long u) {
     id[u] = low[u] = ++cnt;
     st.push(u);
     for (auto i : v[u]) {
@@ -19,7 +19,7 @@ void tarjan(int u) {
     }
     if (low[u] == id[u]) {
         res++;
-        int temp;
+        long long temp;
         do {
             temp = st.top();
             st.pop();
@@ -30,12 +30,12 @@ void tarjan(int u) {
 
 signed main() {
     cin >> n >> m;
-    for (int i = 1; i <= m; i++) {
-        int a, b;
+    for (long long i = 1; i <= m; i++) {
+        long long a, b;
         cin >> a >> b;
         v[a].push_back(b);
     }
-    for (int i = 1; i <= n; i++) {
+    for (long long i = 1; i <= n; i++) {
         if (!id[i]) tarjan(i);
     }
 

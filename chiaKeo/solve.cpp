@@ -2,19 +2,19 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
-    int t;
+    long long t;
     cin >> t;
 
-    int temp = t;
+    long long temp = t;
 
     while (t--)
     {
         long long n, m, a[1000000], tong = 0;
         cin >> n >> m;
 
-        for (int i = 0; i < n; i++)
+        for (long long i = 0; i < n; i++)
         {
             cin >> a[i];
             tong += a[i];

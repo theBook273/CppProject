@@ -1,14 +1,14 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
-int n, k, xq, yq;
-map<pair<int, int>, bool> mp;
+long long n, k, xq, yq;
+map<pair<long long, long long>, bool> mp;
 
-int solveD(int x, int y, int n) {
-    int tong = 0;
-    int temp = x;
+long long solveD(long long x, long long y, long long n) {
+    long long tong = 0;
+    long long temp = x;
     while (temp < n) {
         temp++;
         if (mp[{temp, y}]) {
@@ -27,9 +27,9 @@ int solveD(int x, int y, int n) {
     return tong;
 }
 
-int solveN(int x, int y, int n) {
-    int tong = 0;
-    int temp = y;
+long long solveN(long long x, long long y, long long n) {
+    long long tong = 0;
+    long long temp = y;
     while (temp < n) {
         temp++;
         if (mp[{x, temp}]) {
@@ -48,9 +48,9 @@ int solveN(int x, int y, int n) {
     return tong;
 }
 
-int solveC(int x, int y, int n) {
-    int tong = 0;
-    int tempx = x, tempy = y;
+long long solveC(long long x, long long y, long long n) {
+    long long tong = 0;
+    long long tempx = x, tempy = y;
 
     while (tempx > 1 && tempy > 1) {
         tempx--;
@@ -95,13 +95,13 @@ int solveC(int x, int y, int n) {
 main() {
     cin >> n >> k >> xq >> yq;
 
-    for (int i = 0; i < k; i++) {
-        int a, b;
+    for (long long i = 0; i < k; i++) {
+        long long a, b;
         cin >> a >> b;
         mp[{a, b}] = 1;
     }
 
-    int tong = solveD(xq, yq, n);
+    long long tong = solveD(xq, yq, n);
     tong += solveN(xq, yq, n);
     tong += solveC(xq, yq, n);
 

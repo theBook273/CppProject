@@ -4,7 +4,7 @@ using namespace std;
 
 long long h, m, a, b;
 
-int doi(int gioDoi)
+long long doi(long long gioDoi)
 {
     while (gioDoi < 0)
     {
@@ -18,11 +18,11 @@ int doi(int gioDoi)
     return gioDoi;
 }
 
-int main()
+long long main()
 {
     cin >> h >> m >> a >> b;
 
-    int gioDoi = h - a;
+    long long gioDoi = h - a;
 
     gioDoi = doi(gioDoi);
 

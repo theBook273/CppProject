@@ -2,7 +2,7 @@
 
 using namespace std;
 
-int main() {
+long long main() {
     ios_base::sync_with_stdio(0);
     cin.tie(0);
     long long n, t, k;

@@ -15,10 +15,10 @@ using namespace std;
 //============================================================================
 // START PROGRAM
 //============================================================================
-#define int long long
+#define long long long long
 #define endl '\n'
 
-int solve(int n, int k) {
+long long solve(long long n, long long k) {
     // cerr<<n<<' '<<k<<endl;
     if (n == 1) return 1;
     if (k <= (n + 1) / 2) {
@@ -28,7 +28,7 @@ int solve(int n, int k) {
             return 2 * k;
     }
 
-    int c = solve(n / 2, k - (n + 1) / 2);
+    long long c = solve(n / 2, k - (n + 1) / 2);
     if (n & 1)
         return 2 * c + 1;
     else
@@ -44,10 +44,10 @@ signed main() {
     freopen("output.txt", "w", stdout);
 #endif
 
-    int t;
+    long long t;
     cin >> t;
     while (t--) {
-        int n, k;
+        long long n, k;
         cin >> n >> k;
         cout << solve(n, k) << endl;
     }

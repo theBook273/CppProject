@@ -3,15 +3,15 @@
 
 using namespace std;
 
-int main()
+long long main()
 {
     Solution a;
 
-    vector<int> v = {73, 74, 75, 71, 69, 72, 76, 73};
+    vector<long long> v = {73, 74, 75, 71, 69, 72, 76, 73};
 
-    vector<int> temp = a.dailyTemperatures(v);
+    vector<long long> temp = a.dailyTemperatures(v);
 
-    for (int i = 0; i < temp.size(); i++)
+    for (long long i = 0; i < temp.size(); i++)
     {
         cout << temp[i] << " ";
     }

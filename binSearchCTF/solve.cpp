@@ -2,10 +2,10 @@
 
 using namespace std;
 
-int main() {
-    int l = 1, r = 1000;
+long long main() {
+    long long l = 1, r = 1000;
     while (l <= r) {
-        int m = (l + r) / 2;
+        long long m = (l + r) / 2;
         cout << m << endl;
         bool check;
         cout << "bigger?: ";

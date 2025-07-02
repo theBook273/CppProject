@@ -1,13 +1,13 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
-int n, m, cnt, id[100000], low[100000];
-vector<int> v[100000];
-vector<pair<int, int>> bridge;
+long long n, m, cnt, id[100000], low[100000];
+vector<long long> v[100000];
+vector<pair<long long, long long>> bridge;
 
-void dfs(int x, int p) {
+void dfs(long long x, long long p) {
     id[x] = low[x] = ++cnt;
     for (auto u : v[x])
         if (u != p) {
@@ -26,14 +26,14 @@ void dfs(int x, int p) {
 signed main() {
     cin.tie(NULL)->sync_with_stdio(false);
     cin >> n >> m;
-    for (int i = 1; i <= m; i++) {
-        int a, b;
+    for (long long i = 1; i <= m; i++) {
+        long long a, b;
         cin >> a >> b;
         v[a].push_back(b);
         v[b].push_back(a);
     }
 
-    for (int i = 1; i <= n; i++) {
+    for (long long i = 1; i <= n; i++) {
         if (!id[i]) dfs(i, 0);
     }
 }

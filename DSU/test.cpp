@@ -3,10 +3,10 @@
 using namespace std;
 
 vector<long long> day[100000];
-int res[100000];
+long long res[100000];
 vector<long long> cut;
 long long n, m, q, parent[100000], ranking[100005];
-int ans, lastStand;
+long long ans, lastStand;
 
 long long tim(long long a) {
     if (parent[a] == a) return a;
@@ -26,7 +26,7 @@ void makeUnion(long long a, long long b) {
     }
 }
 
-int main() {
+long long main() {
     ios_base::sync_with_stdio(false);
     cin.tie(NULL);
     cout.tie(NULL);
@@ -80,7 +80,7 @@ int main() {
         dem--;
     }
 
-    for (int i = 0; i < lastStand; i++) {
+    for (long long i = 0; i < lastStand; i++) {
         cout << res[i] << " ";
     }
 }

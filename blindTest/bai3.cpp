@@ -1,16 +1,16 @@
 #include <bits/stdc++.h>
-#define int long long
+#define long long long long
 
 using namespace std;
 
 main() {
     cin.tie(0)->sync_with_stdio(0);
 
-    int t;
+    long long t;
     cin >> t;
 
     while (t--) {
-        int m, a, b, c, tong = 0;
+        long long m, a, b, c, tong = 0;
 
         cin >> m >> a >> b >> c;
 
