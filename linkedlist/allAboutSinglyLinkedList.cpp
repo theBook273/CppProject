@@ -5,14 +5,13 @@ using namespace std;
 struct Node {
   long long data;
   Node *next;
+  Node(int val) {
+    data = val;
+    next = nullptr;
+  }
 };
 
-Node *createNode(long long val) {
-  Node *newOne = new Node();
-  newOne->data = val;
-  newOne->next = nullptr;
-  return newOne;
-}
+Node *createNode(long long val) { return new Node(val); }
 
 void insertBack(Node *&head, long long val) {
   Node *newOne = createNode(val);
