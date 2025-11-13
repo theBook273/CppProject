@@ -1,5 +1,4 @@
-#include <bits/stdc++.h>
-#include <cctype>
+#include <iostream>
 
 using namespace std;
 
@@ -12,6 +11,7 @@ signed main() {
       a.push_back(i - '0');
     }
   }
+
   sort(a.begin(), a.end());
   for (int i = 0; i < a.size(); i++) {
     cout << a[i] << ((i + 1 != a.size()) ? "+" : "\n");

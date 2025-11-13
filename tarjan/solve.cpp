@@ -1,43 +1,46 @@
 #include <bits/stdc++.h>
-#define long long long long
+#define int long long
 
 using namespace std;
 
-vector<long long> a[100000];
-long long n, m, id[100000], low[100000], cnt = 1, bridge = 0, polong long = 0;
+vector<int> a[100000];
+int n, m, id[100000], low[100000], cnt = 1, bridge = 0, par = 0;
 
-void dfs(long long u, long long p) {
-    id[u] = low[u] = ++cnt;
-    long long node = (p != 0);
+void dfs(int u, int p) {
+  id[u] = low[u] = ++cnt;
+  int node = (p != 0);
 
-    for (auto v : a[u])
-        if (v != p) {
-            if (id[v])
-                low[u] = min(id[v], low[u]);
-            else {
-                dfs(v, u);
-                low[u] = min(low[v], low[u]);
-                if (id[v] == low[v]) {
-                    bridge++;
-                    cout << u << " " << v << endl;
-                }
-                if (low[v] >= id[u]) node++;
-            }
+  for (auto v : a[u])
+    if (v != p) {
+      if (id[v])
+        low[u] = min(id[v], low[u]);
+      else {
+        dfs(v, u);
+        low[u] = min(low[v], low[u]);
+        if (id[v] == low[v]) {
+          bridge++;
+          cout << u << " " << v << endl;
         }
-    if (node >= 2) polong long++;
+        if (low[v] >= id[u])
+          node++;
+      }
+    }
+  if (node >= 2)
+    par++;
 }
 signed main() {
-    cin >> n >> m;
+  cin >> n >> m;
 
-    for (long long i = 1; i <= m; i++) {
-        long long v1, v2;
-        cin >> v1 >> v2;
-        a[v1].push_back(v2);
-        a[v2].push_back(v1);
-    }
+  for (long long i = 1; i <= m; i++) {
+    long long v1, v2;
+    cin >> v1 >> v2;
+    a[v1].push_back(v2);
+    a[v2].push_back(v1);
+  }
 
-    for (long long i = 1; i <= n; i++) {
-        if (!id[i]) dfs(i, 0);
-    }
-    cout << polong long << " " << bridge;
+  for (long long i = 1; i <= n; i++) {
+    if (!id[i])
+      dfs(i, 0);
+  }
+  cout << par << " " << bridge;
 }
