@@ -1,45 +1,43 @@
+#include <algorithm>
 #include <bits/stdc++.h>
+#define int long long
 
 using namespace std;
 
 signed main() {
-  cin.tie()->sync_with_stdio(0);
-  vector<int> G, L;
-  int t;
-  cin >> t;
-  char type;
-  int num;
-  while (t--) {
-    cin >> type >> num;
+  ios::sync_with_stdio(0);
+  cin.tie(nullptr);
+
+  int n;
+  cin >> n;
+  vector<int> lower, uppers;
+  set<int> allVals;
+
+  for (int i = 0; i < n; i++) {
+    char type;
+    int p;
+    cin >> type >> p;
     if (type == 'G') {
-      G.push_back(num);
+      lower.push_back(p);
     } else {
-      L.push_back(num);
+      uppers.push_back(p);
     }
+    allVals.insert(p);
   }
 
-  sort(G.begin(), G.end());
-  sort(L.begin(), L.end());
+  sort(lower.begin(), lower.end());
+  sort(uppers.begin(), uppers.end());
+  vector<int> vals(allVals.begin(), allVals.end());
 
-  if (G.empty() || L.empty() || G.back() <= L.front()) {
-    cout << 0;
-    return 0;
+  int max_keep = 0;
+  for (auto m : vals) {
+    int num_g = upper_bound(lower.begin(), lower.end(), m) - lower.begin();
+
+    int num_l = uppers.size() -
+                (lower_bound(uppers.begin(), uppers.end(), m) - uppers.begin());
+
+    max_keep = max(max_keep, num_g + num_l);
   }
 
-  int j = 0, ans = INT_MAX;
-  for (int i = 0; i <= G.size(); i++) {
-    int gVal;
-    if (i == G.size()) {
-      gVal = INT_MAX;
-    } else {
-      gVal = G[i];
-    }
-
-    while (j < L.size() && L[j] < gVal) {
-      j++;
-    }
-    ans = min(ans, i + j);
-  }
-
-  cout << ans;
+  cout << n - max_keep << "\n";
 }
