@@ -54,8 +54,8 @@ void compress() {
 signed main() {
     cin.tie()->sync_with_stdio(0);
 
-    freopen("test.inp", "r", stdin);
-    freopen("test.out", "w", stdout);
+//    freopen("test.inp", "r", stdin);
+//    freopen("test.out", "w", stdout);
 
     cin >> n >> k;
     a.resize(n), ins.resize(n), des.resize(n);

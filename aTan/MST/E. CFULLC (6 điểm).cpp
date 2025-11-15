@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#define int long long
 
 using namespace std;
 
@@ -17,7 +18,7 @@ void join(int x, int y) {
   y = parent(y);
 
   if (x != y) {
-    if (x > y) {
+    if (cost[x] > cost[y]) {
       swap(x, y);
     }
     dsu[y] = x;
@@ -34,4 +35,25 @@ signed main() {
     cin >> cost[i];
     dsu[i] = i;
   }
+
+  for (int u, v, i = 0; i < m; i++) {
+    cin >> u >> v;
+    join(u, v);
+  }
+
+  vector<int> needBridge;
+  for (int i = 1; i <= n; i++) {
+    if (dsu[i] == i) {
+      needBridge.push_back(cost[i]);
+    }
+  }
+
+  sort(needBridge.begin(), needBridge.end());
+
+  int tong = 0;
+  for (int i = 1; i < (int)needBridge.size(); i++) {
+    tong += needBridge[0] + needBridge[i];
+  }
+
+  cout << tong << "\n";
 }
