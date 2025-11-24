@@ -11,8 +11,8 @@ int n, m;
 signed main() {
   cin.tie(0)->sync_with_stdio(0);
 
-  freopen("sumpath.inp", "r", stdin);
-  freopen("sumpath.out", "w", stdout);
+  // freopen("sumpath.inp", "r", stdin);
+  // freopen("sumpath.out", "w", stdout);
 
   cin >> n >> m;
 
@@ -44,5 +44,12 @@ signed main() {
     }
   }
 
-  cout << g[n][m] % MOD;
+  for (int i = 1; i <= n; i++) {
+    for (int j = 1; j <= m; j++) {
+      cout << g[i][j] << " ";
+    }
+    cout << endl;
+  }
+
+  // cout << g[n][m] % MOD;
 }

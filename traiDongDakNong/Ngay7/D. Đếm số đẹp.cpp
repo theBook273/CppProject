@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#include <cstdio>
 #define int long long
 
 using namespace std;
@@ -42,6 +43,7 @@ int solve(int num) {
 
 signed main() {
   cin.tie()->sync_with_stdio(0);
+
   int t;
   cin >> t;
   while (t--) {
