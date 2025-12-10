@@ -3,7 +3,8 @@
 using namespace std;
 
 signed main() {
-  int t;
-  cin >> t;
-  cout << t;
+  set<int> se = {2, 4, 51, 6};
+  cout << *++se.begin();
+  se.erase(se.begin());
+  cout << *se.begin();
 }
