@@ -9,18 +9,18 @@ int n, timer, t;
 vector<int> dis, tin, tout, pos, a, adj[N + 5];
 vector<bool> vis;
 
-void dfsSetup(int u) {
+void dfsSetup(int u, int p) {
   tin[u] = ++timer;
   pos[timer] = u;
   dis[u] += a[u];
   for (auto &v : adj[u]) {
-    if (vis[v]) {
+    if (v == p) {
       continue;
     }
 
     vis[v] = 1;
-    dis[u] += dis[v];
-    dfsSetup(v);
+    dis[v] += dis[u];
+    dfsSetup(v, u);
   }
   tout[u] = timer;
 }
@@ -63,7 +63,7 @@ signed main() {
     adj[v].push_back(u);
   }
 
-  dfsSetup(1);
+  dfsSetup(1, -1);
 
   while (t--) {
     int x;
