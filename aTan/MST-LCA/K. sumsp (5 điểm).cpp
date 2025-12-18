@@ -1,73 +1,76 @@
 #include <bits/stdc++.h>
-#include <utility>
 #define int long long
 
 using namespace std;
 
-const int N = 2e5;
-const int lg = 20;
+struct Edge {
+  int from, to, len;
+  const bool operator<(const Edge &other) { return len < other.len; }
+};
 
-vector<vector<int>> parent(N + 1, vector<int>(lg + 1, 0));
-vector<int> depth(N + 1, 0), adj[N + 1];
-int n, q, x, y, root;
-char type;
+const int N = 1e6;
 
-void dfsSetUp(int u, int p) {
-  for (auto &v : adj[u]) {
-    if (v != p) {
-      depth[v] = depth[u] + 1;
-      parent[v][0] = u;
-      dfsSetUp(v, u);
+int n, m;
+vector<int> dsu, sub, ans;
+vector<pair<int, int>> adj[N + 5];
+vector<Edge> edge;
+
+int parent(int x) { return (dsu[x] == x ? x : dsu[x] = parent(dsu[x])); }
+bool join(int a, int b) {
+  a = parent(a);
+  b = parent(b);
+  if (a != b) {
+    dsu[a] = b;
+    return 1;
+  }
+  return 0;
+}
+
+void dfs(int u, int p) {
+  sub[u] = 1;
+  for (auto &[v, w] : adj[u]) {
+    if (v == p) {
+      continue;
     }
+
+    dfs(v, u);
+    sub[u] += sub[v];
   }
 }
 
-void init() {
-  for (int j = 1; j <= lg; j++) {
-    for (int i = 1; i <= n; i++) {
-      parent[i][j] = parent[parent[i][j = 1]][j - 1];
+void add_bin(vector<int> &ans, int x, int sh) {
+  int pos = sh;
+  while (x > 0) {
+    int bit = x & 1;
+    int carry = bit;
+
+    while (carry) {
+      if (pos >= (int)ans.size()) {
+        ans.push_back(0);
+      }
+      int val = ans[pos] + carry;
+      ans[pos] = val & 1;
+      carry = val >> 1;
+      pos++;
     }
+
+    x >>= 1;
+    sh++;
+    pos = sh;
   }
 }
 
-int lca(int u, int v) {
-  if (depth[u] < depth[v]) {
-    swap(u, v);
-  }
-  int x = depth[u] - depth[v];
-  for (int i = lg; i >= 0; i--) {
-    if (x >= (1 << i)) {
-      u = parent[u][i];
-      x -= (1 << i);
+void calc(int u, int p) {
+  for (auto &[v, w] : adj[u]) {
+    if (v == p) {
+      continue;
     }
-  }
-  if (u == v) {
-    return u;
-  }
-  for (int i = lg; i >= 0; i--) {
-    if (parent[u][i] != parent[v][i]) {
-      u = parent[u][i];
-      v = parent[v][i];
-    }
-  }
-  return parent[u][0];
-}
 
-int newLCA(int u, int v, int r) {
-  if (r == 1) {
-    return lca(u, v);
-  } else {
-    int x = lca(u, v);
-    int res = x;
-    int y = lca(u, r);
-    int z = lca(v, r);
-    if (depth[res] < depth[y]) {
-      res = y;
-    }
-    if (depth[res] < depth[z]) {
-      res = z;
-    }
-    return res;
+    int pa = sub[v] * (n - sub[v]);
+
+    add_bin(ans, pa, w);
+
+    calc(v, u);
   }
 }
 
@@ -75,25 +78,40 @@ signed main() {
   ios::sync_with_stdio(false);
   cin.tie(nullptr);
 
-  cin >> n;
-  for (int u, v, i = 0; i < n; i++) {
-    cin >> u >> v;
-    adj[u].push_back(v);
-    adj[v].push_back(u);
+  dsu.resize(N + 1, 0);
+  sub.resize(N + 1, 0);
+  ans.resize(N + 5, 0);
+  iota(dsu.begin(), dsu.end(), 0);
+
+  cin >> n >> m;
+  for (int u, v, w, i = 0; i < m; i++) {
+    cin >> u >> v >> w;
+    edge.push_back({u, v, w});
   }
 
-  root = 1;
-  dfsSetUp(1, -1);
-  init();
-
-  cin >> q;
-  while (q--) {
-    cin >> type;
-    if (type == '!') {
-      cin >> root;
-    } else {
-      cin >> x >> y;
-      cout << newLCA(x, y, root) << "\n";
+  sort(edge.begin(), edge.end());
+  int _ = 0;
+  for (auto &[u, v, w] : edge) {
+    if (join(u, v)) {
+      adj[u].push_back({v, w});
+      adj[v].push_back({u, w});
+      _++;
+      if (_ == n - 1) {
+        break;
+      }
     }
+  }
+
+  dfs(1, -1);
+
+  calc(1, -1);
+
+  int start = N + 4;
+  while (start > 0 && ans[start] == 0) {
+    start--;
+  }
+
+  for (int i = start; i >= 0; i--) {
+    cout << ans[i];
   }
 }
