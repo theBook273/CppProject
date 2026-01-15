@@ -1,4 +1,5 @@
 #include <bits/stdc++.h>
+#define int long long
 
 using namespace std;
 
@@ -10,95 +11,98 @@ string s;
 pair<long long, pair<long long, char>> ind[maxn];
 
 bool check(long long x) {
-    bool mark[maxn];
-    memset(mark, 0, sizeof(mark));
-    if (ind[x].second.second == 'B') {
-        mark[ind[x].second.first] = 1;
-        long long l = 1e9, r = -1e9;
-        for (long long i = x; i < n; ++i) {
-            if (ind[i].second.second == 'B') {
-                l = min(l, ind[i].second.first);
-                r = max(r, ind[i].second.first);
-            } else {
-                mark[ind[i].second.first] = 1;
-            }
-        }
-
-        long long dem = 0;
-
-        for (long long i = l + 1; i < r; ++i) {
-            if (mark[i]) {
-                dem++;
-            }
-        }
-
-        if (dem != 0) return (dem + 1 <= k);
-        return 1;
+  bool mark[maxn];
+  memset(mark, 0, sizeof(mark));
+  if (ind[x].second.second == 'B') {
+    mark[ind[x].second.first] = 1;
+    long long l = 1e9, r = -1e9;
+    for (long long i = x; i < n; ++i) {
+      if (ind[i].second.second == 'B') {
+        l = min(l, ind[i].second.first);
+        r = max(r, ind[i].second.first);
+      } else {
+        mark[ind[i].second.first] = 1;
+      }
     }
-    if (ind[x].second.second == 'R') {
-        long long l = ind[x].second.first;
-        long long r = ind[x].second.first;
-        for (long long i = x; i < n; ++i) {
-            if (ind[i].second.second == 'B') {
-                l = min(l, ind[i].second.first);
-                r = max(r, ind[i].second.first);
-            } else {
-                mark[ind[i].second.first] = 1;
-            }
-        }
 
-        long long dem = 0;
-        for (long long i = l + 1; i < r; ++i) {
-            if (mark[i]) dem++;
-        }
-        return (dem + 1 <= k);
-    }
-}
-
-long long main() {
-    cin.tie(0)->sync_with_stdio(0);
-    // long long t;
-    // cin >> t;
-    // while (t--) {
-    cin >> n >> k;
-    cin >> s;
     long long dem = 0;
 
-    for (long long i = 0; i < n; ++i) {
-        cin >> ind[i].first;
-        ind[i].second.first = i;
-        ind[i].second.second = s[i];
+    for (long long i = l + 1; i < r; ++i) {
+      if (mark[i]) {
+        dem++;
+      }
     }
 
-    for (long long i = 0; i < n; i++) {
-        if (s[i] == 'B') {
-            dem++;
-            while (s[i + 1] == 'B') {
-                i++;
-            }
-        }
+    if (dem != 0)
+      return (dem + 1 <= k);
+    return 1;
+  }
+  if (ind[x].second.second == 'R') {
+    long long l = ind[x].second.first;
+    long long r = ind[x].second.first;
+    for (long long i = x; i < n; ++i) {
+      if (ind[i].second.second == 'B') {
+        l = min(l, ind[i].second.first);
+        r = max(r, ind[i].second.first);
+      } else {
+        mark[ind[i].second.first] = 1;
+      }
     }
 
-    if (dem <= k) {
-        cout << 0 << "\n";
-        return 0;
+    long long dem = 0;
+    for (long long i = l + 1; i < r; ++i) {
+      if (mark[i])
+        dem++;
     }
+    return (dem + 1 <= k);
+  }
+  return 0;
+}
 
-    sort(ind, ind + n);
+signed main() {
+  cin.tie(0)->sync_with_stdio(0);
+  // long long t;
+  // cin >> t;
+  // while (t--) {
+  cin >> n >> k;
+  cin >> s;
+  long long dem = 0;
 
-    long long res = INT_MAX;
+  for (long long i = 0; i < n; ++i) {
+    cin >> ind[i].first;
+    ind[i].second.first = i;
+    ind[i].second.second = s[i];
+  }
 
-    long long l = 0, r = n - 1;
-    while (l <= r) {
-        long long m = (l + r) / 2;
-        if (check(m)) {
-            res = min(res, ind[m].first);
-            r = m - 1;
-        } else {
-            l = m + 1;
-        }
+  for (long long i = 0; i < n; i++) {
+    if (s[i] == 'B') {
+      dem++;
+      while (s[i + 1] == 'B') {
+        i++;
+      }
     }
+  }
 
-    cout << res << "\n";
-    // }
+  if (dem <= k) {
+    cout << 0 << "\n";
+    return 0;
+  }
+
+  sort(ind, ind + n);
+
+  long long res = INT_MAX;
+
+  long long l = 0, r = n - 1;
+  while (l <= r) {
+    long long m = (l + r) / 2;
+    if (check(m)) {
+      res = min(res, ind[m].first);
+      r = m - 1;
+    } else {
+      l = m + 1;
+    }
+  }
+
+  cout << res << "\n";
+  // }
 }

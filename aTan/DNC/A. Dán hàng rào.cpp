@@ -3,53 +3,41 @@
 
 using namespace std;
 
-vector<int> a;
-vector<pair<int, int>> st;
+const int oo = 1e18;
+
 int n;
+vector<int> a;
 
-void build(int l, int r, int id) {
-  if (l == r) {
-    st[id] = {a[l], l};
-    return;
-  }
-  int m = (l + r) / 2;
-  build(l, m, id * 2);
-  build(m + 1, r, id * 2 + 1);
-  st[id] = min(st[id * 2], st[id * 2 + 1]);
-}
-
-pair<int, int> query(int l, int r, int u, int v, int id) {
-  if (l > r || l > v || u > r) {
-    return {LLONG_MAX, LLONG_MAX};
-  }
-  if (u <= l && r <= v) {
-    return st[id];
-  }
-  int m = (l + r) / 2;
-  return min(query(l, m, u, v, id * 2), query(m + 1, r, u, v, id * 2 + 1));
-}
-
-int dnc(int l, int r, int sub) {
+int dnc(int l, int r) {
   if (l > r) {
     return 0;
   }
 
-  pair<int, int> minQ = query(1, n, l, r, 1);
-  int mini = minQ.first;
-  int mid = minQ.second;
+  int mini = oo;
+  for (int i = l; i <= r; i++) {
+    mini = min(a[i], mini);
+  }
 
-  return dnc(l, mid - 1, mini) + dnc(mid + 1, r, mini) + (mini != sub);
+  int mid = 0;
+  for (int i = l; i <= r; i++) {
+    if (a[i] == mini) {
+      mid = i;
+    }
+    a[i] -= mini;
+  }
+
+  return dnc(l, mid - 1) + dnc(mid + 1, r) + (mini != 0);
 }
 
 signed main() {
-  cin.tie()->sync_with_stdio(0);
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
   cin >> n;
-  a.resize(n + 1);
-  st.resize(n * 4 + 5);
-  for (int i = 1; i <= n; i++) {
-    cin >> a[i];
+  a.resize(n);
+
+  for (auto &i : a) {
+    cin >> i;
   }
 
-  build(1, n, 1);
-  cout << dnc(1, n, 0);
+  cout << dnc(0, n - 1);
 }
