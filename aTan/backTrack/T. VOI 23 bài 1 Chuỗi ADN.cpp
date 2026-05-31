@@ -23,7 +23,7 @@ int cnt() {
 }
 
 void gen(int idx) {
-  if (idx == pos.size()) {
+  if (idx == (int)pos.size()) {
     // cout << s << "\n";
     res = min(res, cnt());
     return;
@@ -39,7 +39,7 @@ void gen(int idx) {
 signed main() {
   cin.tie()->sync_with_stdio(0);
   cin >> s;
-  for (int i = 0; i < s.size(); i++) {
+  for (int i = 0; i < int(s.size()); i++) {
     if (s[i] == '?')
       pos.push_back(i);
   }
