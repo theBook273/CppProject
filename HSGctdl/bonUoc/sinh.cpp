@@ -13,7 +13,7 @@ signed main() {
   system("g++ solve.cpp -o solve");
   system("g++ trau.cpp -o trau");
 
-  int limTest = 10;
+  int limTest = 100;
   int lim = 100000;
   for (int test = 1; test <= limTest; test++) {
     ofstream inp("FOURDIV.INP");

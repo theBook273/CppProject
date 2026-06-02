@@ -39,7 +39,7 @@ void solve() {
     sort(mlAndSpc, mlAndSpc + n, check2);
 }
 
-void prlong longAni() {
+void longAni() {
     solve();
     cout << tong << endl;
     for (long long i = 0; i < n; i++) {
@@ -47,7 +47,7 @@ void prlong longAni() {
     }
 }
 
-long long main() {
+signed main() {
     inp();
-    prlong longAni();
+    longAni();
 }
