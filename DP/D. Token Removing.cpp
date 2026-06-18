@@ -6,7 +6,7 @@ using namespace std;
 void solve() {
   int n, m;
   cin >> n >> m;
-  int dp[n + 1][n + 1];
+  int dp[1000][1000];
 
   for (int i = 0; i <= n; i++) {
     for (int j = 0; j <= n; j++) {
