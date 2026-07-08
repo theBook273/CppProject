@@ -3,9 +3,6 @@
 using namespace std;
 
 signed main() {
-  int t;
-  cin >> t;
-  while (t--) {
-    // solve code
-  }
+  ios::sync_with_stdio(false);
+  cin.tie(nullptr);
 }
